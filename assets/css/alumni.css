@@ -1,0 +1,695 @@
+/* ============================================
+   ALUMNI MODULE STYLES
+   ============================================ */
+
+:root {
+    --primary-color: #9e271f;
+    --secondary-color: #1a1a1a;
+    --light-bg: #f8f9fa;
+    --border-color: #e9ecef;
+    --text-dark: #333;
+    --text-light: #666;
+}
+
+/* ============================================
+   GENERAL STYLES
+   ============================================ */
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 15px;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+/* ============================================
+   ALUMNI CARDS
+   ============================================ */
+
+.alumni-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.alumni-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(158, 39, 31, 0.15);
+}
+
+.alumni-card .card-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.alumni-card .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.alumni-card:hover .card-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.alumni-card .featured-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.alumni-card .card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.alumni-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.alumni-card .batch-year {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.alumni-card .card-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.alumni-card .card-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.alumni-card .company-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.alumni-card .btn-view-more {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+.alumni-card .btn-view-more:hover {
+    background: darken(var(--primary-color), 10%);
+    box-shadow: 0 4px 10px rgba(158, 39, 31, 0.3);
+}
+
+/* ============================================
+   EVENT CARDS
+   ============================================ */
+
+.event-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    height: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(158, 39, 31, 0.15);
+}
+
+.event-card .event-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.event-card .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.05);
+}
+
+.event-card .event-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.event-card .event-body {
+    padding: 20px;
+}
+
+.event-card .event-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.event-card .event-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.event-card .event-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.event-card .event-description {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.event-card .btn-view-details {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.event-card .btn-view-details:hover {
+    background: darken(var(--primary-color), 10%);
+    box-shadow: 0 4px 10px rgba(158, 39, 31, 0.3);
+}
+
+/* ============================================
+   MENTOR CARDS
+   ============================================ */
+
+.mentor-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.mentor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(158, 39, 31, 0.15);
+}
+
+.mentor-card .mentor-avatar {
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mentor-card .mentor-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+}
+
+.mentor-card .mentor-body {
+    padding: 20px;
+}
+
+.mentor-card .mentor-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.mentor-card .mentor-batch {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.mentor-card .mentor-expertise {
+    display: inline-block;
+    background: var(--light-bg);
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.mentor-card .mentor-company {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.mentor-card .mentor-experience {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mentor-card .mentor-availability {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.mentor-card .btn-view-profile {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.mentor-card .btn-view-profile:hover {
+    background: darken(var(--primary-color), 10%);
+    box-shadow: 0 4px 10px rgba(158, 39, 31, 0.3);
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 8px 25px rgba(158, 39, 31, 0.15);
+}
+
+.testimonial-card .quote-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    opacity: 0.2;
+    margin-bottom: -15px;
+}
+
+.testimonial-card .testimonial-message {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.testimonial-card .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.testimonial-card .testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+.testimonial-card .testimonial-info {
+    text-align: left;
+}
+
+.testimonial-card .testimonial-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+}
+
+.testimonial-card .testimonial-batch {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.testimonials-carousel {
+    padding: 20px 0;
+}
+
+.owl-carousel .owl-nav {
+    margin-top: 20px;
+}
+
+.owl-carousel .owl-nav button {
+    background: var(--primary-color) !important;
+    color: white !important;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.owl-carousel .owl-nav button:hover {
+    background: darken(var(--primary-color), 10%) !important;
+}
+
+.owl-carousel .owl-dots .owl-dot span {
+    background: var(--border-color) !important;
+    transition: all 0.3s ease;
+}
+
+.owl-carousel .owl-dots .owl-dot.active span {
+    background: var(--primary-color) !important;
+}
+
+/* ============================================
+   FILTERS & SEARCH
+   ============================================ */
+
+.form-control {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(158, 39, 31, 0.25);
+}
+
+nav.nav-pills .nav-link {
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+    border-radius: 25px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+nav.nav-pills .nav-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+nav.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav-tabs {
+    border-bottom: 2px solid var(--border-color);
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-dark);
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    border-bottom-color: var(--primary-color);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: transparent;
+    border-bottom-color: var(--primary-color);
+}
+
+/* ============================================
+   MODALS
+   ============================================ */
+
+.modal-content {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, rgba(158, 39, 31, 0.1) 0%, rgba(158, 39, 31, 0.05) 100%);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.modal-title {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+.form-group label {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group textarea,
+.form-group select,
+.form-group input {
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: darken(var(--primary-color), 10%);
+    box-shadow: 0 4px 10px rgba(158, 39, 31, 0.3);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .alumni-card,
+    .event-card,
+    .mentor-card {
+        margin-bottom: 20px;
+    }
+
+    .mentee-card {
+        margin-bottom: 20px;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .nav-pills .nav-link {
+        margin-right: 5px;
+        padding: 6px 15px;
+        font-size: 0.85rem;
+    }
+
+    .modal-dialog {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    .page-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .alumni-card .card-image-wrapper,
+    .event-card .event-image {
+        height: 180px;
+    }
+
+    .mentor-card .mentor-avatar {
+        height: 180px;
+    }
+
+    .mentor-card .mentor-avatar img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .testimonial-card .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .testimonial-card .testimonial-info {
+        text-align: center;
+    }
+
+    .btn-view-more,
+    .btn-view-details,
+    .btn-view-profile {
+        width: 100%;
+        padding: 10px !important;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alumni-card,
+.event-card,
+.mentor-card,
+.testimonial-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-light-primary {
+    background-color: rgba(158, 39, 31, 0.05);
+}
+
+.border-primary {
+    border-color: var(--primary-color) !important;
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-light);
+}
+
+.no-results i {
+    font-size: 3rem;
+    color: var(--border-color);
+    margin-bottom: 20px;
+    display: block;
+}

@@ -1,0 +1,701 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="EMRS Dornala Events">
+  <title>Events | EMRS Dornala</title>
+  <link rel="icon" type="image/x-icon" href="images/logo_emrs.ico">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/flaticon.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <link rel="stylesheet" href="assets/css/odometer.min.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/progressbar.min.css">
+  <link rel="stylesheet" href="assets/css/style-front.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/meanmenu.css">
+  <style>
+    :root {
+      --events-bg: #f4f8fb;
+      --events-card: #ffffff;
+      --events-text: #163247;
+      --events-muted: #61778a;
+      --events-primary: #0b4f6c;
+      --events-accent: #d9480f;
+      --events-border: #dbe6ef;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f8fbfe 0%, #eef5fa 100%);
+      color: var(--events-text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-shell {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 24px 14px 42px;
+    }
+
+    .events-hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      min-height: 260px;
+      background: linear-gradient(135deg, #0b4f6c 0%, #127aa0 54%, #1f8a70 100%);
+      color: #fff;
+      box-shadow: 0 18px 42px rgba(9, 40, 59, 0.2);
+    }
+
+    .events-hero::before,
+    .events-hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      filter: blur(10px);
+    }
+
+    .events-hero::before { width: 220px; height: 220px; right: -40px; top: -40px; }
+    .events-hero::after { width: 160px; height: 160px; left: -36px; bottom: -30px; }
+
+    .events-hero-copy {
+      position: relative;
+      padding: 40px 28px;
+      max-width: 760px;
+    }
+
+    .events-kicker {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .events-hero h1 {
+      margin: 14px 0 10px;
+      font-size: clamp(34px, 6vw, 54px);
+      line-height: 1.06;
+      font-weight: 800;
+    }
+
+    .events-hero p {
+      margin: 0;
+      color: rgba(255,255,255,0.92);
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 760px;
+    }
+
+    .events-shell {
+      margin-top: 18px;
+      background: rgba(255,255,255,0.88);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--events-border);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 14px 34px rgba(16, 44, 61, 0.08);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--events-text);
+    }
+
+    .section-heading span {
+      color: var(--events-muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .events-filters-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .events-control {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--events-border);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--events-text);
+      padding: 0 14px;
+      outline: none;
+    }
+
+    .events-control:focus {
+      border-color: rgba(11, 79, 108, 0.5);
+      box-shadow: 0 0 0 4px rgba(11, 79, 108, 0.1);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .featured-card,
+    .event-card,
+    .skeleton-card {
+      border: 1px solid var(--events-border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--events-card);
+      box-shadow: 0 10px 24px rgba(17, 42, 58, 0.08);
+    }
+
+    .featured-card {
+      position: relative;
+      min-height: 260px;
+      color: #fff;
+      isolation: isolate;
+      transform: translateY(12px);
+      opacity: 0;
+      animation: riseIn 0.45s ease forwards;
+    }
+
+    .featured-card img,
+    .event-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .featured-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(3, 24, 35, 0.1) 0%, rgba(3, 24, 35, 0.86) 100%);
+    }
+
+    .badge-pill,
+    .category-pill,
+    .type-pill {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-pill,
+    .category-pill {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+    }
+
+    .type-pill {
+      background: #eef5fb;
+      color: var(--events-primary);
+    }
+
+    .featured-overlay h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .featured-overlay p,
+    .event-card p {
+      margin: 0;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .featured-meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.88);
+      font-weight: 600;
+    }
+
+    .read-more-btn,
+    .load-more-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      border: none;
+      border-radius: 12px;
+      padding: 11px 16px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .read-more-btn {
+      background: linear-gradient(120deg, #fff, #edf7fb);
+      color: var(--events-primary);
+    }
+
+    .read-more-btn:hover,
+    .load-more-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+      text-decoration: none;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .event-card {
+      display: flex;
+      flex-direction: column;
+      transform: translateY(12px);
+      opacity: 0;
+      animation: riseIn 0.5s ease forwards;
+    }
+
+    .event-card img {
+      height: 190px;
+      background: #e8eef4;
+    }
+
+    .event-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px;
+      color: var(--events-text);
+      flex: 1;
+    }
+
+    .event-topline,
+    .event-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .event-date {
+      color: var(--events-muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .event-card h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.35;
+      color: var(--events-text);
+    }
+
+    .event-card p {
+      color: var(--events-muted);
+      min-height: 66px;
+    }
+
+    .load-more-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 18px;
+    }
+
+    .load-more-btn {
+      background: #123247;
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(18, 50, 71, 0.16);
+    }
+
+    .skeleton-card {
+      overflow: hidden;
+    }
+
+    .skeleton-image,
+    .skeleton-line {
+      position: relative;
+      overflow: hidden;
+      background: #e6edf4;
+    }
+
+    .skeleton-image {
+      height: 190px;
+    }
+
+    .skeleton-line {
+      height: 12px;
+      margin: 12px 14px;
+      border-radius: 999px;
+    }
+
+    .skeleton-line.short { width: 42%; }
+
+    .skeleton-image::after,
+    .skeleton-line::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      transform: translateX(-100%);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.75), transparent);
+      animation: shimmer 1.3s infinite;
+    }
+
+    .events-empty-note {
+      padding: 18px;
+      background: #fff;
+      border: 1px dashed var(--events-border);
+      border-radius: 14px;
+      color: var(--events-muted);
+    }
+
+    @keyframes shimmer {
+      100% { transform: translateX(100%); }
+    }
+
+    @keyframes riseIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 767px) {
+      .events-shell { padding: 14px; }
+      .events-hero-copy { padding: 30px 18px; }
+      .section-heading h2 { font-size: 20px; }
+      .event-card img { height: 170px; }
+    }
+    .events-public-shell {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 18px 14px 42px;
+    }
+
+    .events-breadcrumb-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 14px 14px 0;
+    }
+
+    .events-breadcrumb-wrap .breadcrumb {
+      background: transparent;
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    /* Keep Events header spacing consistent with other public pages */
+    .header-spacer {
+      height: 70px !important;
+      margin-top: 15px;
+      display: inline-block;
+    }
+
+    .header-logo {
+      height: 70px !important;
+    }
+
+    .header-tagline {
+      font-size: 18px;
+      font-weight: 700;
+      color: #000000;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body data-spy="scroll" class="skillbar" data-target=".navbar-collapse">
+  <div id="wrapper">
+    <div class="container headertoppanel">
+      <div class="row header_main">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-1 pt-1 emblemb text-center"><img src="WriteReadData\MD32145\dept_logo.jpg" alt="Department logo"></div>
+            <div class="col-md-5 headerpanelmain_box ">
+              <h1>Eklavya Model Residential School</h1>
+              <h1>Dornala, Andhra Pradesh</h1>
+              <span>(जनजातीय कार्य मंत्रालय के अंतर्गत एक स्वायत्त संस्थान), भारत सरकार</span><br>
+              <span>(An Autonomous organisation under Ministry of Tribal Affairs), Government of India</span>
+            </div>
+            <div class="col-md-3 emblemb text-center dis_none"><span class="header-spacer"></span></div>
+            <div class="col-md-3 emblemb text-center dis_none d-flex align-items-center justify-content-center gap-3">
+                            <img src="WriteReadData/MD32145/NEST.jpeg" style="height: 70px!important;" alt="NEST Logo">
+                            <div>
+                                <img src="images/loogo.png" style="height: 70px!important;" alt="EMRS logo">
+                                <br>
+                                <span class="pt-2 d-block" style="font-size:14px; font-weight:bold; color:#000000; line-height: 1.2;">Tribal Transformation Through Education</span>
+                            </div>
+                        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-area">
+    <div class="labto-mobile-nav">
+        <div class="logo">
+            <a href="index.html">
+                <!-- use forward slashes for cross-platform paths and make image responsive -->
+                <img src="WriteReadData/MD32145/dept_logo.jpg" alt="EMRS  Dornala Logo" class="mobile-logo">
+            </a>
+        </div>
+    </div>
+
+    <div class="labto-nav">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+
+                        <!-- Home -->
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link active">Home</a>
+                        </li>
+                       
+
+                        <!-- About Us -->
+                        <li class="nav-item dropdown">
+                            <a href="about.html" class="nav-link">
+                                About Us <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="about.html">About School</a></li>
+                                <li><a class="nav-link" href="vision.html">Vision</a></li>
+                                <li><a class="nav-link" href="mission.html">Mission</a></li>
+                                <li><a class="nav-link" href="objective.html">Objective</a></li>
+                                
+                            </ul>
+                        </li>
+
+                        <!-- Academics -->
+                        <li class="nav-item dropdown">
+                            <a href="academics.html" class="nav-link">
+                                Academics <i class="fas fa-chevron-down"></i>
+                            </a>
+                         
+                        </li>
+
+                                                 <li class="nav-item dropdown">
+                            <a href="campus life.html" class="nav-link">
+                                Campus Life <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="mess.html">Mess</a></li>
+                                <li><a class="nav-link" href="hostel.html">Hostel</a></li>
+                                <li><a class="nav-link" href="staff-quarters.html">Staff Quarters</a></li>
+                                <li><a class="nav-link" href="school.html">School</a></li>
+                                <li><a class="nav-link" href="playground.html">Playground</a></li>
+                            </ul>
+                        </li>
+
+
+                        <!-- Achievements -->
+                        <li class="nav-item">
+                            <a href="achievments and events.html" class="nav-link">Achievements</a>
+                        </li>
+                        <!-- Events Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a href="events.html" class="nav-link">
+                                Events <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="sports.html">Sports Facilities</a></li>
+                                <li><a class="nav-link" href="events.html?category=cultural">Cultural Events</a></li>
+                                <li><a class="nav-link" href="events.html?category=general">Other Activities</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Staff Directory -->
+                        <li class="nav-item">
+                            <a href="staff.html" class="nav-link">Staff Directory</a>
+                        </li>
+
+
+                        <!-- Alumni -->
+                        <li class="nav-item dropdown">
+                            <a href="alumni.html" class="nav-link">
+                                Alumni <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="alumni.html">Notable Alumni</a></li>
+                                <li><a class="nav-link" href="alumni-events.html">Alumni Events</a></li>
+                                <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                            </ul>
+                        </li>
+                        
+
+
+                        <!-- Circulars -->
+                        <li class="nav-item">
+                            <a href="admissions.html" class="nav-link">Admissions</a>
+                        </li>
+
+                                                <!-- Results -->
+                        <li class="nav-item dropdown">
+                            <a href="result.html" class="nav-link">
+                                Results <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="result.html">All Results Portal</a></li>
+                                <li><a class="nav-link" href="results/class-vi.html">Class VI Results</a></li>
+                                <li><a class="nav-link" href="results/class-vii.html">Class VII Results</a></li>
+                                <li><a class="nav-link" href="results/class-viii.html">Class VIII Results</a></li>
+                                <li><a class="nav-link" href="results/class-ix.html">Class IX Results</a></li>
+                                <li><a class="nav-link" href="results/class-x.html">Class X Results</a></li>
+                                <li><a class="nav-link" href="results/class-xi.html">Class XI Results</a></li>
+                                <li><a class="nav-link" href="results/class-xii.html">Class XII Results</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Contact -->
+                        <li class="nav-item">
+                            <a href="contactus.html" class="nav-link">Contact Us</a>
+                        </li>
+
+                        <!-- MIS Login -->
+                        <li class="nav-item">
+                            <a href="admin-login.html" class="nav-link" style="color:#d13b3b;font-weight:600;" target="_blank">MIS Login</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+</div>
+  </div>
+
+  <div class="events-breadcrumb-wrap">
+    <ul class="breadcrumb">
+      <li><a href="index.html" title="Home">Home</a></li>
+      <li><a href="events.html" title="Events">Events</a></li>
+    </ul>
+  </div>
+
+  <main class="events-public-shell" id="eventsPageRoot">
+    <section class="events-hero">
+      <div class="events-hero-copy">
+        <span class="events-kicker">Events</span>
+        <h1>School Events</h1>
+        <p>Discover recent events, monthly highlights, and featured moments from our campus community. Use filters to narrow by category, year, or month.</p>
+      </div>
+    </section>
+
+    <section class="events-shell" aria-label="Events listing">
+      <div class="section-heading">
+        <h2>Featured Events</h2>
+        <span>Highlighted at the top</span>
+      </div>
+      <div id="featuredEventsArea"></div>
+
+      <div class="section-heading">
+        <h2>All Events</h2>
+        <span>Latest first</span>
+      </div>
+
+      <div class="events-filters-wrap">
+        <input id="searchEvents" class="events-control" type="search" placeholder="Search by title" aria-label="Search events by title">
+        <select id="categoryFilter" class="events-control" aria-label="Filter events by category"></select>
+        <select id="yearFilter" class="events-control" aria-label="Filter events by year"></select>
+        <select id="monthFilter" class="events-control" aria-label="Filter events by month">
+          <option value="">All Months</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
+
+      <div id="eventsGrid" class="events-grid" aria-live="polite"></div>
+      <div id="loadMoreArea" class="load-more-row"></div>
+    </section>
+  </main>
+
+  
+<footer>
+            <div class="row copyright-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p> EMRS Dornala , Parkasham, Andhra Pradesh </p>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <ul>
+
+
+                                <li><a title="Accessibility Options" href="#">Accessibility Options</a>
+                                </li>
+
+                                <li><a title="Disclaimer" href="#">Disclaimer</a>
+                                </li>
+
+                                <li><a title="Copyright Policy" href="#">Copyright Policy</a>
+                                </li>
+
+                                <li><a title="Website Policies" href="#">Website Policies</a>
+                                </li>
+
+                                <li><a title="Privacy Policy" href="#">Privacy Policy</a>
+                                </li>
+
+                                <li><a title="Help" href="contactus.html">Help</a>
+                                </li>
+
+
+                            </ul>
+                            <div class="row">
+                                <div class="col-md-9  ">&nbsp;</div>
+                                <div class="col-md-3  visitor_number">Visitor No.- 20803047</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</footer>
+
+<script src="assets/js/jquery-1.12.0.min.js"></script>
+  <script src="assets/js/jquery.meanmenu.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/api-content.js"></script>
+  <script src="assets/js/events-page.js"></script>
+</body>
+</html>
+
+
+
+
+

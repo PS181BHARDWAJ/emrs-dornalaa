@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+venv/
+.venv/
+backend/venv/
+
+# Secrets and local env
+.env
+backend/.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Upload/runtime artifacts
+backend/uploads/
+backend/backend/uploads/

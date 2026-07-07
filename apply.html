@@ -1,0 +1,1788 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="source" content="EMRS Dornala" />
+    <meta name="author" content="EMRS Dornala, Andhra Pradesh" />
+    <meta name="description" content="Eklavya Model Residential School, Dornala - Andhra Pradesh" />
+    <meta name="keywords" content="EMRS Dornala, Tribal School, Residential School, Andhra Pradesh" />
+    <title>Online Admission Form | EMRS Dornala</title>
+	<link rel="icon" type="image/x-icon" href="images/logo_emrs.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap Min CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<!-- Flaticon CSS -->
+	<link rel="stylesheet" href="assets/css/flaticon.css">
+	<!-- Magnific Popup Min CSS -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+	<!-- niceSelect CSS -->
+	<link rel="stylesheet" href="assets/css/nice-select.css">
+	<!-- Odometer Min CSS -->
+	<link rel="stylesheet" href="assets/css/odometer.min.css">
+	<!-- Owl Carousel Min CSS -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<!-- Progressbar Min CSS -->
+	<link rel="stylesheet" href="assets/css/progressbar.min.css">
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="assets/css/style-front.css">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- MeanMenu CSS -->
+	<link rel="stylesheet" href="assets/css/meanmenu.css">
+
+	<link rel="stylesheet" href="slick-carousel/slick.min.css">
+	<link rel="stylesheet" href="slick-carousel/icon-box-slider.css">
+	
+	<script src="assets/js/jquery-1.12.0.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<!-- Bootstrap Min JS -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- MeanMenu JS -->
+	<script src="assets/js/jquery.meanmenu.js"></script>
+	<!-- Main JS -->
+	<script src="assets/js/main.js"></script>
+
+    <style>
+        /* Modern Premium Stepper & Form Wizard Styling */
+        .apply-wrapper {
+            background-color: #f8fafc;
+            padding: 40px 0;
+            font-family: 'Inter', sans-serif;
+            min-height: 700px;
+        }
+        
+        .wizard-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 43, 73, 0.06);
+            border: 1px solid #e2e8f0;
+            padding: 35px;
+            margin-bottom: 40px;
+        }
+
+        /* Stepper progress */
+        .stepper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stepper-header::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 5%;
+            right: 5%;
+            height: 3px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .stepper-progress-bar {
+            position: absolute;
+            top: 25px;
+            left: 5%;
+            width: 0%;
+            height: 3px;
+            background: #28a745;
+            z-index: 1;
+            transition: width 0.4s ease;
+        }
+
+        .step-node {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #e2e8f0;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .step-node.active .step-circle {
+            border-color: #0056B3;
+            color: #0056B3;
+            background: #f0f7ff;
+            transform: scale(1.1);
+            box-shadow: 0 0 12px rgba(0, 86, 179, 0.2);
+        }
+
+        .step-node.completed .step-circle {
+            border-color: #28a745;
+            color: white;
+            background: #28a745;
+        }
+
+        .step-text {
+            margin-top: 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #64748b;
+            transition: color 0.4s;
+            white-space: nowrap;
+        }
+
+        .step-node.active .step-text {
+            color: #0056B3;
+        }
+
+        .step-node.completed .step-text {
+            color: #28a745;
+        }
+
+        /* Form Steps */
+        .form-step-pane {
+            display: none;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .form-step-pane.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .step-pane-title {
+            color: #002B49;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-pane-title i {
+            color: #0056B3;
+        }
+
+        /* Form Inputs */
+        .form-group label {
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .required-label::after {
+            content: " *";
+            color: #ef4444;
+        }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            color: #1e293b;
+            transition: all 0.3s;
+            background-color: #fff;
+            width: 100%;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #0056B3;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
+            outline: none;
+        }
+
+        .form-control.is-invalid, .form-select.is-invalid {
+            border-color: #ef4444;
+            background-image: none;
+        }
+
+        .form-control.is-invalid:focus, .form-select.is-invalid:focus {
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+        }
+
+        .invalid-feedback {
+            color: #ef4444;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* File Upload Zones */
+        .file-upload-card {
+            background: #f8fafc;
+            border: 2px dashed #94a3b8;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .file-upload-card:hover, .file-upload-card.dragover {
+            border-color: #0056B3;
+            background-color: #f0f7ff;
+        }
+
+        .upload-icon {
+            font-size: 2.2rem;
+            color: #64748b;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .file-upload-card:hover .upload-icon {
+            color: #0056B3;
+        }
+
+        .file-upload-card p {
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        .file-upload-card .constraints-info {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+
+        .file-upload-card input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* File Preview Area */
+        .preview-container {
+            display: none;
+            margin-top: 15px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .preview-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 80%;
+        }
+
+        .preview-thumb {
+            width: 45px;
+            height: 45px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 1px solid #cbd5e1;
+        }
+
+        .preview-file-icon {
+            font-size: 1.8rem;
+            color: #ef4444;
+        }
+
+        .preview-details {
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .preview-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .preview-size {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .btn-clear-file {
+            background: none;
+            border: none;
+            color: #ef4444;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .btn-clear-file:hover {
+            background: #fee2e2;
+        }
+
+        /* Buttons footer */
+        .wizard-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 25px;
+        }
+
+        .btn-gov-next {
+            background-color: #28a745;
+            color: white !important;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 6px;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(40,167,69,0.2);
+        }
+
+        .btn-gov-next:hover {
+            background-color: #218838;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(40,167,69,0.3);
+        }
+
+        .btn-gov-back {
+            background-color: #64748b;
+            color: white !important;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 6px;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-gov-back:hover {
+            background-color: #475569;
+            transform: translateY(-1px);
+        }
+
+        /* Loading Spinner Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #28a745;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Success Overlay */
+        .success-pane {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #d1fae5;
+            color: #059669;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 25px auto;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .success-pane h3 {
+            color: #002B49;
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .success-pane p {
+            color: #475569;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .app-no-badge {
+            background-color: #f0fdf4;
+            border: 2px dashed #28a745;
+            border-radius: 8px;
+            padding: 15px 30px;
+            display: inline-block;
+            margin-bottom: 35px;
+        }
+
+        .app-no-badge span {
+            display: block;
+            font-size: 0.85rem;
+            color: #15803d;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .app-no-badge h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #166534;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .success-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Custom alert toast */
+        .toast-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ef4444;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification.success {
+            background: #10b981;
+        }
+
+        .toast-notification i {
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stepper-header {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .stepper-header::before, .stepper-progress-bar {
+                display: none;
+            }
+            .step-node {
+                width: 30%;
+            }
+            .step-text {
+                font-size: 0.75rem;
+            }
+            .wizard-buttons {
+                flex-direction: column-reverse;
+                gap: 12px;
+            }
+            .btn-gov-next, .btn-gov-back {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+
+<body data-spy="scroll" class="skillbar" data-target=".navbar-collapse">
+
+    <div id="wrapper">
+        <div>
+            <!--Tob Bar-->
+            <div class="row tobbar_main">
+                <div class="container">
+                    <div class="skipto"><a title="Skip to main content" class="skip-content" href="#skipCont"><img src="images/ico-skip.png" alt="Skip to main content">&nbsp;&nbsp;Skip to Main Content</a></div>
+                    <div class="common-right clearfix">
+                        <ul id="header-nav">
+                            <li><a title="Social Media's" id="toggleSocial" href="javascript:void(0);"><img src="images/color_scheems.png" alt="Color schemes"></a>
+                                <ul>
+                                    <li><a href="javascript:void(0);" id="sch_1"><img src="images/d1.jpg" alt="Theme option 1"></a></li>
+                                    <li><a href="javascript:void(0);" id="sch_2"><img src="images/d2.jpg" alt="Theme option 2"></a></li>
+                                    <li><a href="javascript:void(0);" id="sch_3"><img src="images/d3.jpg" alt="Theme option 3"></a></li> 
+                                </ul>
+                            </li>
+                            <li class="ico-accessibility"><a title="Accessibility Dropdown" id="toggleAccessibility" href="javascript:void(0);"></a>
+                                <ul>
+                                    <li> <a href="javascript:void(0);" title="Increase font size" id="In">A<sup>+</sup></a> </li>
+                                    <li> <a href="javascript:void(0);" title="Reset font size" id="Normal">A<sup>&nbsp;</sup></a> </li>
+                                    <li> <a href="javascript:void(0);" title="Decrease font size" id="Out">A<sup>-</sup></a> </li>
+                                </ul>
+                            </li>
+                            <li class="ico-social"><a title="Social Media's" href="javascript:void(0);"></a>
+                                <ul>
+                                    <li><a href="javascript:void(0);" target="_blank"><img src="images/ico-facebook.png" alt="Facebook"></a></li>
+                                    <li><a href="javascript:void(0);" target="_blank"><img src="images/ico-twitter.png" alt="Twitter"></a></li>
+                                    <li><a href="javascript:void(0);" target="_blank"><img src="images/ico-youtube.png" alt="youtube"></a></li>
+                                </ul>
+                            </li>
+                            <li class="ico-sitemap"><a title="Sitemap" href="sitemap.html"></a></li>
+                            <li class="hindi"><a title="" href="javascript:void(0);">Language</a>
+                                <ul>
+                                    <li><a title="Link to English version" href="index.html">English</a></li>
+                                    <li><a title="Link to Hindi version" href="index.html">'हिंदी में'</a></li>
+                                </ul> 
+                            </li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+            
+            <div class="container headertoppanel">
+                <div class="row header_main">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1 pt-1 emblemb text-center"><img src="WriteReadData/MD32145/dept_logo.jpg" ></div>
+                            <div class="col-md-5 headerpanelmain_box ">
+                                <h1>Eklavya Model Residential School</h1>
+                                <h1>Dornala, Andhra Pradesh</h1>
+                                <span>(जनजातीय कार्य मंत्रालय के अंतर्गत एक स्वायत्त संस्थान), भारत सरकार</span>
+                                <br/>
+                                <span>(An Autonomous organisation under Ministry of Tribal Affairs), Government of India</span>
+                            </div>
+                            <div class="col-md-3 emblemb text-center dis_none">
+                                 <span style="height: 70px!important;margin-top: 15px;"></span>
+                            </div>
+                            <div class="col-md-3 emblemb text-center dis_none d-flex align-items-center justify-content-center gap-3">
+                            <img src="WriteReadData/MD32145/NEST.jpeg" style="height: 70px!important;" alt="NEST Logo">
+                            <div>
+                                <img src="images/loogo.png" style="height: 70px!important;" alt="EMRS logo">
+                                <br>
+                                <span class="pt-2 d-block" style="font-size:14px; font-weight:bold; color:#000000; line-height: 1.2;">Tribal Transformation Through Education</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        
+        <!--Navigation bar-->
+        <div class="navbar-area">
+            <div class="labto-mobile-nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="WriteReadData/MD32145/dept_logo.jpg" alt="EMRS Dornala Logo" class="mobile-logo">
+                    </a>
+                </div>
+            </div>
+
+            <div class="labto-nav">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link" href="about.html">About School</a></li>
+                                        <li><a class="nav-link" href="vision.html">Vision</a></li>
+                                        <li><a class="nav-link" href="mission.html">Mission</a></li>
+                                        <li><a class="nav-link" href="objective.html">Objective</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="academics.html" class="nav-link">Academics <i class="fas fa-chevron-down"></i></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="campus life.html" class="nav-link">Campus Life <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link" href="mess.html">Mess</a></li>
+                                        <li><a class="nav-link" href="hostel.html">Hostel</a></li>
+                                        <li><a class="nav-link" href="staff-quarters.html">Staff Quarters</a></li>
+                                        <li><a class="nav-link" href="school.html">School</a></li>
+                                        <li><a class="nav-link" href="playground.html">Playground</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="achievments and events.html" class="nav-link">Achievements</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="events.html" class="nav-link">Events <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link" href="sports.html">Sports Facilities</a></li>
+                                        <li><a class="nav-link" href="events.html?category=cultural">Cultural Events</a></li>
+                                        <li><a class="nav-link" href="events.html?category=general">Other Activities</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="staff.html" class="nav-link">Staff Directory</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="alumni.html" class="nav-link">Alumni <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link" href="alumni.html">Notable Alumni</a></li>
+                                        <li><a class="nav-link" href="alumni-events.html">Alumni Events</a></li>
+                                        <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="admissions.html" class="nav-link active">Admissions</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="result.html" class="nav-link">Results <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link" href="result.html">All Results Portal</a></li>
+                                        <li><a class="nav-link" href="results/class-vi.html">Class VI Results</a></li>
+                                        <li><a class="nav-link" href="results/class-vii.html">Class VII Results</a></li>
+                                        <li><a class="nav-link" href="results/class-viii.html">Class VIII Results</a></li>
+                                        <li><a class="nav-link" href="results/class-ix.html">Class IX Results</a></li>
+                                        <li><a class="nav-link" href="results/class-x.html">Class X Results</a></li>
+                                        <li><a class="nav-link" href="results/class-xi.html">Class XI Results</a></li>
+                                        <li><a class="nav-link" href="results/class-xii.html">Class XII Results</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="contactus.html" class="nav-link">Contact Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="admin-login.html" class="nav-link" style="color:#d13b3b;font-weight:600;" target="_blank">MIS Login</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div id="container-body">
+            <div class="container" id="inner-search" style="min-height: 550px;">
+                <ul class="breadcrumb">
+                    <li><a href="index.html" title="Home">Home</a></li>
+                    <li><a href="admissions.html" title="Admissions">Admissions</a></li>
+                    <li>Apply Online</li>
+                </ul>
+
+                <div class="row" id="print-container">
+                    <div class="col-md-12">
+                        <div class="apply-wrapper">
+                            <div class="container">
+                                
+                                <!-- Form Wizard Card -->
+                                <div class="wizard-card">
+                                    
+                                    <!-- Stepper header -->
+                                    <div class="stepper-header">
+                                        <div class="stepper-progress-bar" id="stepperProgressBar"></div>
+                                        <div class="step-node active" id="stepNode1">
+                                            <div class="step-circle">1</div>
+                                            <div class="step-text">Student</div>
+                                        </div>
+                                        <div class="step-node" id="stepNode2">
+                                            <div class="step-circle">2</div>
+                                            <div class="step-text">Parents</div>
+                                        </div>
+                                        <div class="step-node" id="stepNode3">
+                                            <div class="step-circle">3</div>
+                                            <div class="step-text">Address</div>
+                                        </div>
+                                        <div class="step-node" id="stepNode4">
+                                            <div class="step-circle">4</div>
+                                            <div class="step-text">Academics</div>
+                                        </div>
+                                        <div class="step-node" id="stepNode5">
+                                            <div class="step-circle">5</div>
+                                            <div class="step-text">Documents</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Main Interactive Form -->
+                                    <form id="admissionForm" novalidate autocomplete="off">
+                                        
+                                        <!-- STEP 1: Student Demographics -->
+                                        <div class="form-step-pane active" id="stepPane1">
+                                            <h3 class="step-pane-title"><i class="fa fa-user"></i> Student Personal Information</h3>
+                                            <div class="row">
+                                                <div class="col-md-6 form-group">
+                                                    <label class="required-label">Student Full Name</label>
+                                                    <input type="text" name="studentName" class="form-control" placeholder="As per Aadhaar/Birth Certificate" required>
+                                                    <div class="invalid-feedback">Student name is required.</div>
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <label class="required-label">Date of Birth</label>
+                                                    <input type="date" name="dob" class="form-control" required>
+                                                    <div class="invalid-feedback">Please enter a valid Date of Birth.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-4 form-group">
+                                                    <label class="required-label">Gender</label>
+                                                    <select name="gender" class="form-select" required>
+                                                        <option value="" selected disabled>Select Gender</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">Gender selection is required.</div>
+                                                </div>
+                                                <div class="col-md-4 form-group">
+                                                    <label class="required-label">Category</label>
+                                                    <select name="category" class="form-select" required>
+                                                        <option value="" selected disabled>Select Category</option>
+                                                        <option value="ST">Scheduled Tribe (ST)</option>
+                                                        <option value="SC">Scheduled Caste (SC)</option>
+                                                        <option value="OBC">Other Backward Class (OBC)</option>
+                                                        <option value="General">General (OC)</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">Category selection is required.</div>
+                                                </div>
+                                                <div class="col-md-4 form-group">
+                                                    <label class="required-label">Class Applying For</label>
+                                                    <select name="classApplying" class="form-select" required>
+                                                        <option value="" selected disabled>Select Class</option>
+                                                        <option value="VI">Class VI</option>
+                                                        <option value="VII">Class VII</option>
+                                                        <option value="VIII">Class VIII</option>
+                                                        <option value="IX">Class IX</option>
+                                                        <option value="X">Class X</option>
+                                                        <option value="XI">Class XI</option>
+                                                        <option value="XII">Class XII</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">Please select the target class.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-6 form-group">
+                                                    <label class="required-label">Mobile Number</label>
+                                                    <input type="tel" name="mobile" class="form-control" maxlength="10" placeholder="10-digit mobile number" onkeypress="return isNumber(event)" required>
+                                                    <div class="invalid-feedback">A valid 10-digit mobile number is required.</div>
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <label class="required-label">Email Address</label>
+                                                    <div class="input-group">
+                                                        <input type="email" name="email" id="emailInput" class="form-control" placeholder="example@email.com" required>
+                                                        <button type="button" id="btnSendOTP" class="btn btn-primary" style="border-top-left-radius: 0; border-bottom-left-radius: 0; min-width: 100px;">Send OTP</button>
+                                                    </div>
+                                                    <div class="invalid-feedback" id="emailError" style="display: none;">Please enter a valid email address.</div>
+                                                    
+                                                    <!-- OTP Verification Input Section -->
+                                                    <div id="otpVerificationSection" style="display: none; margin-top: 10px; background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px dashed #0056B3;">
+                                                        <label class="small font-weight-bold text-secondary mb-1">Enter 6-Digit Email OTP</label>
+                                                        <div class="input-group">
+                                                            <input type="text" id="emailOTPInput" class="form-control text-center" maxlength="6" placeholder="000000" style="letter-spacing: 4px; font-weight: bold; font-size: 1.1rem;" onkeypress="return isNumber(event)">
+                                                            <button type="button" id="btnVerifyOTP" class="btn btn-success" style="min-width: 100px;">Verify</button>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center mt-2">
+                                                            <small id="otpTimerText" class="text-muted" style="font-size: 0.75rem;"></small>
+                                                            <button type="button" id="btnResendOTP" class="btn btn-link btn-sm text-decoration-none p-0" style="font-size: 0.75rem;" disabled>Resend OTP</button>
+                                                        </div>
+                                                        <div class="text-danger small mt-1" id="otpError" style="display: none;">Incorrect OTP. Please check and try again.</div>
+                                                    </div>
+                                                    
+                                                    <!-- Verified Badge -->
+                                                    <div id="emailVerifiedBadge" style="display: none; margin-top: 8px;" class="text-success small fw-bold">
+                                                        <i class="fa fa-check-circle"></i> Email Verified Successfully
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-12 form-group">
+                                                    <label>Aadhaar Number <span class="text-muted">(12 Digits - Optional but recommended)</span></label>
+                                                    <input type="text" name="aadhaar" class="form-control" maxlength="12" placeholder="12-digit Aadhaar number" onkeypress="return isNumber(event)">
+                                                    <div class="invalid-feedback">If provided, Aadhaar must be exactly 12 digits.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- STEP 2: Parent Details -->
+                                        <div class="form-step-pane" id="stepPane2">
+                                            <h3 class="step-pane-title"><i class="fa fa-users"></i> Parent & Guardian Details</h3>
+                                            <div class="row">
+                                                <div class="col-md-6 form-group">
+                                                    <label class="required-label">Father's Full Name</label>
+                                                    <input type="text" name="fatherName" class="form-control" placeholder="Enter father's name" required>
+                                                    <div class="invalid-feedback">Father's name is required.</div>
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <label class="required-label">Mother's Full Name</label>
+                                                    <input type="text" name="motherName" class="form-control" placeholder="Enter mother's name" required>
+                                                    <div class="invalid-feedback">Mother's name is required.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-6 form-group">
+                                                    <label>Father's Occupation <span class="text-muted">(Optional)</span></label>
+                                                    <input type="text" name="fatherOccupation" class="form-control" placeholder="e.g. Agriculture, Business, Service">
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <label>Parental Annual Income <span class="text-muted">(INR - Optional)</span></label>
+                                                    <input type="number" name="annualIncome" class="form-control" min="0" placeholder="e.g. 96000" onkeypress="return isNumber(event)">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- STEP 3: Contact Address -->
+                                        <div class="form-step-pane" id="stepPane3">
+                                            <h3 class="step-pane-title"><i class="fa fa-home"></i> Correspondence & Address Details</h3>
+                                            <div class="row">
+                                                <div class="col-md-4 form-group">
+                                                    <label class="required-label">State</label>
+                                                    <input type="text" name="state" class="form-control" value="Andhra Pradesh" required>
+                                                    <div class="invalid-feedback">State name is required.</div>
+                                                </div>
+                                                <div class="col-md-4 form-group">
+                                                    <label class="required-label">District</label>
+                                                    <input type="text" name="district" class="form-control" placeholder="e.g. Prakasam" required>
+                                                    <div class="invalid-feedback">District name is required.</div>
+                                                </div>
+                                                <div class="col-md-4 form-group">
+                                                    <label class="required-label">Village / Town</label>
+                                                    <input type="text" name="village" class="form-control" placeholder="e.g. Dornala" required>
+                                                    <div class="invalid-feedback">Village or Town name is required.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-9 form-group">
+                                                    <label class="required-label">Full Residential Address</label>
+                                                    <textarea name="fullAddress" class="form-control" rows="3" placeholder="House No, Landmark, Street address details..." required></textarea>
+                                                    <div class="invalid-feedback">Full correspondence address is required.</div>
+                                                </div>
+                                                <div class="col-md-3 form-group">
+                                                    <label class="required-label">Pincode</label>
+                                                    <input type="text" name="pincode" class="form-control" maxlength="6" placeholder="6-digit pincode" onkeypress="return isNumber(event)" required>
+                                                    <div class="invalid-feedback">A valid 6-digit Pincode is required.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- STEP 4: Academic History -->
+                                        <div class="form-step-pane" id="stepPane4">
+                                            <h3 class="step-pane-title"><i class="fa fa-graduation-cap"></i> Previous Academic History</h3>
+                                            <p class="text-muted mb-4">Provide details of the last school attended by the student.</p>
+                                            <div class="row">
+                                                <div class="col-md-8 form-group">
+                                                    <label>Previous School Name</label>
+                                                    <input type="text" name="previousSchool" class="form-control" placeholder="e.g. ZPHS School, Dornala">
+                                                </div>
+                                                <div class="col-md-4 form-group">
+                                                    <label>Last Class Attended</label>
+                                                    <input type="text" name="lastClass" class="form-control" placeholder="e.g. Class V">
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-4 form-group">
+                                                    <label>School Board / Affiliation</label>
+                                                    <input type="text" name="board" class="form-control" placeholder="e.g. State Board (AP), CBSE">
+                                                </div>
+                                                <div class="col-md-4 form-group">
+                                                    <label>Percentage / GPA Obtained</label>
+                                                    <input type="text" name="percentage" class="form-control" placeholder="e.g. 85% or 8.5 GPA">
+                                                </div>
+                                                <div class="col-md-4 form-group">
+                                                    <label>Year of Passing</label>
+                                                    <input type="text" name="passingYear" class="form-control" maxlength="4" placeholder="e.g. 2026" onkeypress="return isNumber(event)">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- STEP 5: Document Uploads & Declaration -->
+                                        <div class="form-step-pane" id="stepPane5">
+                                            <h3 class="step-pane-title"><i class="fa fa-cloud-upload"></i> Upload Mandatory Documents</h3>
+                                            <p class="text-muted mb-4">Upload scanned files. Allowed formats: <b>JPG, PNG, PDF</b>. Maximum size: <b>2MB</b> for photo, <b>5MB</b> for document certificates.</p>
+                                            
+                                            <div class="row">
+                                                <!-- Passport photo -->
+                                                <div class="col-md-6 mb-4">
+                                                    <label class="required-label">Student Passport Photo</label>
+                                                    <div class="file-upload-card" id="card_photo">
+                                                        <i class="fa fa-user-circle upload-icon"></i>
+                                                        <p>Click or drag image file here to upload</p>
+                                                        <span class="constraints-info">JPEG or PNG only, Max 2MB</span>
+                                                        <input type="file" name="photo" id="file_photo" accept="image/jpeg,image/png" required>
+                                                    </div>
+                                                    <div class="preview-container" id="prev_photo">
+                                                        <div class="preview-info">
+                                                            <img class="preview-thumb" id="thumb_photo" src="" alt="Thumbnail">
+                                                            <div class="preview-details">
+                                                                <div class="preview-name" id="name_photo"></div>
+                                                                <div class="preview-size" id="size_photo"></div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn-clear-file" data-key="photo">&times;</button>
+                                                    </div>
+                                                    <div class="invalid-feedback text-danger font-weight-bold" id="error_photo" style="display:none; font-size:0.8rem;">Passport photo is mandatory.</div>
+                                                </div>
+
+                                                <!-- Birth Certificate -->
+                                                <div class="col-md-6 mb-4">
+                                                    <label class="required-label">Birth Certificate</label>
+                                                    <div class="file-upload-card" id="card_birthCertificate">
+                                                        <i class="fa fa-birthday-cake upload-icon"></i>
+                                                        <p>Click or drag certificate here to upload</p>
+                                                        <span class="constraints-info">PDF, JPG, PNG. Max 5MB</span>
+                                                        <input type="file" name="birthCertificate" id="file_birthCertificate" accept="application/pdf,image/jpeg,image/png" required>
+                                                    </div>
+                                                    <div class="preview-container" id="prev_birthCertificate">
+                                                        <div class="preview-info">
+                                                            <i class="fa fa-file-pdf-o preview-file-icon" id="icon_birthCertificate"></i>
+                                                            <div class="preview-details">
+                                                                <div class="preview-name" id="name_birthCertificate"></div>
+                                                                <div class="preview-size" id="size_birthCertificate"></div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn-clear-file" data-key="birthCertificate">&times;</button>
+                                                    </div>
+                                                    <div class="invalid-feedback text-danger font-weight-bold" id="error_birthCertificate" style="display:none; font-size:0.8rem;">Birth certificate file is mandatory.</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <!-- Caste Certificate -->
+                                                <div class="col-md-6 mb-4">
+                                                    <label class="required-label">Caste / Category Certificate</label>
+                                                    <div class="file-upload-card" id="card_casteCertificate">
+                                                        <i class="fa fa-id-card-o upload-icon"></i>
+                                                        <p>Click or drag certificate here to upload</p>
+                                                        <span class="constraints-info">PDF, JPG, PNG. Max 5MB</span>
+                                                        <input type="file" name="casteCertificate" id="file_casteCertificate" accept="application/pdf,image/jpeg,image/png" required>
+                                                    </div>
+                                                    <div class="preview-container" id="prev_casteCertificate">
+                                                        <div class="preview-info">
+                                                            <i class="fa fa-file-pdf-o preview-file-icon" id="icon_casteCertificate"></i>
+                                                            <div class="preview-details">
+                                                                <div class="preview-name" id="name_casteCertificate"></div>
+                                                                <div class="preview-size" id="size_casteCertificate"></div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn-clear-file" data-key="casteCertificate">&times;</button>
+                                                    </div>
+                                                    <div class="invalid-feedback text-danger font-weight-bold" id="error_casteCertificate" style="display:none; font-size:0.8rem;">Caste certificate file is mandatory.</div>
+                                                </div>
+
+                                                <!-- Aadhaar copy -->
+                                                <div class="col-md-6 mb-4">
+                                                    <label class="required-label">Student Aadhaar Copy</label>
+                                                    <div class="file-upload-card" id="card_aadhaarCopy">
+                                                        <i class="fa fa-id-badge upload-icon"></i>
+                                                        <p>Click or drag Aadhaar scan copy here</p>
+                                                        <span class="constraints-info">PDF, JPG, PNG. Max 5MB</span>
+                                                        <input type="file" name="aadhaarCopy" id="file_aadhaarCopy" accept="application/pdf,image/jpeg,image/png" required>
+                                                    </div>
+                                                    <div class="preview-container" id="prev_aadhaarCopy">
+                                                        <div class="preview-info">
+                                                            <i class="fa fa-file-pdf-o preview-file-icon" id="icon_aadhaarCopy"></i>
+                                                            <div class="preview-details">
+                                                                <div class="preview-name" id="name_aadhaarCopy"></div>
+                                                                <div class="preview-size" id="size_aadhaarCopy"></div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn-clear-file" data-key="aadhaarCopy">&times;</button>
+                                                    </div>
+                                                    <div class="invalid-feedback text-danger font-weight-bold" id="error_aadhaarCopy" style="display:none; font-size:0.8rem;">Aadhaar card scan copy is mandatory.</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <!-- TC (Optional) -->
+                                                <div class="col-md-12 mb-4">
+                                                    <label>School Transfer Certificate (TC) <span class="text-muted">(Optional)</span></label>
+                                                    <div class="file-upload-card" id="card_transferCertificate">
+                                                        <i class="fa fa-arrow-circle-right upload-icon"></i>
+                                                        <p>Click or drag TC document here to upload</p>
+                                                        <span class="constraints-info">PDF, JPG, PNG. Max 5MB</span>
+                                                        <input type="file" name="transferCertificate" id="file_transferCertificate" accept="application/pdf,image/jpeg,image/png">
+                                                    </div>
+                                                    <div class="preview-container" id="prev_transferCertificate">
+                                                        <div class="preview-info">
+                                                            <i class="fa fa-file-pdf-o preview-file-icon" id="icon_transferCertificate"></i>
+                                                            <div class="preview-details">
+                                                                <div class="preview-name" id="name_transferCertificate"></div>
+                                                                <div class="preview-size" id="size_transferCertificate"></div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn-clear-file" data-key="transferCertificate">&times;</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Declaration checkbox -->
+                                            <div class="form-check mt-4 text-left p-0 pl-4">
+                                                <input class="form-check-input" type="checkbox" id="chkDeclaration" style="width:16px; height:16px; cursor:pointer;" required>
+                                                <label class="form-check-label pl-2 font-weight-bold" for="chkDeclaration" style="cursor:pointer; color:#1e293b;">
+                                                    I hereby declare that all information and files submitted above are authentic, true and belong to the applicant. I understand that any false declaration will lead to immediate cancellation of admission eligibility.
+                                                </label>
+                                                <div class="invalid-feedback text-danger font-weight-bold mt-1" id="error_chkDeclaration" style="display:none; font-size:0.8rem;">You must accept the self-declaration to submit.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Stepper Navigation buttons -->
+                                        <div class="wizard-buttons">
+                                            <button type="button" class="btn-gov-back" id="btnPrev" style="display: none;"><i class="fa fa-arrow-left"></i> Previous Step</button>
+                                            <button type="button" class="btn-gov-next ml-auto" id="btnNext">Next Step <i class="fa fa-arrow-right"></i></button>
+                                        </div>
+                                    </form>
+
+                                    <!-- Submission Success Result Display -->
+                                    <div class="success-pane" id="successPane">
+                                        <div class="success-icon">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                        <h3>Application Submitted Successfully!</h3>
+                                        <p>Your online application has been securely recorded. The school admissions committee will review your documents. Please note down your Application Number for future reference and tracking.</p>
+                                        
+                                        <div class="app-no-badge">
+                                            <span>Registration Number</span>
+                                            <h2 id="dispAppNo">EMRS202600001</h2>
+                                        </div>
+
+                                        <div class="success-actions">
+                                            <a href="" id="btnDownloadPDF" class="btn-gov-primary-link" target="_blank"><i class="fa fa-file-pdf-o"></i> Download Admission Form PDF</a>
+                                            <a href="index.html" class="btn-gov-secondary-link"><i class="fa fa-home"></i> Back to Homepage</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+
+        <!-- Loading spinner overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div>
+                <div class="loading-spinner"></div>
+                <h4 style="color:#ffffff; font-weight:700;">Submitting Application</h4>
+                <p style="color:#e2e8f0; font-size:0.9rem;">Uploading certificates and generating your registration number... Please do not refresh.</p>
+            </div>
+        </div>
+
+        <!-- Custom toast alert notification -->
+        <div class="toast-notification" id="toastNotification">
+            <i class="fa fa-exclamation-triangle"></i>
+            <span id="toastMsg">Error message here</span>
+        </div>
+
+        <footer>
+            <div class="row copyright-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p> EMRS Dornala , Parkasham, Andhra Pradesh </p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <ul>
+                                <li><a title="Accessibility Options" href="#">Accessibility Options</a></li>
+                                <li><a title="Disclaimer" href="#">Disclaimer</a></li>
+                                <li><a title="Copyright Policy" href="#">Copyright Policy</a></li>
+                                <li><a title="Website Policies" href="#">Website Policies</a></li>
+                                <li><a title="Privacy Policy" href="#">Privacy Policy</a></li>
+                                <li><a title="Help" href="contactus.html">Help</a></li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-md-9">&nbsp;</div>
+                                <div class="col-md-3 visitor_number">Visitor No.- 20803047</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script controls for Stepper Form Wizard -->
+    <script>
+        const API_BASE = 'https://emrsdornala.onrender.com/api';
+
+        let currentStep = 1;
+        const totalSteps = 5;
+
+        // Email OTP Verification state & logic
+        let isEmailVerified = false;
+        let otpCooldownTimer = null;
+        let otpCooldownSeconds = 60;
+
+        function startOtpCooldown() {
+            const btnResend = document.getElementById('btnResendOTP');
+            const timerText = document.getElementById('otpTimerText');
+            const btnSend = document.getElementById('btnSendOTP');
+            
+            btnSend.disabled = true;
+            btnResend.disabled = true;
+            otpCooldownSeconds = 60;
+            
+            if (otpCooldownTimer) clearInterval(otpCooldownTimer);
+            
+            otpCooldownTimer = setInterval(() => {
+                otpCooldownSeconds--;
+                if (otpCooldownSeconds <= 0) {
+                    clearInterval(otpCooldownTimer);
+                    timerText.textContent = "";
+                    btnResend.disabled = false;
+                    btnSend.disabled = false;
+                } else {
+                    timerText.textContent = `Resend available in ${otpCooldownSeconds}s`;
+                }
+            }, 1000);
+        }
+
+        async function handleSendOTP() {
+            const emailInput = document.getElementById('emailInput');
+            const emailError = document.getElementById('emailError');
+            const otpSection = document.getElementById('otpVerificationSection');
+            const emailValue = emailInput.value.trim();
+            
+            emailInput.classList.remove('is-invalid');
+            emailError.style.display = 'none';
+            document.getElementById('otpError').style.display = 'none';
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailValue || !emailRegex.test(emailValue)) {
+                emailInput.classList.add('is-invalid');
+                emailError.textContent = "Please enter a valid email address before sending OTP.";
+                emailError.style.display = 'block';
+                return;
+            }
+            
+            const btnSend = document.getElementById('btnSendOTP');
+            const origText = btnSend.textContent;
+            btnSend.textContent = "Sending...";
+            btnSend.disabled = true;
+            
+            try {
+                const response = await fetch(`${API_BASE}/otp/send-email`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: emailValue })
+                });
+                
+                const result = await response.json();
+                if (response.ok) {
+                    if (result.mock_otp) {
+                        showToast(`[Mock Mode] OTP code generated: ${result.mock_otp}`, true);
+                        alert(`[Development Mode]\nSMTP credentials are not configured in backend .env file.\n\nYour mock OTP code is: ${result.mock_otp}`);
+                    } else {
+                        showToast("Verification code sent to your email.", true);
+                    }
+                    otpSection.style.display = 'block';
+                    startOtpCooldown();
+                } else {
+                    emailInput.classList.add('is-invalid');
+                    emailError.textContent = result.detail || "Failed to send verification code.";
+                    emailError.style.display = 'block';
+                    showToast(result.detail || "Failed to send OTP.");
+                }
+            } catch (err) {
+                console.error(err);
+                showToast("Network error. Please try again.");
+            } finally {
+                btnSend.textContent = origText;
+                btnSend.disabled = false;
+            }
+        }
+
+        async function handleVerifyOTP() {
+            const emailInput = document.getElementById('emailInput');
+            const otpInput = document.getElementById('emailOTPInput');
+            const otpError = document.getElementById('otpError');
+            const otpSection = document.getElementById('otpVerificationSection');
+            const verifiedBadge = document.getElementById('emailVerifiedBadge');
+            const btnSend = document.getElementById('btnSendOTP');
+            
+            const emailValue = emailInput.value.trim();
+            const otpValue = otpInput.value.trim();
+            
+            otpError.style.display = 'none';
+            
+            if (!otpValue || otpValue.length !== 6) {
+                otpError.textContent = "Please enter a 6-digit OTP code.";
+                otpError.style.display = 'block';
+                return;
+            }
+            
+            const btnVerify = document.getElementById('btnVerifyOTP');
+            const origText = btnVerify.textContent;
+            btnVerify.textContent = "Verifying...";
+            btnVerify.disabled = true;
+            
+            try {
+                const response = await fetch(`${API_BASE}/otp/verify-email`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: emailValue, otp: otpValue })
+                });
+                
+                const result = await response.json();
+                if (response.ok) {
+                    showToast("Email address verified successfully!", true);
+                    isEmailVerified = true;
+                    
+                    otpSection.style.display = 'none';
+                    verifiedBadge.style.display = 'block';
+                    emailInput.readOnly = true;
+                    btnSend.style.display = 'none';
+                    
+                    if (otpCooldownTimer) clearInterval(otpCooldownTimer);
+                } else {
+                    otpError.textContent = result.detail || "Incorrect OTP. Verification failed.";
+                    otpError.style.display = 'block';
+                    showToast(result.detail || "Incorrect verification code.");
+                }
+            } catch (err) {
+                console.error(err);
+                showToast("Network error. Please try again.");
+            } finally {
+                btnVerify.textContent = origText;
+                btnVerify.disabled = false;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnSend = document.getElementById('btnSendOTP');
+            const btnVerify = document.getElementById('btnVerifyOTP');
+            const btnResend = document.getElementById('btnResendOTP');
+            if (btnSend) btnSend.addEventListener('click', handleSendOTP);
+            if (btnVerify) btnVerify.addEventListener('click', handleVerifyOTP);
+            if (btnResend) btnResend.addEventListener('click', handleSendOTP);
+        });
+
+        // Custom Toast Helper
+        function showToast(message, isSuccess = false) {
+            const toast = document.getElementById('toastNotification');
+            const msgSpan = document.getElementById('toastMsg');
+            msgSpan.textContent = message;
+            
+            if (isSuccess) {
+                toast.classList.add('success');
+                toast.querySelector('i').className = 'fa fa-check-circle';
+            } else {
+                toast.classList.remove('success');
+                toast.querySelector('i').className = 'fa fa-exclamation-triangle';
+            }
+            
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4500);
+        }
+
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+        // Stepper Visual Sync
+        function updateStepper() {
+            // Update step node classes
+            for (let i = 1; i <= totalSteps; i++) {
+                const node = document.getElementById(`stepNode${i}`);
+                if (i < currentStep) {
+                    node.className = 'step-node completed';
+                    node.querySelector('.step-circle').innerHTML = '<i class="fa fa-check"></i>';
+                } else if (i === currentStep) {
+                    node.className = 'step-node active';
+                    node.querySelector('.step-circle').textContent = i;
+                } else {
+                    node.className = 'step-node';
+                    node.querySelector('.step-circle').textContent = i;
+                }
+            }
+            // Update progress line
+            const percentage = ((currentStep - 1) / (totalSteps - 1)) * 90;
+            document.getElementById('stepperProgressBar').style.width = `${percentage}%`;
+
+            // Display active pane
+            document.querySelectorAll('.form-step-pane').forEach((pane, idx) => {
+                if (idx + 1 === currentStep) {
+                    pane.classList.add('active');
+                } else {
+                    pane.classList.remove('active');
+                }
+            });
+
+            // Adjust navigation buttons
+            if (currentStep === 1) {
+                document.getElementById('btnPrev').style.display = 'none';
+            } else {
+                document.getElementById('btnPrev').style.display = 'inline-flex';
+            }
+
+            if (currentStep === totalSteps) {
+                document.getElementById('btnNext').innerHTML = 'Submit Application <i class="fa fa-paper-plane"></i>';
+                document.getElementById('btnNext').className = 'btn-gov-next btn-success';
+            } else {
+                document.getElementById('btnNext').innerHTML = 'Next Step <i class="fa fa-arrow-right"></i>';
+                document.getElementById('btnNext').className = 'btn-gov-next';
+            }
+            
+            // Scroll form wrapper to top smoothly on step change
+            document.querySelector('.wizard-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Step-specific Validation Rules
+        function validateStep(step) {
+            const pane = document.getElementById(`stepPane${step}`);
+            let isValid = true;
+
+            // Reset field validations inside current pane
+            pane.querySelectorAll('.form-control, .form-select').forEach(input => {
+                input.classList.remove('is-invalid');
+                const feedback = input.nextElementSibling;
+                if (feedback && feedback.classList.contains('invalid-feedback')) {
+                    feedback.style.display = 'none';
+                }
+            });
+
+            if (step === 1) {
+                const name = pane.querySelector('[name="studentName"]');
+                const dob = pane.querySelector('[name="dob"]');
+                const gender = pane.querySelector('[name="gender"]');
+                const category = pane.querySelector('[name="category"]');
+                const classApplying = pane.querySelector('[name="classApplying"]');
+                const mobile = pane.querySelector('[name="mobile"]');
+                const email = pane.querySelector('[name="email"]');
+                const aadhaar = pane.querySelector('[name="aadhaar"]');
+
+                if (!name.value.trim()) {
+                    name.classList.add('is-invalid');
+                    name.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                if (!dob.value) {
+                    dob.classList.add('is-invalid');
+                    dob.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                if (!gender.value) {
+                    gender.classList.add('is-invalid');
+                    gender.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                if (!category.value) {
+                    category.classList.add('is-invalid');
+                    category.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                if (!classApplying.value) {
+                    classApplying.classList.add('is-invalid');
+                    classApplying.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                
+                const mobileRegex = /^[6-9]\d{9}$/;
+                if (!mobile.value.trim() || !mobileRegex.test(mobile.value)) {
+                    mobile.classList.add('is-invalid');
+                    mobile.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+
+                const emailInput = pane.querySelector('#emailInput');
+                const emailError = pane.querySelector('#emailError');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
+                    emailInput.classList.add('is-invalid');
+                    emailError.textContent = "A valid email address is required.";
+                    emailError.style.display = 'block';
+                    isValid = false;
+                } else if (!isEmailVerified) {
+                    emailInput.classList.add('is-invalid');
+                    emailError.textContent = "Please verify your email address via OTP code before continuing.";
+                    emailError.style.display = 'block';
+                    isValid = false;
+                }
+
+                if (aadhaar.value.trim() && aadhaar.value.trim().length !== 12) {
+                    aadhaar.classList.add('is-invalid');
+                    aadhaar.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+            } 
+            else if (step === 2) {
+                const father = pane.querySelector('[name="fatherName"]');
+                const mother = pane.querySelector('[name="motherName"]');
+                if (!father.value.trim()) {
+                    father.classList.add('is-invalid');
+                    father.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                if (!mother.value.trim()) {
+                    mother.classList.add('is-invalid');
+                    mother.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+            } 
+            else if (step === 3) {
+                const state = pane.querySelector('[name="state"]');
+                const district = pane.querySelector('[name="district"]');
+                const village = pane.querySelector('[name="village"]');
+                const fullAddress = pane.querySelector('[name="fullAddress"]');
+                const pincode = pane.querySelector('[name="pincode"]');
+
+                if (!state.value.trim()) {
+                    state.classList.add('is-invalid');
+                    state.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                if (!district.value.trim()) {
+                    district.classList.add('is-invalid');
+                    district.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                if (!village.value.trim()) {
+                    village.classList.add('is-invalid');
+                    village.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                if (!fullAddress.value.trim()) {
+                    fullAddress.classList.add('is-invalid');
+                    fullAddress.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+                if (!pincode.value.trim() || pincode.value.trim().length !== 6) {
+                    pincode.classList.add('is-invalid');
+                    pincode.nextElementSibling.style.display = 'block';
+                    isValid = false;
+                }
+            }
+            else if (step === 5) {
+                // Validate files mandatory presence
+                const photo = document.getElementById('file_photo');
+                const birth = document.getElementById('file_birthCertificate');
+                const caste = document.getElementById('file_casteCertificate');
+                const aadhaarCopy = document.getElementById('file_aadhaarCopy');
+                const chkDeclaration = document.getElementById('chkDeclaration');
+
+                // Helper error triggers
+                if (!photo.files || photo.files.length === 0) {
+                    document.getElementById('error_photo').style.display = 'block';
+                    isValid = false;
+                } else {
+                    document.getElementById('error_photo').style.display = 'none';
+                }
+
+                if (!birth.files || birth.files.length === 0) {
+                    document.getElementById('error_birthCertificate').style.display = 'block';
+                    isValid = false;
+                } else {
+                    document.getElementById('error_birthCertificate').style.display = 'none';
+                }
+
+                if (!caste.files || caste.files.length === 0) {
+                    document.getElementById('error_casteCertificate').style.display = 'block';
+                    isValid = false;
+                } else {
+                    document.getElementById('error_casteCertificate').style.display = 'none';
+                }
+
+                if (!aadhaarCopy.files || aadhaarCopy.files.length === 0) {
+                    document.getElementById('error_aadhaarCopy').style.display = 'block';
+                    isValid = false;
+                } else {
+                    document.getElementById('error_aadhaarCopy').style.display = 'none';
+                }
+
+                if (!chkDeclaration.checked) {
+                    document.getElementById('error_chkDeclaration').style.display = 'block';
+                    isValid = false;
+                } else {
+                    document.getElementById('error_chkDeclaration').style.display = 'none';
+                }
+            }
+
+            return isValid;
+        }
+
+        // Stepper Navigation Actions
+        document.getElementById('btnNext').addEventListener('click', async () => {
+            if (!validateStep(currentStep)) {
+                showToast("Please correct the errors in the highlighted fields before proceeding.");
+                return;
+            }
+
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateStepper();
+            } else {
+                // Final submission trigger
+                await submitApplicationForm();
+            }
+        });
+
+        document.getElementById('btnPrev').addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStepper();
+            }
+        });
+
+        // Interactive File handling
+        const fileUploadKeys = ['photo', 'birthCertificate', 'casteCertificate', 'aadhaarCopy', 'transferCertificate'];
+        
+        fileUploadKeys.forEach(key => {
+            const input = document.getElementById(`file_${key}`);
+            const card = document.getElementById(`card_${key}`);
+            const preview = document.getElementById(`prev_${key}`);
+            const previewName = document.getElementById(`name_${key}`);
+            const previewSize = document.getElementById(`size_${key}`);
+            const errorDiv = document.getElementById(`error_${key}`);
+
+            // File select event
+            input.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    handleSelectedFile(file, key);
+                }
+            });
+
+            // Drag and drop events
+            ['dragenter', 'dragover'].forEach(eventName => {
+                card.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    card.classList.add('dragover');
+                }, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                card.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    card.classList.remove('dragover');
+                }, false);
+            });
+
+            card.addEventListener('drop', (e) => {
+                const dt = e.dataTransfer;
+                const file = dt.files[0];
+                if (file) {
+                    input.files = dt.files;
+                    handleSelectedFile(file, key);
+                }
+            });
+        });
+
+        function handleSelectedFile(file, key) {
+            const card = document.getElementById(`card_${key}`);
+            const preview = document.getElementById(`prev_${key}`);
+            const previewName = document.getElementById(`name_${key}`);
+            const previewSize = document.getElementById(`size_${key}`);
+            const errorDiv = document.getElementById(`error_${key}`);
+
+            // Validate file bounds client-side
+            const maxMB = key === 'photo' ? 2 : 5;
+            if (file.size > maxMB * 1024 * 1024) {
+                showToast(`File size exceeds the allowable limit of ${maxMB}MB for this block.`);
+                document.getElementById(`file_${key}`).value = '';
+                return;
+            }
+
+            // Hide error state
+            if (errorDiv) errorDiv.style.display = 'none';
+
+            // Show details
+            previewName.textContent = file.name;
+            previewSize.textContent = `${(file.size / (1024 * 1024)).toFixed(2)} MB`;
+
+            // If image, show visual thumbnail preview
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    if (key === 'photo') {
+                        document.getElementById('thumb_photo').src = e.target.result;
+                    } else {
+                        const icon = document.getElementById(`icon_${key}`);
+                        if (icon) {
+                            // Replace icon element with thumbnail image
+                            const img = document.createElement('img');
+                            img.className = 'preview-thumb';
+                            img.id = `icon_${key}`;
+                            img.src = e.target.result;
+                            icon.replaceWith(img);
+                        } else {
+                            // Check if image thumb already replaced it
+                            const existingImg = preview.querySelector('img.preview-thumb');
+                            if (existingImg) {
+                                existingImg.src = e.target.result;
+                            }
+                        }
+                    }
+                };
+                reader.readAsDataURL(file);
+            } else {
+                // Revert to pdf icon
+                const existingImg = preview.querySelector('img.preview-thumb');
+                if (existingImg && key !== 'photo') {
+                    const icon = document.createElement('i');
+                    icon.className = 'fa fa-file-pdf-o preview-file-icon';
+                    icon.id = `icon_${key}`;
+                    existingImg.replaceWith(icon);
+                }
+            }
+
+            card.style.display = 'none';
+            preview.style.display = 'flex';
+        }
+
+        // Reset File Select
+        document.querySelectorAll('.btn-clear-file').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const key = btn.getAttribute('data-key');
+                const input = document.getElementById(`file_${key}`);
+                const card = document.getElementById(`card_${key}`);
+                const preview = document.getElementById(`prev_${key}`);
+                
+                input.value = '';
+                card.style.display = 'block';
+                preview.style.display = 'none';
+                
+                // If replaced pdf icon, reset it
+                const img = preview.querySelector('img.preview-thumb');
+                if (img && key !== 'photo') {
+                    const icon = document.createElement('i');
+                    icon.className = 'fa fa-file-pdf-o preview-file-icon';
+                    icon.id = `icon_${key}`;
+                    img.replaceWith(icon);
+                }
+            });
+        });
+
+        // Form Submit Handler
+        async function submitApplicationForm() {
+            const form = document.getElementById('admissionForm');
+            const overlay = document.getElementById('loadingOverlay');
+            
+            // Build FormData payload
+            const formData = new FormData();
+            
+            // Text inputs
+            form.querySelectorAll('input[type="text"], input[type="tel"], input[type="date"], input[type="email"], input[type="number"], select, textarea').forEach(input => {
+                if (input.name) {
+                    formData.append(input.name, input.value.trim());
+                }
+            });
+
+            // File inputs
+            fileUploadKeys.forEach(key => {
+                const fileInput = document.getElementById(`file_${key}`);
+                if (fileInput.files && fileInput.files[0]) {
+                    formData.append(key, fileInput.files[0]);
+                }
+            });
+
+            // Show Loading
+            overlay.style.display = 'flex';
+
+            try {
+                const response = await fetch(`${API_BASE}/admissions/apply`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+                overlay.style.display = 'none';
+
+                if (response.ok) {
+                    // Success Transition
+                    document.getElementById('admissionForm').style.display = 'none';
+                    document.querySelector('.stepper-header').style.display = 'none';
+                    
+                    const successPane = document.getElementById('successPane');
+                    successPane.style.display = 'block';
+                    
+                    document.getElementById('dispAppNo').textContent = result.applicationNo;
+                    
+                    // Configure direct PDF downloader link
+                    const dobVal = form.querySelector('[name="dob"]').value;
+                    const pdfBtn = document.getElementById('btnDownloadPDF');
+                    pdfBtn.href = `${API_BASE}/admissions/${result.applicationNo}/pdf?dob=${encodeURIComponent(dobVal)}`;
+
+                    showToast("Application submitted successfully!", true);
+                } else {
+                    showToast(result.detail || "Submission failed. Please check input formats or check for duplicate entry.");
+                }
+            } catch (err) {
+                overlay.style.display = 'none';
+                showToast("Network connection error. Please ensure the backend server is running.");
+                console.error(err);
+            }
+        }
+    </script>
+    <script src="assets/jqprint/print-page.js"></script>
+    <script src="assets/js/visitor-counter.js"></script>
+</body>
+</html>

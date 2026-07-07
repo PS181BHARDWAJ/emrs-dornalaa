@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="EMRS Dornala event details">
+  <title>Event Details | EMRS Dornala</title>
+  <link rel="icon" type="image/x-icon" href="images/logo_emrs.ico">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    :root {
+      --detail-bg: #f4f8fb;
+      --detail-card: #ffffff;
+      --detail-text: #183449;
+      --detail-muted: #61778a;
+      --detail-primary: #0b4f6c;
+      --detail-border: #dbe6ef;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f8fbfe 0%, #eef5fa 100%);
+      color: var(--detail-text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .detail-page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 14px 42px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      border: 1px solid var(--detail-border);
+      background: #fff;
+      color: var(--detail-primary);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 10px 16px;
+      margin-bottom: 14px;
+    }
+
+    .detail-card {
+      background: var(--detail-card);
+      border: 1px solid var(--detail-border);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 36px rgba(16, 44, 61, 0.1);
+    }
+
+    .detail-hero {
+      position: relative;
+    }
+
+    .detail-hero img {
+      width: 100%;
+      height: min(52vh, 460px);
+      object-fit: cover;
+      display: block;
+      background: #e8eef4;
+    }
+
+    .detail-hero-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 20px 20px 22px;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(3, 24, 35, 0.05) 0%, rgba(3, 24, 35, 0.88) 100%);
+    }
+
+    .detail-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .detail-hero-overlay h1 {
+      margin: 12px 0 8px;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.12;
+      font-weight: 800;
+    }
+
+    .detail-hero-overlay p {
+      margin: 0;
+      max-width: 780px;
+      color: rgba(255,255,255,0.92);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .detail-body {
+      padding: 20px;
+    }
+
+    .detail-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .detail-meta-card {
+      border: 1px solid var(--detail-border);
+      border-radius: 16px;
+      background: #f9fcff;
+      padding: 14px;
+    }
+
+    .detail-meta-card span {
+      display: block;
+      color: var(--detail-muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .detail-meta-card strong {
+      color: var(--detail-text);
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .detail-copy {
+      color: var(--detail-text);
+      line-height: 1.8;
+      font-size: 16px;
+      white-space: pre-wrap;
+    }
+
+    .detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 8px;
+    }
+
+    .detail-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 12px;
+      padding: 11px 16px;
+      background: linear-gradient(120deg, var(--detail-primary), #1f7aa2);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .detail-button.secondary {
+      background: #eef5fb;
+      color: var(--detail-primary);
+      border: 1px solid var(--detail-border);
+    }
+
+    .gallery-section {
+      margin-top: 22px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .section-heading span {
+      color: var(--detail-muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .gallery-item {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(16, 44, 61, 0.08);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .empty-copy {
+      color: var(--detail-muted);
+      margin: 0;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.8);
+      z-index: 9999;
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: min(1060px, 92vw);
+      max-height: 88vh;
+      border-radius: 14px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      color: #fff;
+      font-size: 40px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .detail-body { padding: 16px; }
+      .detail-hero img { height: 36vh; }
+    }
+  </style>
+</head>
+<body>
+  <main class="detail-page">
+    <a class="back-link" href="events.html">Back to Events</a>
+    <div id="eventDetailRoot" class="detail-card">
+      <div class="detail-body">Loading event details...</div>
+    </div>
+  </main>
+
+  <div id="lightboxOverlay" class="lightbox" aria-hidden="true">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImage" alt="Event gallery image">
+  </div>
+
+  <script src="assets/js/api-content.js"></script>
+  <script src="assets/js/event-detail.js"></script>
+</body>
+</html>

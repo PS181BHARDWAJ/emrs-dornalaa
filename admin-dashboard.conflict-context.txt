@@ -1,0 +1,836 @@
+==========================================================================================
+MARKER at line 8: <<<<<<< HEAD
+     1: <!DOCTYPE html>
+     2: <html lang="en">
+     3: <head>
+     4:   <meta charset="UTF-8" />
+     5:   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     6:   <title>EMRS Dornala Admin Dashboard</title>
+     7:   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+     8: <<<<<<< HEAD
+     9:   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    10:   <link rel="preconnect" href="https://fonts.googleapis.com">
+    11:   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    12:   <script>
+    13:     (function () {
+    14:       try {
+    15:         const savedTheme = localStorage.getItem('emrs_admin_theme') || 'light';
+    16:         if (savedTheme === 'dark') {
+==========================================================================================
+MARKER at line 1154: =======
+  1146:     <div class="d-flex justify-content-between align-items-center mb-4 panel-header">
+  1147:       <div>
+  1148:         <h3 id="panelTitle" class="panel-title">Manage Announcements</h3>
+  1149:         <p class="panel-subtitle">Welcome back! Manage your school content here</p>
+  1150:       </div>
+  1151:       <div class="panel-updated-wrap">
+  1152:         <small class="panel-updated">Last updated: <span id="lastUpdatedTime">today</span></small>
+  1153:       </div>
+  1154: =======
+  1155:   <style>
+  1156:     body {background:#f4f6f9;}
+  1157:     #sidebar {min-height:100vh; border-right:1px solid #dee2e6;}
+  1158:     .sidebar-item {cursor:pointer; padding:.8rem 1rem;}
+  1159:     .sidebar-item.active {background:#007bff; color:#fff;}
+  1160:     .card {border-radius:12px;}
+  1161:     .modal-backdrop {opacity:.2!important;}
+  1162:   </style>
+==========================================================================================
+MARKER at line 1180: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1172:     <div id="navStaff" class="sidebar-item">Manage Staff</div>
+  1173:     <hr>
+  1174:     <button id="logoutBtn" class="btn btn-sm btn-danger">Logout</button>
+  1175:   </nav>
+  1176: 
+  1177:   <div class="flex-grow-1 p-3">
+  1178:     <div class="d-flex justify-content-between align-items-center mb-4">
+  1179:       <h3 id="panelTitle">Manage Announcements</h3>
+  1180: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1181:     </div>
+  1182: 
+  1183:     <div id="alerts"></div>
+  1184: 
+  1185: <<<<<<< HEAD
+  1186:     <div id="announcementManager" class="d-none manager-pane"></div>
+  1187:     <div id="notificationManager" class="d-none manager-pane"></div>
+  1188:     <div id="eventsManager" class="d-none manager-pane"></div>
+==========================================================================================
+MARKER at line 1185: <<<<<<< HEAD
+  1177:   <div class="flex-grow-1 p-3">
+  1178:     <div class="d-flex justify-content-between align-items-center mb-4">
+  1179:       <h3 id="panelTitle">Manage Announcements</h3>
+  1180: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1181:     </div>
+  1182: 
+  1183:     <div id="alerts"></div>
+  1184: 
+  1185: <<<<<<< HEAD
+  1186:     <div id="announcementManager" class="d-none manager-pane"></div>
+  1187:     <div id="notificationManager" class="d-none manager-pane"></div>
+  1188:     <div id="eventsManager" class="d-none manager-pane"></div>
+  1189:     <div id="calendarManager" class="d-none manager-pane"></div>
+  1190:     <div id="staffManager" class="d-none manager-pane"></div>
+  1191:     <div id="contactPageManager" class="d-none manager-pane"></div>
+  1192:     <div id="resultsManager" class="d-none manager-pane"></div>
+  1193:     <div id="alumniNotableManager" class="d-none manager-pane"></div>
+==========================================================================================
+MARKER at line 1196: =======
+  1188:     <div id="eventsManager" class="d-none manager-pane"></div>
+  1189:     <div id="calendarManager" class="d-none manager-pane"></div>
+  1190:     <div id="staffManager" class="d-none manager-pane"></div>
+  1191:     <div id="contactPageManager" class="d-none manager-pane"></div>
+  1192:     <div id="resultsManager" class="d-none manager-pane"></div>
+  1193:     <div id="alumniNotableManager" class="d-none manager-pane"></div>
+  1194:     <div id="alumniEventsManager" class="d-none manager-pane"></div>
+  1195:     <div id="alumniTestimonialsManager" class="d-none manager-pane"></div>
+  1196: =======
+  1197:     <div id="announcementManager" class="d-none"></div>
+  1198:     <div id="notificationManager" class="d-none"></div>
+  1199:     <div id="eventsManager" class="d-none"></div>
+  1200:     <div id="calendarManager" class="d-none"></div>
+  1201:     <div id="staffManager" class="d-none"></div>
+  1202: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1203:   </div>
+  1204: </div>
+==========================================================================================
+MARKER at line 1202: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1194:     <div id="alumniEventsManager" class="d-none manager-pane"></div>
+  1195:     <div id="alumniTestimonialsManager" class="d-none manager-pane"></div>
+  1196: =======
+  1197:     <div id="announcementManager" class="d-none"></div>
+  1198:     <div id="notificationManager" class="d-none"></div>
+  1199:     <div id="eventsManager" class="d-none"></div>
+  1200:     <div id="calendarManager" class="d-none"></div>
+  1201:     <div id="staffManager" class="d-none"></div>
+  1202: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1203:   </div>
+  1204: </div>
+  1205: 
+  1206: <script>
+  1207: <<<<<<< HEAD
+  1208: let alumniMenuOpen = false;
+  1209: const THEME_STORAGE_KEY = 'emrs_admin_theme';
+  1210: const SIDEBAR_STORAGE_KEY = 'emrs_admin_sidebar';
+==========================================================================================
+MARKER at line 1207: <<<<<<< HEAD
+  1199:     <div id="eventsManager" class="d-none"></div>
+  1200:     <div id="calendarManager" class="d-none"></div>
+  1201:     <div id="staffManager" class="d-none"></div>
+  1202: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1203:   </div>
+  1204: </div>
+  1205: 
+  1206: <script>
+  1207: <<<<<<< HEAD
+  1208: let alumniMenuOpen = false;
+  1209: const THEME_STORAGE_KEY = 'emrs_admin_theme';
+  1210: const SIDEBAR_STORAGE_KEY = 'emrs_admin_sidebar';
+  1211: 
+  1212: function isMobileView() {
+  1213:   return window.matchMedia('(max-width: 992px)').matches;
+  1214: }
+  1215: 
+==========================================================================================
+MARKER at line 1324: =======
+  1316:   const timeStr = `${hours}:${String(minutes).padStart(2, '0')}`;
+  1317:   document.getElementById('lastUpdatedTime').textContent = timeStr;
+  1318: }
+  1319: 
+  1320: // Initialize last modified time
+  1321: updateLastModified();
+  1322: setInterval(updateLastModified, 60000);
+  1323: 
+  1324: =======
+  1325: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1326: const baseUrl = 'http://localhost:5000/api';
+  1327: const mediaBaseUrl = baseUrl.replace(/\/api\/?$/, '');
+  1328: const token = localStorage.getItem('emrs_token');
+  1329: if(!token) { window.location.href='admin-login.html'; }
+  1330: 
+  1331: let editSectionId = null;
+  1332: 
+==========================================================================================
+MARKER at line 1325: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1317:   document.getElementById('lastUpdatedTime').textContent = timeStr;
+  1318: }
+  1319: 
+  1320: // Initialize last modified time
+  1321: updateLastModified();
+  1322: setInterval(updateLastModified, 60000);
+  1323: 
+  1324: =======
+  1325: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1326: const baseUrl = 'http://localhost:5000/api';
+  1327: const mediaBaseUrl = baseUrl.replace(/\/api\/?$/, '');
+  1328: const token = localStorage.getItem('emrs_token');
+  1329: if(!token) { window.location.href='admin-login.html'; }
+  1330: 
+  1331: let editSectionId = null;
+  1332: 
+  1333: const panelTitle = document.getElementById('panelTitle');
+==========================================================================================
+MARKER at line 1339: <<<<<<< HEAD
+  1331: let editSectionId = null;
+  1332: 
+  1333: const panelTitle = document.getElementById('panelTitle');
+  1334: const announcementManager = document.getElementById('announcementManager');
+  1335: const notificationManager = document.getElementById('notificationManager');
+  1336: const eventsManager = document.getElementById('eventsManager');
+  1337: const calendarManager = document.getElementById('calendarManager');
+  1338: const staffManager = document.getElementById('staffManager');
+  1339: <<<<<<< HEAD
+  1340: const contactPageManager = document.getElementById('contactPageManager');
+  1341: const resultsManager = document.getElementById('resultsManager');
+  1342: const alumniNotableManager = document.getElementById('alumniNotableManager');
+  1343: const alumniEventsManager = document.getElementById('alumniEventsManager');
+  1344: const alumniTestimonialsManager = document.getElementById('alumniTestimonialsManager');
+  1345: let cachedEventItems = [];
+  1346: let cachedCalendarItems = [];
+  1347: let cachedStaffItems = [];
+==========================================================================================
+MARKER at line 1375: =======
+  1367:   document.getElementById('alerts').innerHTML = alertHtml;
+  1368:   setTimeout(() => {
+  1369:     const alert = document.querySelector('.alert');
+  1370:     if (alert) {
+  1371:       alert.style.animation = 'fadeOut 0.3s ease forwards';
+  1372:       setTimeout(() => document.getElementById('alerts').innerHTML = '', 300);
+  1373:     }
+  1374:   }, 3000);
+  1375: =======
+  1376: let cachedEventItems = [];
+  1377: let cachedCalendarItems = [];
+  1378: let cachedStaffItems = [];
+  1379: 
+  1380: function showAlert(message, type='success') {
+  1381:   document.getElementById('alerts').innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+  1382:   setTimeout(()=>document.getElementById('alerts').innerHTML='',3000);
+  1383: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+==========================================================================================
+MARKER at line 1383: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1375: =======
+  1376: let cachedEventItems = [];
+  1377: let cachedCalendarItems = [];
+  1378: let cachedStaffItems = [];
+  1379: 
+  1380: function showAlert(message, type='success') {
+  1381:   document.getElementById('alerts').innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+  1382:   setTimeout(()=>document.getElementById('alerts').innerHTML='',3000);
+  1383: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1384: }
+  1385: 
+  1386: function normalizeMediaUrl(url) {
+  1387:   if (!url) return '';
+  1388:   const value = String(url);
+  1389:   if (value.startsWith('http://') || value.startsWith('https://')) return value;
+  1390:   if (value.startsWith('/')) return `${mediaBaseUrl}${value}`;
+  1391:   return `${mediaBaseUrl}/uploads/${value.replace(/^\/+/, '')}`;
+==========================================================================================
+MARKER at line 1394: <<<<<<< HEAD
+  1386: function normalizeMediaUrl(url) {
+  1387:   if (!url) return '';
+  1388:   const value = String(url);
+  1389:   if (value.startsWith('http://') || value.startsWith('https://')) return value;
+  1390:   if (value.startsWith('/')) return `${mediaBaseUrl}${value}`;
+  1391:   return `${mediaBaseUrl}/uploads/${value.replace(/^\/+/, '')}`;
+  1392: }
+  1393: 
+  1394: <<<<<<< HEAD
+  1395: async function fetchJsonFirstAvailable(paths, options = {}) {
+  1396:   let lastError = null;
+  1397:   for (const path of paths) {
+  1398:     try {
+  1399:       const res = await fetch(`${baseUrl}${path}`, options);
+  1400:       if (res.ok) {
+  1401:         return await res.json();
+  1402:       }
+==========================================================================================
+MARKER at line 1424: =======
+  1416: async function fetchJsonOptional(paths, options = {}, fallback = []) {
+  1417:   try {
+  1418:     return await fetchJsonFirstAvailable(paths, options);
+  1419:   } catch (error) {
+  1420:     return fallback;
+  1421:   }
+  1422: }
+  1423: 
+  1424: =======
+  1425: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1426: function setActiveNav(selectedPage) {
+  1427:   document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+  1428:   const item = document.querySelector(`[data-page='${selectedPage}']`);
+  1429:   if(item) item.classList.add('active');
+  1430: }
+  1431: 
+  1432: function escapeHtml(text) {
+==========================================================================================
+MARKER at line 1425: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1417:   try {
+  1418:     return await fetchJsonFirstAvailable(paths, options);
+  1419:   } catch (error) {
+  1420:     return fallback;
+  1421:   }
+  1422: }
+  1423: 
+  1424: =======
+  1425: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1426: function setActiveNav(selectedPage) {
+  1427:   document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+  1428:   const item = document.querySelector(`[data-page='${selectedPage}']`);
+  1429:   if(item) item.classList.add('active');
+  1430: }
+  1431: 
+  1432: function escapeHtml(text) {
+  1433:   return String(text||'')
+==========================================================================================
+MARKER at line 1489: <<<<<<< HEAD
+  1481:   document.getElementById('annActive').checked = true;
+  1482:   document.getElementById('announcementFormTitle').textContent = defaultCategory === 'whats_new' ? 'Add What\'s New Item' : 'Add Notification Item';
+  1483:   document.getElementById('announcementSubmitBtn').textContent = 'Add';
+  1484: }
+  1485: 
+  1486: async function loadAnnouncementManager(category){
+  1487:   const isWhatsNew = category === 'whats_new';
+  1488:   panelTitle.textContent = isWhatsNew ? 'Manage Announcements' : 'Manage Notifications';
+  1489: <<<<<<< HEAD
+  1490:   hideAllManagers();
+  1491:   announcementManager.classList.remove('d-none');
+  1492: =======
+  1493:   announcementManager.classList.remove('d-none');
+  1494:   notificationManager.classList.add('d-none');
+  1495:   eventsManager.classList.add('d-none');
+  1496:   calendarManager.classList.add('d-none');
+  1497:   staffManager.classList.add('d-none');
+==========================================================================================
+MARKER at line 1492: =======
+  1484: }
+  1485: 
+  1486: async function loadAnnouncementManager(category){
+  1487:   const isWhatsNew = category === 'whats_new';
+  1488:   panelTitle.textContent = isWhatsNew ? 'Manage Announcements' : 'Manage Notifications';
+  1489: <<<<<<< HEAD
+  1490:   hideAllManagers();
+  1491:   announcementManager.classList.remove('d-none');
+  1492: =======
+  1493:   announcementManager.classList.remove('d-none');
+  1494:   notificationManager.classList.add('d-none');
+  1495:   eventsManager.classList.add('d-none');
+  1496:   calendarManager.classList.add('d-none');
+  1497:   staffManager.classList.add('d-none');
+  1498: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1499: 
+  1500:   let list = [];
+==========================================================================================
+MARKER at line 1498: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1490:   hideAllManagers();
+  1491:   announcementManager.classList.remove('d-none');
+  1492: =======
+  1493:   announcementManager.classList.remove('d-none');
+  1494:   notificationManager.classList.add('d-none');
+  1495:   eventsManager.classList.add('d-none');
+  1496:   calendarManager.classList.add('d-none');
+  1497:   staffManager.classList.add('d-none');
+  1498: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1499: 
+  1500:   let list = [];
+  1501:   try {
+  1502:     const response = await fetch(`${baseUrl}/announcements/all`, {headers:{'Authorization':'Bearer '+token}});
+  1503:     if (!response.ok) {
+  1504:       throw new Error(`Request failed (${response.status})`);
+  1505:     }
+  1506:     const payload = await response.json();
+==========================================================================================
+MARKER at line 1516: <<<<<<< HEAD
+  1508:   } catch (error) {
+  1509:     showAlert('Unable to load announcements. Please login again or check API connectivity.', 'danger');
+  1510:     announcementManager.innerHTML = `<div class="card p-3"><p class="mb-0 text-danger">Could not load data from API.</p></div>`;
+  1511:     return;
+  1512:   }
+  1513: 
+  1514:   const filtered = list.filter(item => (item.category || 'notification') === category);
+  1515: 
+  1516: <<<<<<< HEAD
+  1517:   announcementManager.innerHTML = `
+  1518:     <div class="card card-accent p-3 mb-3">
+  1519:       <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem;">
+  1520:         <i class="fas ${isWhatsNew ? 'fa-newspaper' : 'fa-envelope-open-text'}" style="font-size:1.5rem; color:var(--primary);"></i>
+  1521:         <div>
+  1522:           <h5 id="announcementFormTitle" style="margin:0;">${isWhatsNew ? 'Add What\'s New Item' : 'Add Notification Item'}</h5>
+  1523:           <p style="color:var(--text-secondary); font-size:0.875rem; margin:0.25rem 0 0;">Create and manage your ${isWhatsNew ? 'announcements' : 'notifications'}</p>
+  1524:         </div>
+==========================================================================================
+MARKER at line 1577: =======
+  1569:               <td><span style="display:inline-block; padding:0.25rem 0.75rem; background:${item.active ? 'var(--success-light)' : 'var(--danger-light)'}; color:${item.active ? 'var(--success)' : 'var(--danger)'}; border-radius:0.375rem; font-size:0.8125rem; font-weight:600;">${item.active ? 'Yes':'No'}</span></td>
+  1570:               <td style="text-align:center;"><button class='btn btn-sm btn-primary' onclick='editAnnouncement("${item.id}", "${category}")'><i class="fas fa-edit"></i></button> <button class='btn btn-sm btn-warning' onclick='toggleAnnouncement("${item.id}", "${category}")'><i class="fas fa-sync"></i></button> <button class='btn btn-sm btn-danger' onclick='deleteAnnouncement("${item.id}", "${category}")'><i class="fas fa-trash"></i></button></td>
+  1571:             </tr>`).join('') : `<tr><td colspan="5" style="text-align:center; padding:2rem; color:var(--text-tertiary);">No items found. Create your first one above!</td></tr>`}
+  1572:           </tbody>
+  1573:         </table>
+  1574:       </div>
+  1575:     </div>
+  1576:   `;
+  1577: =======
+  1578:   announcementManager.innerHTML = `<div class="card p-3 mb-3">
+  1579:       <h5 id="announcementFormTitle">${isWhatsNew ? 'Add What\'s New Item' : 'Add Notification Item'}</h5>
+  1580:       <form id="announcementForm" onsubmit="return false;">
+  1581:         <input type="hidden" id="annEditId">
+  1582:         <div class="mb-2"><label>Title</label><input id="annTitle" class="form-control" required></div>
+  1583:         <div class="mb-2"><label>Description</label><textarea id="annMessage" class="form-control" rows="3"></textarea></div>
+  1584:         <div class="mb-2"><label>Link</label><input id="annLink" class="form-control" placeholder="https://..."></div>
+  1585:         <div class="mb-2"><label>PDF URL</label><input id="annPdfUrl" class="form-control" placeholder="/uploads/...pdf"></div>
+==========================================================================================
+MARKER at line 1598: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1590:         <div class="mb-2 form-check"><input type="checkbox" id="annIsNew" class="form-check-input"><label class="form-check-label" for="annIsNew">Show NEW badge</label></div>
+  1591:         <div class="mb-2 form-check"><input type="checkbox" id="annShowTicker" class="form-check-input" checked><label class="form-check-label" for="annShowTicker">Show in top ticker</label></div>
+  1592:         <div class="mb-2 form-check"><input type="checkbox" id="annActive" class="form-check-input" checked><label class="form-check-label" for="annActive">Active</label></div>
+  1593:         <button id="announcementSubmitBtn" class="btn btn-primary" onclick="saveAnnouncement('${category}')">Add</button>
+  1594:         <button class="btn btn-secondary" type="button" onclick="resetAnnouncementForm('${category}')">Reset</button>
+  1595:       </form>
+  1596:     </div>
+  1597:     <div class="card p-3"><h5>Existing Items</h5><table class="table table-sm"><thead><tr><th>Title</th><th>NEW</th><th>Ticker</th><th>Active</th><th>Actions</th></tr></thead><tbody>${filtered.length ? filtered.map(item=>`<tr><td>${item.title || ''}</td><td>${item.is_new ? 'Yes':'No'}</td><td>${item.show_in_ticker ? 'Yes':'No'}</td><td>${item.active ? 'Yes':'No'}</td><td><button class='btn btn-sm btn-primary' onclick='editAnnouncement("${item.id}", "${category}")'>Edit</button> <button class='btn btn-sm btn-secondary' onclick='toggleAnnouncement("${item.id}", "${category}")'>Toggle</button> <button class='btn btn-sm btn-danger' onclick='deleteAnnouncement("${item.id}", "${category}")'>Delete</button></td></tr>`).join('') : `<tr><td colspan="5">No items found.</td></tr>`}</tbody></table></div>`;
+  1598: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1599: 
+  1600:   const categoryInput = document.getElementById('annCategory');
+  1601:   categoryInput.value = category;
+  1602: }
+  1603: 
+  1604: <<<<<<< HEAD
+  1605: 
+  1606: =======
+==========================================================================================
+MARKER at line 1604: <<<<<<< HEAD
+  1596:     </div>
+  1597:     <div class="card p-3"><h5>Existing Items</h5><table class="table table-sm"><thead><tr><th>Title</th><th>NEW</th><th>Ticker</th><th>Active</th><th>Actions</th></tr></thead><tbody>${filtered.length ? filtered.map(item=>`<tr><td>${item.title || ''}</td><td>${item.is_new ? 'Yes':'No'}</td><td>${item.show_in_ticker ? 'Yes':'No'}</td><td>${item.active ? 'Yes':'No'}</td><td><button class='btn btn-sm btn-primary' onclick='editAnnouncement("${item.id}", "${category}")'>Edit</button> <button class='btn btn-sm btn-secondary' onclick='toggleAnnouncement("${item.id}", "${category}")'>Toggle</button> <button class='btn btn-sm btn-danger' onclick='deleteAnnouncement("${item.id}", "${category}")'>Delete</button></td></tr>`).join('') : `<tr><td colspan="5">No items found.</td></tr>`}</tbody></table></div>`;
+  1598: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1599: 
+  1600:   const categoryInput = document.getElementById('annCategory');
+  1601:   categoryInput.value = category;
+  1602: }
+  1603: 
+  1604: <<<<<<< HEAD
+  1605: 
+  1606: =======
+  1607: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1608: async function saveAnnouncement(defaultCategory){
+  1609:   const editId = document.getElementById('annEditId').value;
+  1610:   const title = document.getElementById('annTitle').value;
+  1611:   const message = document.getElementById('annMessage').value;
+  1612:   const link = document.getElementById('annLink').value;
+==========================================================================================
+MARKER at line 1606: =======
+  1598: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1599: 
+  1600:   const categoryInput = document.getElementById('annCategory');
+  1601:   categoryInput.value = category;
+  1602: }
+  1603: 
+  1604: <<<<<<< HEAD
+  1605: 
+  1606: =======
+  1607: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1608: async function saveAnnouncement(defaultCategory){
+  1609:   const editId = document.getElementById('annEditId').value;
+  1610:   const title = document.getElementById('annTitle').value;
+  1611:   const message = document.getElementById('annMessage').value;
+  1612:   const link = document.getElementById('annLink').value;
+  1613:   const pdfUrl = document.getElementById('annPdfUrl').value;
+  1614:   const fileSize = document.getElementById('annFileSize').value;
+==========================================================================================
+MARKER at line 1607: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1599: 
+  1600:   const categoryInput = document.getElementById('annCategory');
+  1601:   categoryInput.value = category;
+  1602: }
+  1603: 
+  1604: <<<<<<< HEAD
+  1605: 
+  1606: =======
+  1607: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1608: async function saveAnnouncement(defaultCategory){
+  1609:   const editId = document.getElementById('annEditId').value;
+  1610:   const title = document.getElementById('annTitle').value;
+  1611:   const message = document.getElementById('annMessage').value;
+  1612:   const link = document.getElementById('annLink').value;
+  1613:   const pdfUrl = document.getElementById('annPdfUrl').value;
+  1614:   const fileSize = document.getElementById('annFileSize').value;
+  1615:   const category = document.getElementById('annCategory').value || defaultCategory;
+==========================================================================================
+MARKER at line 1752: <<<<<<< HEAD
+  1744:   preview.src = '';
+  1745:   updatePublishBothVisibility();
+  1746: }
+  1747: 
+  1748: async function loadEventManager(defaultCategory = 'event') {
+  1749:   document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+  1750:   document.getElementById('navEventItems').classList.add('active');
+  1751:   panelTitle.textContent = 'Manage Achievements & Events';
+  1752: <<<<<<< HEAD
+  1753:   hideAllManagers();
+  1754:   eventsManager.classList.remove('d-none');
+  1755: =======
+  1756:   announcementManager.classList.add('d-none');
+  1757:   notificationManager.classList.add('d-none');
+  1758:   eventsManager.classList.remove('d-none');
+  1759:   calendarManager.classList.add('d-none');
+  1760:   staffManager.classList.add('d-none');
+==========================================================================================
+MARKER at line 1755: =======
+  1747: 
+  1748: async function loadEventManager(defaultCategory = 'event') {
+  1749:   document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+  1750:   document.getElementById('navEventItems').classList.add('active');
+  1751:   panelTitle.textContent = 'Manage Achievements & Events';
+  1752: <<<<<<< HEAD
+  1753:   hideAllManagers();
+  1754:   eventsManager.classList.remove('d-none');
+  1755: =======
+  1756:   announcementManager.classList.add('d-none');
+  1757:   notificationManager.classList.add('d-none');
+  1758:   eventsManager.classList.remove('d-none');
+  1759:   calendarManager.classList.add('d-none');
+  1760:   staffManager.classList.add('d-none');
+  1761: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1762: 
+  1763:   const response = await fetch(`${baseUrl}/events/all`, {headers: {'Authorization':'Bearer '+token}});
+==========================================================================================
+MARKER at line 1761: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1753:   hideAllManagers();
+  1754:   eventsManager.classList.remove('d-none');
+  1755: =======
+  1756:   announcementManager.classList.add('d-none');
+  1757:   notificationManager.classList.add('d-none');
+  1758:   eventsManager.classList.remove('d-none');
+  1759:   calendarManager.classList.add('d-none');
+  1760:   staffManager.classList.add('d-none');
+  1761: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1762: 
+  1763:   const response = await fetch(`${baseUrl}/events/all`, {headers: {'Authorization':'Bearer '+token}});
+  1764:   if (!response.ok) {
+  1765:     showAlert('Unable to load event items', 'danger');
+  1766:     return;
+  1767:   }
+  1768: 
+  1769:   cachedEventItems = await response.json();
+==========================================================================================
+MARKER at line 1772: <<<<<<< HEAD
+  1764:   if (!response.ok) {
+  1765:     showAlert('Unable to load event items', 'danger');
+  1766:     return;
+  1767:   }
+  1768: 
+  1769:   cachedEventItems = await response.json();
+  1770: 
+  1771:   eventsManager.innerHTML = `
+  1772: <<<<<<< HEAD
+  1773:     <div class="card card-accent p-3 mb-3">
+  1774:       <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem;">
+  1775:         <i class="fas fa-star" style="font-size:1.5rem; color:var(--primary);"></i>
+  1776:         <div>
+  1777:           <h5 id="eventFormTitle" style="margin:0;">Add Achievement / Event</h5>
+  1778:           <p style="color:var(--text-secondary); font-size:0.875rem; margin:0.25rem 0 0;">Create memorable events and achievements</p>
+  1779:         </div>
+  1780:       </div>
+==========================================================================================
+MARKER at line 1830: =======
+  1822:                 <td>${item.event_date ? new Date(item.event_date).toLocaleDateString() : '-'}</td>
+  1823:                 <td><span style="display:inline-block; padding:0.25rem 0.75rem; background:${item.active ? 'var(--success-light)' : 'var(--danger-light)'}; color:${item.active ? 'var(--success)' : 'var(--danger)'}; border-radius:0.375rem; font-size:0.8125rem; font-weight:600;">${item.active ? 'Active' : 'Inactive'}</span></td>
+  1824:                 <td style="text-align:center;"><button class='btn btn-sm btn-primary' onclick='editEventItem("${item.id}")'><i class="fas fa-edit"></i></button> <button class='btn btn-sm btn-danger' onclick='deleteEventItem("${item.id}", "${defaultCategory}")'><i class="fas fa-trash"></i></button></td>
+  1825:               </tr>
+  1826:             `).join('') : `<tr><td colspan="5" style="text-align:center; padding:2rem; color:var(--text-tertiary);">No events found. Create your first one above!</td></tr>`}
+  1827:           </tbody>
+  1828:         </table>
+  1829:       </div>
+  1830: =======
+  1831:     <div class="card p-3 mb-3">
+  1832:       <h5 id="eventFormTitle">Add Achievement / Event</h5>
+  1833:       <form id="eventForm" onsubmit="return false;">
+  1834:         <input type="hidden" id="eventEditId">
+  1835:         <div class="mb-2"><label>Title</label><input id="eventTitle" class="form-control" required></div>
+  1836:         <div class="mb-2"><label>Short Description (2-3 lines)</label><textarea id="eventShortDescription" class="form-control" rows="2" required></textarea></div>
+  1837:         <div class="mb-2"><label>Full Description</label><textarea id="eventFullDescription" class="form-control" rows="5"></textarea></div>
+  1838:         <div class="mb-2"><label>Category</label>
+==========================================================================================
+MARKER at line 1876: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1868:               <td>
+  1869:                 <button class='btn btn-sm btn-primary' onclick='editEventItem("${item.id}")'>Edit</button>
+  1870:                 <button class='btn btn-sm btn-danger' onclick='deleteEventItem("${item.id}", "${defaultCategory}")'>Delete</button>
+  1871:               </td>
+  1872:             </tr>
+  1873:           `).join('') : `<tr><td colspan="5">No items found.</td></tr>`}
+  1874:         </tbody>
+  1875:       </table>
+  1876: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1877:     </div>
+  1878:   `;
+  1879: 
+  1880:   document.getElementById('eventCategory').value = defaultCategory;
+  1881:   updatePublishBothVisibility();
+  1882: }
+  1883: 
+  1884: async function saveEventItem(defaultCategory) {
+==========================================================================================
+MARKER at line 1992: <<<<<<< HEAD
+  1984:   const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  1985:   return months.map(month => `<option value="${month}" ${month === selected ? 'selected' : ''}>${month}</option>`).join('');
+  1986: }
+  1987: 
+  1988: async function loadCalendarManager() {
+  1989:   document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+  1990:   document.getElementById('navCalendar').classList.add('active');
+  1991:   panelTitle.textContent = 'Manage Calendar';
+  1992: <<<<<<< HEAD
+  1993:   hideAllManagers();
+  1994: =======
+  1995: 
+  1996:   announcementManager.classList.add('d-none');
+  1997:   notificationManager.classList.add('d-none');
+  1998:   eventsManager.classList.add('d-none');
+  1999:   staffManager.classList.add('d-none');
+  2000: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+==========================================================================================
+MARKER at line 1994: =======
+  1986: }
+  1987: 
+  1988: async function loadCalendarManager() {
+  1989:   document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+  1990:   document.getElementById('navCalendar').classList.add('active');
+  1991:   panelTitle.textContent = 'Manage Calendar';
+  1992: <<<<<<< HEAD
+  1993:   hideAllManagers();
+  1994: =======
+  1995: 
+  1996:   announcementManager.classList.add('d-none');
+  1997:   notificationManager.classList.add('d-none');
+  1998:   eventsManager.classList.add('d-none');
+  1999:   staffManager.classList.add('d-none');
+  2000: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  2001:   calendarManager.classList.remove('d-none');
+  2002: 
+==========================================================================================
+MARKER at line 2000: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  1992: <<<<<<< HEAD
+  1993:   hideAllManagers();
+  1994: =======
+  1995: 
+  1996:   announcementManager.classList.add('d-none');
+  1997:   notificationManager.classList.add('d-none');
+  1998:   eventsManager.classList.add('d-none');
+  1999:   staffManager.classList.add('d-none');
+  2000: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  2001:   calendarManager.classList.remove('d-none');
+  2002: 
+  2003:   const res = await fetch(`${baseUrl}/calendar/all`, {headers:{'Authorization':'Bearer '+token}});
+  2004:   if (!res.ok) {
+  2005:     showAlert('Unable to load calendar', 'danger');
+  2006:     return;
+  2007:   }
+  2008: 
+==========================================================================================
+MARKER at line 2117: <<<<<<< HEAD
+  2109:   }
+  2110:   loadCalendarManager();
+  2111: }
+  2112: 
+  2113: async function loadStaffManager() {
+  2114:   document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+  2115:   document.getElementById('navStaff').classList.add('active');
+  2116:   panelTitle.textContent = 'Manage Staff';
+  2117: <<<<<<< HEAD
+  2118:   hideAllManagers();
+  2119: =======
+  2120: 
+  2121:   announcementManager.classList.add('d-none');
+  2122:   notificationManager.classList.add('d-none');
+  2123:   eventsManager.classList.add('d-none');
+  2124:   calendarManager.classList.add('d-none');
+  2125: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+==========================================================================================
+MARKER at line 2119: =======
+  2111: }
+  2112: 
+  2113: async function loadStaffManager() {
+  2114:   document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+  2115:   document.getElementById('navStaff').classList.add('active');
+  2116:   panelTitle.textContent = 'Manage Staff';
+  2117: <<<<<<< HEAD
+  2118:   hideAllManagers();
+  2119: =======
+  2120: 
+  2121:   announcementManager.classList.add('d-none');
+  2122:   notificationManager.classList.add('d-none');
+  2123:   eventsManager.classList.add('d-none');
+  2124:   calendarManager.classList.add('d-none');
+  2125: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  2126:   staffManager.classList.remove('d-none');
+  2127: 
+==========================================================================================
+MARKER at line 2125: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  2117: <<<<<<< HEAD
+  2118:   hideAllManagers();
+  2119: =======
+  2120: 
+  2121:   announcementManager.classList.add('d-none');
+  2122:   notificationManager.classList.add('d-none');
+  2123:   eventsManager.classList.add('d-none');
+  2124:   calendarManager.classList.add('d-none');
+  2125: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  2126:   staffManager.classList.remove('d-none');
+  2127: 
+  2128:   const res = await fetch(`${baseUrl}/staff/all`, {headers:{'Authorization':'Bearer '+token}});
+  2129:   if (!res.ok) {
+  2130:     showAlert('Unable to load staff', 'danger');
+  2131:     return;
+  2132:   }
+  2133: 
+==========================================================================================
+MARKER at line 2274: <<<<<<< HEAD
+  2266:   const res = await fetch(`${baseUrl}/staff/${id}/move?direction=${direction}`, {method:'PATCH', headers:{'Authorization':'Bearer '+token}});
+  2267:   if (!res.ok) {
+  2268:     showAlert('Reorder staff failed', 'danger');
+  2269:     return;
+  2270:   }
+  2271:   loadStaffManager();
+  2272: }
+  2273: 
+  2274: <<<<<<< HEAD
+  2275: function parseLines(text) {
+  2276:   return String(text || '')
+  2277:     .split(/\r?\n/)
+  2278:     .map(line => line.trim())
+  2279:     .filter(Boolean);
+  2280: }
+  2281: 
+  2282: function linesToText(lines) {
+==========================================================================================
+MARKER at line 3223: =======
+  3215:   window.addEventListener('resize', syncSidebarWithViewport);
+  3216: 
+  3217:   document.getElementById('navLogoutBtn').addEventListener('click', ()=>{
+  3218:     if(confirm('Are you sure you want to logout?')) {
+  3219:       localStorage.removeItem('emrs_token'); 
+  3220:       window.location='admin-login.html';
+  3221:     }
+  3222:   });
+  3223: =======
+  3224: function init() {
+  3225:   document.getElementById('logoutBtn').addEventListener('click', ()=>{localStorage.removeItem('emrs_token'); window.location='admin-login.html';});
+  3226: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  3227:   document.getElementById('navAnnouncements').addEventListener('click', loadAnnouncements);
+  3228:   document.getElementById('navNotifications').addEventListener('click', loadNotifications);
+  3229:   document.getElementById('navEventItems').addEventListener('click', () => loadEventManager('event'));
+  3230:   document.getElementById('navCalendar').addEventListener('click', loadCalendarManager);
+  3231:   document.getElementById('navStaff').addEventListener('click', loadStaffManager);
+==========================================================================================
+MARKER at line 3226: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  3218:     if(confirm('Are you sure you want to logout?')) {
+  3219:       localStorage.removeItem('emrs_token'); 
+  3220:       window.location='admin-login.html';
+  3221:     }
+  3222:   });
+  3223: =======
+  3224: function init() {
+  3225:   document.getElementById('logoutBtn').addEventListener('click', ()=>{localStorage.removeItem('emrs_token'); window.location='admin-login.html';});
+  3226: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  3227:   document.getElementById('navAnnouncements').addEventListener('click', loadAnnouncements);
+  3228:   document.getElementById('navNotifications').addEventListener('click', loadNotifications);
+  3229:   document.getElementById('navEventItems').addEventListener('click', () => loadEventManager('event'));
+  3230:   document.getElementById('navCalendar').addEventListener('click', loadCalendarManager);
+  3231:   document.getElementById('navStaff').addEventListener('click', loadStaffManager);
+  3232: <<<<<<< HEAD
+  3233:   document.getElementById('navContactPage').addEventListener('click', loadContactPageManager);
+  3234:   document.getElementById('navResultsManager').addEventListener('click', loadResultsManager);
+==========================================================================================
+MARKER at line 3232: <<<<<<< HEAD
+  3224: function init() {
+  3225:   document.getElementById('logoutBtn').addEventListener('click', ()=>{localStorage.removeItem('emrs_token'); window.location='admin-login.html';});
+  3226: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  3227:   document.getElementById('navAnnouncements').addEventListener('click', loadAnnouncements);
+  3228:   document.getElementById('navNotifications').addEventListener('click', loadNotifications);
+  3229:   document.getElementById('navEventItems').addEventListener('click', () => loadEventManager('event'));
+  3230:   document.getElementById('navCalendar').addEventListener('click', loadCalendarManager);
+  3231:   document.getElementById('navStaff').addEventListener('click', loadStaffManager);
+  3232: <<<<<<< HEAD
+  3233:   document.getElementById('navContactPage').addEventListener('click', loadContactPageManager);
+  3234:   document.getElementById('navResultsManager').addEventListener('click', loadResultsManager);
+  3235:   document.getElementById('navAlumniNotable').addEventListener('click', loadAlumniNotableManager);
+  3236:   document.getElementById('navAlumniEvents').addEventListener('click', loadAlumniEventsManager);
+  3237:   document.getElementById('navAlumniTestimonials').addEventListener('click', loadAlumniTestimonialsManager);
+  3238: 
+  3239:   document.querySelectorAll('#sidebar .sidebar-item').forEach((item) => {
+  3240:     item.addEventListener('click', () => {
+==========================================================================================
+MARKER at line 3247: =======
+  3239:   document.querySelectorAll('#sidebar .sidebar-item').forEach((item) => {
+  3240:     item.addEventListener('click', () => {
+  3241:       if (isMobileView()) {
+  3242:         closeMobileSidebar();
+  3243:       }
+  3244:     });
+  3245:   });
+  3246: 
+  3247: =======
+  3248: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  3249:   loadAnnouncements();
+  3250: }
+  3251: 
+  3252: init();
+  3253: </script>
+  3254: </body>
+  3255: <<<<<<< HEAD
+==========================================================================================
+MARKER at line 3248: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  3240:     item.addEventListener('click', () => {
+  3241:       if (isMobileView()) {
+  3242:         closeMobileSidebar();
+  3243:       }
+  3244:     });
+  3245:   });
+  3246: 
+  3247: =======
+  3248: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  3249:   loadAnnouncements();
+  3250: }
+  3251: 
+  3252: init();
+  3253: </script>
+  3254: </body>
+  3255: <<<<<<< HEAD
+  3256: </html>
+==========================================================================================
+MARKER at line 3255: <<<<<<< HEAD
+  3247: =======
+  3248: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  3249:   loadAnnouncements();
+  3250: }
+  3251: 
+  3252: init();
+  3253: </script>
+  3254: </body>
+  3255: <<<<<<< HEAD
+  3256: </html>
+  3257: =======
+  3258: </html>
+  3259: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+==========================================================================================
+MARKER at line 3257: =======
+  3249:   loadAnnouncements();
+  3250: }
+  3251: 
+  3252: init();
+  3253: </script>
+  3254: </body>
+  3255: <<<<<<< HEAD
+  3256: </html>
+  3257: =======
+  3258: </html>
+  3259: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+==========================================================================================
+MARKER at line 3259: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9
+  3251: 
+  3252: init();
+  3253: </script>
+  3254: </body>
+  3255: <<<<<<< HEAD
+  3256: </html>
+  3257: =======
+  3258: </html>
+  3259: >>>>>>> 5e5c7fc5f1e76aef069fbbbc2ca89d996e02bae9

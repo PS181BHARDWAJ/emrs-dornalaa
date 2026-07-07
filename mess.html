@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Mess Facilities | EMRS Dornala
+
+    </title>
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/style-front.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+
+    <link rel="icon" href="images/logo_emrs.ico">
+
+
+    <style>
+        :root {
+
+            --primary: #0a4f8f;
+
+            --secondary: #1e88e5;
+
+            --accent: #ff9800;
+
+            --light: #f5f9fd;
+
+            --card: #ffffff;
+
+            --text: #1c2b36;
+
+            --border: #dbe7f3;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            background:
+
+                linear-gradient(180deg,
+
+                    #f7fbff,
+
+                    #eef5fb);
+
+            font-family:
+
+                "Segoe UI",
+
+                sans-serif;
+
+            color: var(--text);
+
+        }
+
+
+
+        .page-shell {
+
+            max-width: 1240px;
+
+            margin: auto;
+
+            padding: 0 20px;
+
+        }
+
+
+
+        .mess-hero {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 28px;
+
+            min-height: 420px;
+
+            margin-top: 20px;
+
+            background:
+
+                linear-gradient(135deg,
+
+                    #0a4f8f,
+
+                    #1e88e5);
+
+            box-shadow:
+
+                0 25px 50px rgba(10,
+
+                    79,
+
+                    143,
+
+                    0.25);
+
+        }
+
+
+        .hero-bg {
+
+            position: absolute;
+
+            inset: 0;
+
+            background-size: cover;
+
+            background-position: center;
+
+            opacity: .25;
+
+            transform: scale(1.1);
+
+        }
+
+
+        .hero-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                rgba(0,
+
+                    0,
+
+                    0,
+
+                    0.25);
+
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            padding: 80px 60px;
+
+            color: white;
+
+            max-width: 700px;
+
+        }
+
+
+
+        .hero-kicker {
+
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            background:
+
+                rgba(255,
+
+                    255,
+
+                    255,
+
+                    0.18);
+
+            border-radius: 40px;
+
+            backdrop-filter: blur(10px);
+
+            font-weight: 600;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .hero-content h1 {
+
+            font-size: 56px;
+
+            font-weight: 800;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .hero-content p {
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            opacity: .95;
+
+        }
+
+
+
+        .hero-buttons {
+
+            margin-top: 35px;
+
+            display: flex;
+
+            gap: 15px;
+
+        }
+
+
+
+        .hero-btn {
+
+            padding: 14px 28px;
+
+            border-radius: 8px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: .3s;
+
+        }
+
+
+
+        .hero-primary {
+
+            background: white;
+
+            color: var(--primary);
+
+        }
+
+
+
+        .hero-secondary {
+
+            background:
+
+                rgba(255,
+
+                    255,
+
+                    255,
+
+                    0.15);
+
+            color: white;
+
+            border: 2px solid rgba(255,
+
+                    255,
+
+                    255,
+
+                    0.3);
+
+        }
+
+
+
+        .hero-btn:hover {
+
+            transform:
+
+                translateY(-3px);
+
+        }
+
+
+
+        .section {
+
+            margin-top: 80px;
+
+        }
+
+
+
+        .section-kicker {
+
+            color: var(--primary);
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            font-size: 14px;
+
+        }
+
+
+
+        .section-title {
+
+            font-size: 42px;
+
+            font-weight: 800;
+
+            margin-top: 10px;
+
+        }
+
+
+
+        .stats-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(4,
+
+                    1fr);
+
+            gap: 25px;
+
+            margin-top: 45px;
+
+        }
+
+
+
+        .stat-card {
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            box-shadow:
+
+                0 10px 30px rgba(0,
+
+                    0,
+
+                    0,
+
+                    0.05);
+
+            transition: .3s;
+
+        }
+
+
+
+        .stat-card:hover {
+
+            transform:
+
+                translateY(-6px);
+
+        }
+
+
+
+        .stat-icon {
+
+            font-size: 45px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .stat-number {
+
+            font-size: 42px;
+
+            font-weight: 800;
+
+            color: var(--primary);
+
+        }
+
+
+
+        .stat-title {
+
+            margin-top: 10px;
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        @media(max-width:991px) {
+
+            .stats-grid {
+
+                grid-template-columns:
+
+                    1fr 1fr;
+
+            }
+
+            .hero-content {
+
+                padding: 50px 30px;
+
+            }
+
+            .hero-content h1 {
+
+                font-size: 38px;
+
+            }
+
+        }
+
+
+        @media(max-width:768px) {
+
+            .stats-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .hero-buttons {
+
+                flex-direction: column;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <div id="headerShell"></div>
+
+
+    <main class="page-shell">
+
+
+        <section class="mess-hero" id="heroSection">
+
+
+            <div class="hero-bg" id="heroBanner">
+
+            </div>
+
+
+            <div class="hero-overlay">
+
+            </div>
+
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-kicker">
+
+                    Dining & Nutrition
+
+                </div>
+
+
+
+                <h1 id="heroTitle">
+
+                    Healthy Food,
+
+                    Healthy Mind
+
+                </h1>
+
+
+
+                <p id="heroSubtitle">
+
+                    EMRS Dornala provides nutritious,
+
+                    hygienic and balanced meals
+
+                    prepared under expert supervision
+
+                    for all students.
+
+                </p>
+
+
+
+                <div class="hero-buttons">
+
+                    <a href="#stats" class="hero-btn hero-primary">
+
+                        Explore Dining
+
+                    </a>
+
+
+                    <a href="#gallery" class="hero-btn hero-secondary">
+
+                        View Gallery
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ========================= -->
+        <!-- STATISTICS SECTION -->
+        <!-- ========================= -->
+
+        <section id="stats" class="section">
+
+            <div class="section-kicker">
+
+                MESS OVERVIEW
+
+            </div>
+
+            <h2 class="section-title">
+
+                Nutritious Dining Experience
+
+            </h2>
+
+
+            <div class="stats-grid" id="statsContainer">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">🍽️</div>
+
+                    <div class="stat-number" id="studentsStat">
+
+                        500+
+
+                    </div>
+
+                    <div class="stat-title">
+
+                        Students Served Daily
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">🥗</div>
+
+                    <div class="stat-number" id="menuStat">
+
+                        4
+
+                    </div>
+
+                    <div class="stat-title">
+
+                        Meals Per Day
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">👨‍🍳</div>
+
+                    <div class="stat-number" id="staffStat">
+
+                        12
+
+                    </div>
+
+                    <div class="stat-title">
+
+                        Kitchen Staff
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">⭐</div>
+
+                    <div class="stat-number" id="qualityStat">
+
+                        100%
+
+                    </div>
+
+                    <div class="stat-title">
+
+                        Hygiene Standards
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================= -->
+        <!-- FEATURES -->
+        <!-- ========================= -->
+
+
+        <section class="section">
+
+
+            <div class="section-kicker">
+
+                DINING FEATURES
+
+            </div>
+
+            <h2 class="section-title">
+
+                World Class Mess Facilities
+
+            </h2>
+
+
+            <div class="feature-grid">
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        🥛
+
+                    </div>
+
+
+                    <h3>
+
+                        Nutritious Meals
+
+                    </h3>
+
+
+                    <p>
+
+                        Balanced breakfast,
+
+                        lunch,
+
+                        evening snacks
+
+                        and dinner
+
+                        prepared according
+
+                        to health guidelines.
+
+                    </p>
+
+                </div>
+
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        🧼
+
+                    </div>
+
+
+                    <h3>
+
+                        Hygienic Kitchen
+
+                    </h3>
+
+
+                    <p>
+
+                        Modern kitchen
+
+                        with strict
+
+                        cleanliness and
+
+                        food safety
+
+                        standards.
+
+                    </p>
+
+                </div>
+
+
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        🥗
+
+                    </div>
+
+
+                    <h3>
+
+                        Balanced Diet
+
+                    </h3>
+
+
+                    <p>
+
+                        Protein,
+
+                        vitamins,
+
+                        fruits,
+
+                        milk,
+
+                        and healthy meals
+
+                        for students.
+
+                    </p>
+
+                </div>
+
+
+
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        🪑
+
+                    </div>
+
+
+                    <h3>
+
+                        Large Dining Hall
+
+                    </h3>
+
+
+                    <p>
+
+                        Spacious and
+
+                        comfortable
+
+                        seating arrangement
+
+                        for all students.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+        <style>
+            .feature-grid {
+
+                display: grid;
+
+                grid-template-columns:
+
+                    repeat(4,
+
+                        1fr);
+
+                gap: 25px;
+
+                margin-top: 40px;
+
+            }
+
+
+            .feature-card {
+
+                background: white;
+
+                padding: 35px;
+
+                border-radius: 22px;
+
+                box-shadow:
+
+                    0 12px 30px rgba(0,
+
+                        0,
+
+                        0,
+
+                        0.06);
+
+                transition: .35s;
+
+                text-align: center;
+
+                border: 1px solid #eef2f6;
+
+            }
+
+
+            .feature-card:hover {
+
+                transform:
+
+                    translateY(-8px);
+
+                box-shadow:
+
+                    0 20px 40px rgba(10,
+
+                        79,
+
+                        143,
+
+                        0.12);
+
+            }
+
+
+
+            .feature-icon {
+
+                font-size: 55px;
+
+                margin-bottom: 20px;
+
+            }
+
+
+
+            .feature-card h3 {
+
+                font-size: 24px;
+
+                font-weight: 700;
+
+                margin-bottom: 15px;
+
+            }
+
+
+
+            .feature-card p {
+
+                line-height: 1.8;
+
+                color: #555;
+
+            }
+
+
+
+            @media(max-width:991px) {
+
+                .feature-grid {
+
+                    grid-template-columns:
+
+                        1fr 1fr;
+
+                }
+
+            }
+
+
+            @media(max-width:768px) {
+
+                .feature-grid {
+
+                    grid-template-columns: 1fr;
+
+                }
+
+            }
+        </style>
+        <!-- ========================================= -->
+        <!-- MESS GALLERY SECTION -->
+        <!-- ========================================= -->
+
+        <section id="gallery" class="section">
+
+            <div class="section-kicker">
+                DINING GALLERY
+            </div>
+
+            <h2 class="section-title">
+                Explore Our Mess Facilities
+            </h2>
+
+            <div id="galleryContainer" class="gallery-grid">
+
+                <!-- Dynamic Gallery -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================= -->
+        <!-- LIGHTBOX -->
+        <!-- ========================================= -->
+
+        <div id="lightbox" class="lightbox">
+
+            <button class="close-btn" onclick="closeLightbox()">
+
+                ×
+
+            </button>
+
+            <img id="lightboxImg" src="" alt="Gallery Image">
+
+        </div>
+
+
+
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+
+    <div id="footerShell"></div>
+
+
+
+
+    <style>
+        .gallery-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-top: 45px;
+
+        }
+
+
+
+        .gallery-item {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 22px;
+
+            cursor: pointer;
+
+            box-shadow:
+
+                0 12px 35px rgba(0, 0, 0, .08);
+
+            transition: .35s;
+
+        }
+
+
+
+        .gallery-item:hover {
+
+            transform:
+
+                translateY(-6px);
+
+        }
+
+
+
+        .gallery-item img {
+
+            width: 100%;
+
+            height: 280px;
+
+            object-fit: cover;
+
+            transition:
+
+                transform .5s ease;
+
+        }
+
+
+
+        .gallery-item:hover img {
+
+            transform:
+
+                scale(1.12);
+
+        }
+
+
+
+        .gallery-overlay {
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            padding: 25px;
+
+            background:
+
+                linear-gradient(to top,
+
+                    rgba(0, 0, 0, .85),
+
+                    transparent);
+
+            color: white;
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+        }
+
+
+
+        .featured-badge {
+
+            position: absolute;
+
+            top: 18px;
+
+            right: 18px;
+
+            background: #ff9800;
+
+            padding: 8px 15px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: white;
+
+        }
+
+
+
+        .lightbox {
+
+            display: none;
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background:
+
+                rgba(0, 0, 0, .95);
+
+            z-index: 9999;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+
+        .lightbox img {
+
+            max-width: 90%;
+
+            max-height: 90vh;
+
+            border-radius: 18px;
+
+        }
+
+
+
+        .close-btn {
+
+            position: absolute;
+
+            top: 25px;
+
+            right: 40px;
+
+            background: none;
+
+            border: none;
+
+            font-size: 42px;
+
+            color: white;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .close-btn:hover {
+
+            transform: scale(1.1);
+
+        }
+
+
+
+        @media(max-width:991px) {
+
+            .gallery-grid {
+
+                grid-template-columns:
+
+                    1fr 1fr;
+
+            }
+
+        }
+
+
+
+        @media(max-width:768px) {
+
+            .gallery-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+    </style>
+
+
+
+
+
+    <script src="assets/js/facility-public.js"></script>
+    <script>
+
+
+
+
+
+        /* HERO */
+
+        async function loadHero() {
+
+
+            const data =
+
+                await EMRSFacility.fetchJson(
+
+                    "/mess/hero",
+
+                    {}
+
+                );
+
+
+
+            document.getElementById(
+
+                "heroTitle"
+
+            ).innerText =
+
+                data.title;
+
+
+
+            document.getElementById(
+
+                "heroSubtitle"
+
+            ).innerText =
+
+                data.subtitle;
+
+
+
+            if (data.banner_image) {
+
+                document.getElementById(
+
+                    "heroBanner"
+
+                ).style.backgroundImage =
+
+                    `url('${EMRSFacility.normalizeMediaUrl(data.banner_image)}')`;
+
+            }
+
+        }
+
+
+
+
+
+        /* STATS */
+
+        async function loadStats() {
+
+
+            const data =
+
+                await EMRSFacility.fetchJson(
+
+                    "/mess/stats",
+
+                    {}
+
+                );
+
+
+
+            document.getElementById(
+
+                "studentsStat"
+
+            ).innerHTML =
+
+                data.students + "+";
+
+
+
+            document.getElementById(
+
+                "menuStat"
+
+            ).innerHTML =
+
+                data.meals;
+
+
+
+            document.getElementById(
+
+                "staffStat"
+
+            ).innerHTML =
+
+                data.staff;
+
+
+
+            document.getElementById(
+
+                "qualityStat"
+
+            ).innerHTML =
+
+                data.quality + "%";
+
+        }
+
+
+
+        /////////////////////////////////////////////////
+
+
+        /* GALLERY */
+
+
+        async function loadGallery() {
+
+
+            const items =
+
+                await EMRSFacility.fetchJson(
+
+                    "/mess/gallery",
+
+                    []
+
+                );
+
+
+
+            const container =
+
+                document.getElementById(
+
+                    "galleryContainer"
+
+                );
+
+
+
+            container.innerHTML = "";
+
+
+
+
+            EMRSFacility.renderGallery("#galleryContainer", items);
+
+
+        }
+
+
+
+
+        /////////////////////////////////////////////////
+
+        /* LIGHTBOX */
+
+
+        function openLightbox(src) {
+
+
+            document.getElementById(
+
+                "lightbox"
+
+            ).style.display =
+
+                "flex";
+
+
+            document.getElementById(
+
+                "lightboxImg"
+
+            ).src = src;
+
+
+        }
+
+
+
+        function closeLightbox() {
+
+
+            document.getElementById(
+
+                "lightbox"
+
+            ).style.display =
+
+                "none";
+
+        }
+
+
+
+        /////////////////////////////////////////////////
+
+
+        /* HEADER + FOOTER */
+
+
+        async function loadShells() {
+
+
+            await EMRSFacility.loadShells("#headerShell", "#footerShell");
+
+        }
+
+
+
+        /////////////////////////////////////////////////
+
+
+        async function init() {
+
+
+            await loadShells();
+
+
+            await loadHero();
+
+
+            await loadStats();
+
+
+            await loadGallery();
+
+        }
+
+
+        init();
+
+    </script>
+
+
+</body>
+
+</html>

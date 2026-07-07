@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Facilities | EMRS Dornala</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/flaticon.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <link rel="stylesheet" href="assets/css/odometer.min.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/progressbar.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/style-front.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/meanmenu.css">
+  <link rel="icon" href="images/logo_emrs.ico">
+  <style>
+    :root {
+      --hostel-primary: #6b5b95;
+      --hostel-secondary: #88498f;
+      --hostel-accent: #d4a5a5;
+      --hostel-light: #f0e6f6;
+      --hostel-text: #2c3e50;
+      --hostel-border: #e0d5e8;
+      --card-bg: #ffffff;
+      --text-secondary: #666666;
+      --success: #27ae60;
+      --danger: #e74c3c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f8fbfe 0%, #eef5fa 100%);
+      color: var(--hostel-text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-shell {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 4px 0 36px;
+    }
+
+    /* HERO SECTION */
+    .hostel-hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      min-height: 360px;
+      background: linear-gradient(135deg, #6b5b95 0%, #88498f 40%, #d4a5a5 100%);
+      color: #fff;
+      box-shadow: 0 24px 48px rgba(107, 91, 149, 0.25);
+      margin-bottom: 24px;
+    }
+
+    .hostel-hero::before,
+    .hostel-hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      filter: blur(12px);
+    }
+
+    .hostel-hero::before { width: 320px; height: 320px; right: -80px; top: -60px; }
+    .hostel-hero::after { width: 240px; height: 240px; left: -60px; bottom: -50px; }
+
+    .hero-background-image {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.4;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(107, 91, 149, var(--overlay-opacity, 0.3));
+      z-index: 1;
+    }
+
+    .hostel-hero-copy {
+      position: relative;
+      z-index: 2;
+      padding: 60px 40px;
+      max-width: 900px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.2);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hostel-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .hostel-hero > p {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-btn-primary {
+      background: #fff;
+      color: var(--hostel-primary);
+    }
+
+    .hero-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,255,255,0.3);
+    }
+
+    .hero-btn-secondary {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.3);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-btn-secondary:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.5);
+      transform: translateY(-2px);
+
+    .fas {
+      font-style: normal;
+      font-family: inherit;
+      font-weight: 700;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .fa-clock::before { content: "⏰"; }
+    .fa-images::before { content: "🖼"; }
+    .fa-calendar::before { content: "📅"; }
+    .fa-bell::before { content: "🔔"; }
+    .fa-file-pdf::before { content: "📄"; }
+    .fa-play-circle::before { content: "▶"; }
+    .fa-search-plus::before { content: "🔍"; }
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .breadcrumb-nav a {
+      color: var(--hostel-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: var(--hostel-secondary);
+      text-decoration: underline;
+    }
+
+    /* SECTION STYLES */
+    .section {
+      margin-bottom: 64px;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      color: var(--hostel-primary);
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--hostel-text);
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+    }
+
+    /* SCHEDULE CARDS */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .schedule-card {
+      background: var(--card-bg);
+      border: 1px solid var(--hostel-border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .schedule-card:hover {
+      border-color: var(--hostel-primary);
+      box-shadow: 0 12px 32px rgba(107, 91, 149, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .schedule-icon {
+      font-size: 3rem;
+      color: var(--hostel-primary);
+      margin-bottom: 16px;
+    }
+
+    .schedule-time {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--hostel-text);
+      margin-bottom: 8px;
+    }
+
+    .schedule-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--hostel-text);
+      margin-bottom: 8px;
+    }
+
+    .schedule-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* NOTICES SECTION */
+    .notices-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .notice-card {
+      background: var(--card-bg);
+      border-left: 4px solid var(--hostel-primary);
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .notice-card.pinned {
+      border-left-color: var(--danger);
+      box-shadow: 0 8px 24px rgba(231, 76, 60, 0.1);
+    }
+
+    .notice-card:hover {
+      box-shadow: 0 12px 32px rgba(107, 91, 149, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .notice-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(107, 91, 149, 0.1);
+      color: var(--hostel-primary);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .notice-badge.pinned {
+      background: rgba(231, 76, 60, 0.1);
+      color: var(--danger);
+    }
+
+    .notice-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--hostel-text);
+      margin-bottom: 12px;
+    }
+
+    .notice-content {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .notice-attachment {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 12px;
+      background: var(--hostel-light);
+      color: var(--hostel-primary);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .notice-attachment:hover {
+      background: var(--hostel-primary);
+      color: #fff;
+    }
+
+    /* GALLERY SECTION */
+    .gallery-filters {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      background: var(--card-bg);
+      border: 2px solid var(--hostel-border);
+      border-radius: 8px;
+      color: var(--hostel-text);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--hostel-primary);
+      color: var(--hostel-primary);
+    }
+
+    .filter-btn.active {
+      background: var(--hostel-primary);
+      border-color: var(--hostel-primary);
+      color: #fff;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f0f0f0;
+      aspect-ratio: 1;
+      cursor: pointer;
+    }
+
+    .full-span-state {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:hover video {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(107, 91, 149, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-icon {
+      color: #fff;
+      font-size: 2.5rem;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .gallery-featured {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      padding: 6px 12px;
+      background: var(--danger);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .lightbox-media {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-prev {
+      left: 16px;
+    }
+
+    .lightbox-next {
+      right: 16px;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-secondary);
+    }
+
+    .empty-state i {
+      font-size: 4rem;
+      color: var(--hostel-primary);
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+
+    .empty-state h3 {
+      color: var(--hostel-text);
+      margin-bottom: 10px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .page-shell {
+        padding: 6px 0 24px;
+      }
+
+      .hostel-hero {
+        min-height: 280px;
+        margin-bottom: 32px;
+      }
+
+      .hostel-hero-copy {
+        padding: 40px 24px;
+      }
+
+      .hostel-hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .hostel-hero > p {
+        font-size: 1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .section-title {
+        font-size: 1.875rem;
+      }
+
+      .schedule-grid,
+      .notices-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+
+      .gallery-filters {
+        justify-content: center;
+      }
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .schedule-card,
+    .notice-card,
+    .gallery-item {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .schedule-card:nth-child(1) { animation-delay: 0.1s; }
+    .schedule-card:nth-child(2) { animation-delay: 0.2s; }
+    .schedule-card:nth-child(3) { animation-delay: 0.3s; }
+    .schedule-card:nth-child(4) { animation-delay: 0.4s; }
+    .schedule-card:nth-child(5) { animation-delay: 0.5s; }
+    .schedule-card:nth-child(6) { animation-delay: 0.6s; }
+
+    .notice-card:nth-child(1) { animation-delay: 0.1s; }
+    .notice-card:nth-child(2) { animation-delay: 0.2s; }
+    .notice-card:nth-child(3) { animation-delay: 0.3s; }
+
+    .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+    .gallery-item:nth-child(2) { animation-delay: 0.15s; }
+    .gallery-item:nth-child(3) { animation-delay: 0.2s; }
+    .gallery-item:nth-child(4) { animation-delay: 0.25s; }
+    .gallery-item:nth-child(5) { animation-delay: 0.3s; }
+    .gallery-item:nth-child(6) { animation-delay: 0.35s; }
+  </style>
+</head>
+<body>
+  <div id="headerShell"></div>
+
+  <main class="page-shell">
+    <div id="heroSection" class="hostel-hero">
+      <div class="hero-background-image" id="heroBannerImage"></div>
+      <div class="hero-overlay"></div>
+      <div class="hostel-hero-copy">
+        <div class="hero-kicker">Premium Residential Experience</div>
+        <h1 id="heroTitle">Hostel Facilities</h1>
+        <p id="heroSubtitle">Experience comfort and community in our world-class hostel facilities.</p>
+        <div class="hero-buttons">
+          <a href="#schedule-section" class="hero-btn hero-btn-primary">
+            <i class="fas fa-clock"></i> View Schedule
+          </a>
+          <a href="#gallery-section" class="hero-btn hero-btn-secondary">
+            <i class="fas fa-images"></i> View Gallery
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section id="schedule-section" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Daily Life</div>
+        <h2 class="section-title">Hostel Routine & Schedule</h2>
+        <p class="section-description">Our well-planned schedule ensures balanced academics, recreation, and rest for all residents.</p>
+      </div>
+      <div id="scheduleContainer" class="schedule-grid">
+        <div class="empty-state full-span-state">
+          <i class="fas fa-calendar"></i>
+          <h3>No schedules yet</h3>
+          <p>Daily schedule information will be updated soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="notices-section" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Important Updates</div>
+        <h2 class="section-title">Hostel Notices & Announcements</h2>
+        <p class="section-description">Stay informed with the latest hostel updates, rules, and important announcements.</p>
+      </div>
+      <div id="noticesContainer" class="notices-grid">
+        <div class="empty-state full-span-state">
+          <i class="fas fa-bell"></i>
+          <h3>No notices yet</h3>
+          <p>Check back soon for important hostel announcements.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery-section" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Visual Tour</div>
+        <h2 class="section-title">Hostel Gallery</h2>
+        <p class="section-description">Explore our hostel through photos and videos showcasing facilities and student life.</p>
+      </div>
+      <div id="filterContainer" class="gallery-filters">
+        <button class="filter-btn active" onclick="filterGallery('all')">All</button>
+        <button class="filter-btn" onclick="filterGallery('rooms')">Rooms</button>
+        <button class="filter-btn" onclick="filterGallery('dining-hall')">Dining Hall</button>
+        <button class="filter-btn" onclick="filterGallery('study-areas')">Study Areas</button>
+        <button class="filter-btn" onclick="filterGallery('activities')">Activities</button>
+        <button class="filter-btn" onclick="filterGallery('celebrations')">Celebrations</button>
+      </div>
+      <div id="galleryContainer" class="gallery-grid">
+        <div class="empty-state full-span-state">
+          <i class="fas fa-images"></i>
+          <h3>No gallery items yet</h3>
+          <p>Gallery will be updated with hostel photos and videos soon.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()">×</button>
+      <button class="lightbox-nav lightbox-prev" onclick="previousGalleryItem()">&lsaquo;</button>
+      <button class="lightbox-nav lightbox-next" onclick="nextGalleryItem()">&rsaquo;</button>
+      <img id="lightboxMedia" class="lightbox-media" src="" alt="">
+    </div>
+  </div>
+
+  <!-- INCLUDE FOOTER SHELL -->
+  <div id="footerShell"></div>
+
+  <script src="assets/js/jquery-1.12.0.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.meanmenu.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/facility-public.js"></script>
+
+  <script>
+    const API_BASE = EMRSFacility.apiUrl('/hostel');
+    let galleryData = [];
+    let currentGalleryIndex = 0;
+    let currentFilter = 'all';
+
+    function normalizeMediaUrl(url) {
+      return EMRSFacility.normalizeMediaUrl(url);
+    }
+
+    function initializeSharedNavbar() {
+      if (window.jQuery && typeof $.fn.meanmenu === 'function' && $('.mean-menu').length && !$('.mean-container').length) {
+        $('.mean-menu').meanmenu({
+          meanScreenWidth: '991'
+        });
+      }
+
+      if (window.jQuery) {
+        $(window).trigger('scroll');
+      }
+    }
+
+    function getSharedHeaderHtml(doc) {
+      const wrapper = doc.querySelector('#wrapper');
+      if (!wrapper) return '';
+
+      const parts = [];
+      wrapper.querySelectorAll(':scope > .tobbar_main, :scope > .headertoppanel, :scope > .navbar-area').forEach((node) => {
+        parts.push(node.outerHTML);
+      });
+      return parts.join('\n');
+    }
+
+    // Load header and footer shells
+    async function loadShells() {
+      try {
+        const headerRes = await fetch('index.html');
+        const headerHtml = await headerRes.text();
+        const headerParser = new DOMParser();
+        const headerDoc = headerParser.parseFromString(headerHtml, 'text/html');
+        const headerContent = getSharedHeaderHtml(headerDoc);
+
+        if (headerContent) {
+          document.getElementById('headerShell').innerHTML = headerContent;
+        }
+
+        const footerRes = await fetch('index.html');
+        const footerHtml = await footerRes.text();
+        const footerParser = new DOMParser();
+        const footerDoc = footerParser.parseFromString(footerHtml, 'text/html');
+        const footer = footerDoc.querySelector('footer');
+
+        if (footer) {
+          document.getElementById('footerShell').innerHTML = footer.outerHTML;
+        }
+
+        initializeSharedNavbar();
+      } catch (e) {
+        console.error('Failed to load shells:', e);
+      }
+    }
+
+    // Load hostel info
+    async function loadHostelInfo() {
+      try {
+        const res = await fetch(`${API_BASE}`);
+        if (!res.ok) throw new Error('Failed to load hostel info');
+        const data = await res.json();
+
+        document.getElementById('heroTitle').textContent = data.title || 'Hostel Facilities';
+        document.getElementById('heroSubtitle').textContent = data.subtitle || data.description || '';
+
+        if (data.banner_image) {
+          document.getElementById('heroBannerImage').style.backgroundImage = `url('${normalizeMediaUrl(data.banner_image)}')`;
+        }
+
+        const section = document.getElementById('heroSection');
+        section.style.setProperty('--overlay-opacity', data.overlay_opacity || 0.3);
+
+      } catch (e) {
+        console.error('Failed to load hostel info:', e);
+      }
+    }
+
+    // Load schedules
+    async function loadSchedules() {
+      try {
+        const res = await fetch(`${API_BASE}/schedules`);
+        if (!res.ok) throw new Error('Failed to load schedules');
+        const schedules = await res.json();
+
+        const container = document.getElementById('scheduleContainer');
+        if (schedules.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state" style="grid-column: 1/-1;">
+              <i class="fas fa-calendar"></i>
+              <h3>No schedules yet</h3>
+              <p>Daily schedule information will be updated soon.</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = schedules.map(s => `
+          <div class="schedule-card">
+            <div class="schedule-icon"><i class="${s.icon || 'fas fa-clock'}"></i></div>
+            <div class="schedule-time">${s.time}</div>
+            <div class="schedule-title">${s.title}</div>
+            <div class="schedule-desc">${s.description}</div>
+          </div>
+        `).join('');
+      } catch (e) {
+        console.error('Failed to load schedules:', e);
+      }
+    }
+
+    // Load notices
+    async function loadNotices() {
+      try {
+        const res = await fetch(`${API_BASE}/notices`);
+        if (!res.ok) throw new Error('Failed to load notices');
+        const notices = await res.json();
+
+        const container = document.getElementById('noticesContainer');
+        if (notices.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state" style="grid-column: 1/-1;">
+              <i class="fas fa-bell"></i>
+              <h3>No notices yet</h3>
+              <p>Check back soon for important hostel announcements.</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = notices.map(n => `
+          <div class="notice-card ${n.pinned ? 'pinned' : ''}">
+            <span class="notice-badge ${n.pinned ? 'pinned' : ''}">${n.pinned ? '📌 Pinned' : n.category}</span>
+            <h3 class="notice-title">${n.title}</h3>
+            <p class="notice-content">${n.content}</p>
+            ${n.attachment_url ? `<a href="${normalizeMediaUrl(n.attachment_url)}" target="_blank" class="notice-attachment"><i class="fas fa-file-pdf"></i> Attachment</a>` : ''}
+          </div>
+        `).join('');
+      } catch (e) {
+        console.error('Failed to load notices:', e);
+      }
+    }
+
+    // Load gallery
+    async function loadGallery() {
+      try {
+        const res = await fetch(`${API_BASE}/gallery`);
+        if (!res.ok) throw new Error('Failed to load gallery');
+        galleryData = await res.json();
+
+        if (galleryData.length === 0) {
+          document.getElementById('galleryContainer').innerHTML = `
+            <div class="empty-state" style="grid-column: 1/-1;">
+              <i class="fas fa-images"></i>
+              <h3>No gallery items yet</h3>
+              <p>Gallery will be updated with hostel photos and videos soon.</p>
+            </div>
+          `;
+          return;
+        }
+
+        renderGallery();
+      } catch (e) {
+        console.error('Failed to load gallery:', e);
+      }
+    }
+
+    // Render gallery with filter
+    function renderGallery() {
+      const filtered = currentFilter === 'all'
+        ? galleryData
+        : galleryData.filter(item => item.category === currentFilter);
+
+      if (filtered.length === 0) {
+        document.getElementById('galleryContainer').innerHTML = `
+          <div class="empty-state" style="grid-column: 1/-1;">
+            <i class="fas fa-images"></i>
+            <h3>No items in this category</h3>
+            <p>Try another category or check back soon.</p>
+          </div>
+        `;
+        return;
+      }
+
+      document.getElementById('galleryContainer').innerHTML = filtered.map((item, idx) => `
+        <div class="gallery-item" onclick="openLightbox(${galleryData.indexOf(item)})">
+          ${item.media_type === 'video'
+            ? `<video class="gallery-media" src="${normalizeMediaUrl(item.media_url)}" poster=""></video>`
+            : `<img class="gallery-media" src="${normalizeMediaUrl(item.media_url)}" alt="${item.title}" loading="lazy">`
+          }
+          ${item.featured ? '<span class="gallery-featured">Featured</span>' : ''}
+          <div class="gallery-overlay">
+            <i class="fas fa-${item.media_type === 'video' ? 'play-circle' : 'search-plus'} gallery-icon"></i>
+          </div>
+          ${item.caption ? `<div class="gallery-caption">${item.caption}</div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    // Filter gallery
+    function filterGallery(category) {
+      currentFilter = category;
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      renderGallery();
+    }
+
+    // Lightbox functions
+    function openLightbox(index) {
+      currentGalleryIndex = index;
+      const item = galleryData[index];
+      const media = document.getElementById('lightboxMedia');
+      if (item.media_type === 'video') {
+        const video = document.createElement('video');
+        video.src = normalizeMediaUrl(item.media_url);
+        video.controls = true;
+        video.style.cssText = 'max-width: 100%; max-height: 85vh; object-fit: contain;';
+        media.replaceWith(video);
+        document.getElementById('lightboxMedia').id = 'lightboxVideo';
+      } else {
+        media.src = normalizeMediaUrl(item.media_url);
+        media.alt = item.title;
+      }
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    function previousGalleryItem() {
+      currentGalleryIndex = (currentGalleryIndex - 1 + galleryData.length) % galleryData.length;
+      openLightbox(currentGalleryIndex);
+    }
+
+    function nextGalleryItem() {
+      currentGalleryIndex = (currentGalleryIndex + 1) % galleryData.length;
+      openLightbox(currentGalleryIndex);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') previousGalleryItem();
+      if (e.key === 'ArrowRight') nextGalleryItem();
+    });
+
+    // Initialize
+    async function init() {
+      await loadShells();
+      await loadHostelInfo();
+      await loadSchedules();
+      await loadNotices();
+      await loadGallery();
+
+      // Auto-refresh every 30 seconds
+      setInterval(() => {
+        loadHostelInfo();
+        loadSchedules();
+        loadNotices();
+        loadGallery();
+      }, 30000);
+    }
+
+    init();
+  </script>
+</body>
+</html>

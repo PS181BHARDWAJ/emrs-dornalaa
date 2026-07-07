@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Campus Life | EMRS Dornala</title>
+
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/style-front.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/meanmenu.css">
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+/>
+
+<link rel="icon" href="images/logo_emrs.ico">
+
+<style>
+
+:root{
+
+--campus-primary:#08295A;
+
+--campus-secondary:#0F4C81;
+
+--campus-accent:#FFCC4D;
+
+--campus-light:#F6FAFF;
+
+--campus-text:#1E2D3D;
+
+--campus-border:#DCE7F5;
+
+--card-bg:#fff;
+
+}
+
+
+body{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#F7FAFD,
+
+#EDF4FB
+
+);
+
+font-family:
+
+"Segoe UI",
+
+sans-serif;
+
+overflow-x:hidden;
+
+}
+
+
+.page-shell{
+
+max-width:1240px;
+
+margin:auto;
+
+padding:5px 0 50px;
+
+}
+
+
+/* HERO */
+
+.campus-hero{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:28px;
+
+min-height:550px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#08295A,
+
+#0F4C81,
+
+#2A5F97
+
+);
+
+box-shadow:
+
+0 30px 60px
+
+rgba(8,41,90,.25);
+
+margin-bottom:70px;
+
+color:#fff;
+
+}
+
+
+.hero-bg{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+url("images/campus-banner.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+opacity:.15;
+
+animation:
+
+zoomHero
+
+18s
+
+infinite
+
+alternate;
+
+}
+
+
+@keyframes zoomHero{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.12);
+
+}
+
+}
+
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+rgba(8,41,90,.45);
+
+}
+
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+padding:
+
+80px 55px;
+
+max-width:780px;
+
+}
+
+
+.hero-kicker{
+
+display:inline-block;
+
+padding:
+
+10px 22px;
+
+background:
+
+rgba(255,255,255,.15);
+
+backdrop-filter:
+
+blur(10px);
+
+border-radius:40px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+}
+
+
+.hero-content h1{
+
+font-size:58px;
+
+font-weight:700;
+
+line-height:1.2;
+
+margin-bottom:25px;
+
+}
+
+
+.hero-content p{
+
+font-size:20px;
+
+line-height:1.8;
+
+opacity:.95;
+
+margin-bottom:35px;
+
+}
+
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+
+.hero-btn{
+
+padding:
+
+15px 35px;
+
+border-radius:50px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+
+.hero-btn-primary{
+
+background:
+
+var(--campus-accent);
+
+color:#000;
+
+}
+
+
+.hero-btn-secondary{
+
+background:
+
+rgba(255,255,255,.15);
+
+backdrop-filter:blur(10px);
+
+color:#fff;
+
+border:
+
+1px solid
+
+rgba(255,255,255,.25);
+
+}
+
+
+.hero-btn:hover{
+
+transform:
+
+translateY(-7px);
+
+}
+
+
+/* SECTION */
+
+.section{
+
+margin-bottom:90px;
+
+}
+
+
+.section-kicker{
+
+display:inline-block;
+
+font-size:14px;
+
+font-weight:700;
+
+color:
+
+var(--campus-primary);
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+margin-bottom:10px;
+
+}
+
+
+.section-title{
+
+font-size:42px;
+
+font-weight:700;
+
+color:
+
+var(--campus-text);
+
+margin-bottom:15px;
+
+}
+
+
+.section-desc{
+
+font-size:18px;
+
+max-width:700px;
+
+color:#666;
+
+margin-bottom:40px;
+
+}
+
+
+/* FACILITY */
+
+.facility-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+
+auto-fit,
+
+minmax(320px,1fr)
+
+);
+
+gap:30px;
+
+}
+
+
+.facility-card{
+
+background:#fff;
+
+border-radius:25px;
+
+overflow:hidden;
+
+box-shadow:
+
+0 15px 45px
+
+rgba(0,0,0,.08);
+
+transition:.45s;
+
+}
+
+
+.facility-card:hover{
+
+transform:
+
+translateY(-12px);
+
+}
+
+
+.facility-card img{
+
+height:240px;
+
+width:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+
+.facility-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+
+.facility-content{
+
+padding:30px;
+
+}
+
+
+.facility-content h3{
+
+font-size:28px;
+
+font-weight:700;
+
+color:
+
+var(--campus-primary);
+
+margin-bottom:15px;
+
+}
+
+
+.facility-content p{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+
+.facility-link{
+
+display:inline-block;
+
+margin-top:18px;
+
+padding:
+
+12px 28px;
+
+background:
+
+var(--campus-primary);
+
+color:white;
+
+border-radius:40px;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+
+.facility-link:hover{
+
+background:
+
+var(--campus-accent);
+
+color:#000;
+
+}
+
+
+/* COUNTER */
+
+.counter-section{
+
+padding:
+
+70px 40px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#08295A,
+
+#0F4C81
+
+);
+
+border-radius:30px;
+
+color:white;
+
+}
+
+
+.counter-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+
+4,
+
+1fr
+
+);
+
+gap:25px;
+
+}
+
+
+.counter-box{
+
+text-align:center;
+
+padding:30px;
+
+background:
+
+rgba(255,255,255,.08);
+
+backdrop-filter:
+
+blur(12px);
+
+border-radius:20px;
+
+}
+
+
+.counter{
+
+font-size:52px;
+
+font-weight:700;
+
+color:
+
+var(--campus-accent);
+
+}
+
+
+.counter-box p{
+
+font-size:18px;
+
+margin-top:10px;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content{
+
+padding:50px 25px;
+
+}
+
+
+.hero-content h1{
+
+font-size:36px;
+
+}
+
+
+.counter-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+
+.section-title{
+
+font-size:32px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div id="headerShell"></div>
+
+
+<main class="page-shell">
+
+
+<section class="campus-hero">
+
+
+<div class="hero-bg"></div>
+
+<div class="hero-overlay"></div>
+
+
+<div class="hero-content">
+
+<div class="hero-kicker">
+
+EMRS Residential Excellence
+
+</div>
+
+
+<h1 data-aos="fade-up">
+
+Experience Life Beyond The Classroom
+
+</h1>
+
+
+<p data-aos="fade-up" data-aos-delay="200">
+
+EMRS Dornala provides a vibrant residential environment where students excel academically, participate in sports, develop leadership skills and enjoy a safe, enriching campus life.
+
+</p>
+
+
+<div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+
+<a href="#facilities" class="hero-btn hero-btn-primary">
+
+Explore Campus
+
+</a>
+
+
+<a href="#gallery"
+
+class="hero-btn hero-btn-secondary">
+
+View Gallery
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<section class="section" id="facilities">
+
+<div class="section-kicker">
+
+Campus Facilities
+
+</div>
+
+
+<h2 class="section-title">
+
+Explore Our Campus Life
+
+</h2>
+
+
+<p class="section-desc">
+
+Discover world-class residential and educational facilities designed to nurture excellence and holistic development.
+
+</p>
+
+
+
+<div class="facility-grid">
+
+
+<div class="facility-card" data-aos="fade-up">
+
+<img src="images/mess.jpg" alt="EMRS Dornala Dining Mess Hall">
+
+<div class="facility-content">
+
+<h3>Mess</h3>
+
+<p>
+
+Nutritious and hygienic meals served in a clean dining environment.
+
+</p>
+
+<a href="mess.html"
+
+class="facility-link">
+
+Explore
+
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="facility-card"
+
+data-aos="fade-up"
+
+data-aos-delay="100">
+
+<img src="images/school.jpg" alt="EMRS Dornala School building front facade">
+
+<div class="facility-content">
+
+<h3>School</h3>
+
+<p>
+
+Modern classrooms, laboratories and innovative learning spaces.
+
+</p>
+
+<a href="school.html"
+
+class="facility-link">
+
+Explore
+
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="facility-card"
+
+data-aos="fade-up"
+
+data-aos-delay="200">
+
+<img src="images/playground.jpg" alt="EMRS Dornala sports playground and field">
+
+<div class="facility-content">
+
+<h3>Playground</h3>
+
+<p>
+
+Sports grounds promoting physical fitness and team spirit.
+
+</p>
+
+<a href="playground.html"
+
+class="facility-link">
+
+Explore
+
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="facility-card"
+
+data-aos="fade-up"
+
+data-aos-delay="300">
+
+<img src="images/staff.jpg" alt="EMRS Dornala staff quarters housing block">
+
+<div class="facility-content">
+
+<h3>Staff Quarters</h3>
+
+<p>
+
+Comfortable and secure residential accommodation for staff.
+
+</p>
+
+<a href="staff-quarters.html"
+
+class="facility-link">
+
+Explore
+
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="facility-card"
+
+data-aos="fade-up"
+
+data-aos-delay="400">
+
+<img src="images/hostel.avif" alt="EMRS Dornala student residential hostel block">
+
+<div class="facility-content">
+
+<h3>Hostel</h3>
+
+<p>
+
+Safe and modern hostel facilities with complete residential support.
+
+</p>
+
+<a href="hostel.html"
+
+class="facility-link">
+
+Explore
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="counter-section"
+
+data-aos="fade-up">
+
+<div class="counter-grid">
+
+
+<div class="counter-box">
+
+<h2 class="counter"
+
+data-target="500">
+
+0
+
+</h2>
+
+<p>Students</p>
+
+</div>
+
+
+
+<div class="counter-box">
+
+<h2 class="counter"
+
+data-target="24">
+
+0
+
+</h2>
+
+<p>24×7 Security</p>
+
+</div>
+
+
+
+<div class="counter-box">
+
+<h2 class="counter"
+
+data-target="100">
+
+0
+
+</h2>
+
+<p>Residential Campus</p>
+
+</div>
+
+
+
+<div class="counter-box">
+
+<h2 class="counter"
+
+data-target="10">
+
+0
+
+</h2>
+
+<p>Sports Activities</p>
+
+</div>
+
+
+
+</div>
+
+</section>
+<!-- WHY CAMPUS LIFE -->
+
+<section class="section why-campus" id="why-campus">
+
+<div class="section-kicker">
+Why Campus Life
+</div>
+
+<h2 class="section-title">
+A Complete Residential Learning Experience
+</h2>
+
+<p class="section-desc">
+EMRS Dornala provides a safe, modern and inspiring environment where students grow academically, physically and socially.
+</p>
+
+
+<div class="why-grid">
+
+
+<div class="why-card" data-aos="fade-up">
+
+<div class="why-icon">
+🛡️
+</div>
+
+<h3>
+Safe Campus
+</h3>
+
+<p>
+24×7 security, wardens and a disciplined residential environment.
+</p>
+
+</div>
+
+
+
+<div class="why-card"
+data-aos="fade-up"
+data-aos-delay="100">
+
+<div class="why-icon">
+🍲
+</div>
+
+<h3>
+Healthy Living
+</h3>
+
+<p>
+Nutritious meals and hygienic facilities promoting student wellness.
+</p>
+
+</div>
+
+
+
+<div class="why-card"
+data-aos="fade-up"
+data-aos-delay="200">
+
+<div class="why-icon">
+🏫
+</div>
+
+<h3>
+Modern Infrastructure
+</h3>
+
+<p>
+Smart classrooms, labs and technology-enabled education.
+</p>
+
+</div>
+
+
+
+<div class="why-card"
+data-aos="fade-up"
+data-aos-delay="300">
+
+<div class="why-icon">
+⚽
+</div>
+
+<h3>
+Sports Excellence
+</h3>
+
+<p>
+Excellent playgrounds and sports opportunities for all students.
+</p>
+
+</div>
+
+
+
+<div class="why-card"
+data-aos="fade-up"
+data-aos-delay="400">
+
+<div class="why-icon">
+👨‍🏫
+</div>
+
+<h3>
+Experienced Staff
+</h3>
+
+<p>
+Dedicated teachers and mentors guiding students towards excellence.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- CAMPUS GALLERY -->
+
+<section class="section" id="gallery">
+
+
+<div class="section-kicker">
+
+Campus Gallery
+
+</div>
+
+
+<h2 class="section-title">
+
+Life at EMRS Dornala
+
+</h2>
+
+
+<p class="section-desc">
+
+Explore memorable moments and beautiful facilities across the campus.
+
+</p>
+
+
+
+<div class="gallery-grid">
+
+
+<div class="gallery-item" data-aos="zoom-in">
+
+<img src="images/gallery1.jpg">
+
+<div class="gallery-overlay">
+
+View
+
+</div>
+
+</div>
+
+
+
+<div class="gallery-item" data-aos="zoom-in">
+
+<img src="images/gallery2.jpg">
+
+<div class="gallery-overlay">
+
+View
+
+</div>
+
+</div>
+
+
+
+<div class="gallery-item" data-aos="zoom-in">
+
+<img src="images/gallery3.jpg">
+
+<div class="gallery-overlay">
+
+View
+
+</div>
+
+</div>
+
+
+
+<div class="gallery-item" data-aos="zoom-in">
+
+<img src="images/gallery4.jpg">
+
+<div class="gallery-overlay">
+
+View
+
+</div>
+
+</div>
+
+
+
+<div class="gallery-item" data-aos="zoom-in">
+
+<img src="images/gallery5.jpg">
+
+<div class="gallery-overlay">
+
+View
+
+</div>
+
+</div>
+
+
+
+<div class="gallery-item" data-aos="zoom-in">
+
+<img src="images/gallery6.jpg">
+
+<div class="gallery-overlay">
+
+View
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- CTA SECTION -->
+
+
+<section class="campus-cta"
+
+data-aos="fade-up">
+
+
+<div class="cta-content">
+
+
+<h2>
+
+Experience the Best Campus Life
+
+</h2>
+
+
+<p>
+
+A place where students learn, grow and build a bright future.
+
+</p>
+
+
+<a href="admission.html"
+
+class="cta-btn">
+
+Apply For Admission
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+
+
+
+
+</main>
+
+<!-- FOOTER -->
+<div id="footerShell"></div>
+
+
+
+
+
+
+
+<!-- CSS FOR PART 2 -->
+
+
+<style>
+
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+
+auto-fit,
+
+minmax(250px,1fr)
+
+);
+
+gap:30px;
+
+}
+
+
+
+.why-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+box-shadow:
+
+0 15px 40px
+
+rgba(0,0,0,.08);
+
+text-align:center;
+
+transition:.4s;
+
+}
+
+
+
+.why-card:hover{
+
+transform:
+
+translateY(-10px);
+
+}
+
+
+
+.why-icon{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.why-card h3{
+
+font-size:26px;
+
+color:#08295A;
+
+font-weight:700;
+
+margin-bottom:15px;
+
+}
+
+
+
+.why-card p{
+
+color:#666;
+
+line-height:1.8;
+
+}
+
+
+
+
+
+
+.gallery-grid{
+
+columns:3;
+
+column-gap:20px;
+
+}
+
+
+
+.gallery-item{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:20px;
+
+margin-bottom:20px;
+
+cursor:pointer;
+
+}
+
+
+
+.gallery-item img{
+
+width:100%;
+
+display:block;
+
+transition:.5s;
+
+}
+
+
+
+.gallery-item:hover img{
+
+transform:scale(1.08);
+
+}
+
+
+
+.gallery-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+rgba(
+
+8,
+
+41,
+
+90,
+
+0.65
+
+);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+font-size:24px;
+
+font-weight:700;
+
+opacity:0;
+
+transition:.4s;
+
+}
+
+
+
+.gallery-item:hover
+
+.gallery-overlay{
+
+opacity:1;
+
+}
+
+
+
+
+
+
+.campus-cta{
+
+
+padding:
+
+90px 50px;
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#08295A,
+
+#0F4C81
+
+);
+
+
+border-radius:30px;
+
+
+text-align:center;
+
+
+color:white;
+
+
+margin-top:60px;
+
+
+box-shadow:
+
+0 25px 55px
+
+rgba(8,41,90,.25);
+
+}
+
+
+
+.campus-cta h2{
+
+font-size:48px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}
+
+
+
+.campus-cta p{
+
+font-size:20px;
+
+opacity:.95;
+
+margin-bottom:35px;
+
+}
+
+
+
+.cta-btn{
+
+display:inline-block;
+
+padding:
+
+16px 40px;
+
+background:#FFCC4D;
+
+color:#000;
+
+font-weight:700;
+
+border-radius:50px;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+
+
+.cta-btn:hover{
+
+transform:
+
+translateY(-8px);
+
+box-shadow:
+
+0 15px 30px
+
+rgba(
+
+255,
+
+204,
+
+77,
+
+.4
+
+);
+
+}
+
+
+
+@media(max-width:768px){
+
+
+.gallery-grid{
+
+columns:1;
+
+}
+
+
+.campus-cta{
+
+padding:50px 25px;
+
+}
+
+
+.campus-cta h2{
+
+font-size:32px;
+
+}
+
+
+}
+
+
+</style>
+<!-- JAVASCRIPT LIBRARIES -->
+
+<script src="assets/js/jquery-1.12.0.min.js"></script>
+
+<script src="assets/js/popper.min.js"></script>
+
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/jquery.meanmenu.js"></script>
+
+<script src="assets/js/owl.carousel.min.js"></script>
+
+<script src="assets/js/wow.min.js"></script>
+
+<script src="assets/js/main.js"></script>
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+
+
+<script src="assets/js/facility-public.js"></script>
+<script>
+
+/* AOS */
+
+AOS.init({
+
+duration:1000,
+
+once:true,
+
+offset:120
+
+});
+
+
+
+
+
+function startCounters(){
+
+document.querySelectorAll(".counter").forEach(counter=>{
+
+counter.innerText="0";
+
+const updateCounter=()=>{
+
+const target=+counter.getAttribute("data-target");
+
+const count=+counter.innerText;
+
+const increment=Math.max(target/80,1);
+
+if(count<target){
+
+counter.innerText=Math.min(target,Math.ceil(count+increment));
+
+setTimeout(updateCounter,25);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+};
+
+updateCounter();
+
+});
+
+}
+
+
+async function loadCampusContent(){
+
+const hero=await EMRSFacility.fetchJson("/campus/hero",{});
+
+EMRSFacility.setText(".campus-hero h1",hero.title);
+
+EMRSFacility.setText(".campus-hero p",hero.subtitle);
+
+if(hero.banner_image){
+
+document.querySelector(".campus-hero .hero-bg").style.backgroundImage=
+
+`url("${EMRSFacility.normalizeMediaUrl(hero.banner_image)}")`;
+
+}
+
+const stats=await EMRSFacility.fetchJson("/campus/stats",{});
+
+const mappings=[
+
+["students",0],
+
+["security",1],
+
+["residential",2],
+
+["sports",3]
+
+];
+
+mappings.forEach(([key,index])=>{
+
+const counter=document.querySelectorAll(".counter")[index];
+
+if(counter && stats[key]!==undefined){
+
+counter.setAttribute("data-target",stats[key]);
+
+}
+
+});
+
+const gallery=await EMRSFacility.fetchJson("/campus/gallery",[]);
+
+EMRSFacility.renderGallery(".gallery-grid",gallery,{animate:true,emptyText:"Campus gallery will be updated soon."});
+
+}
+
+
+
+
+
+
+/* SMOOTH SCROLL */
+
+document.querySelectorAll(
+
+'a[href^="#"]'
+
+).forEach(anchor=>{
+
+
+anchor.addEventListener(
+
+'click',
+
+function(e){
+
+e.preventDefault();
+
+
+document.querySelector(
+
+this.getAttribute("href")
+
+).scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+});
+
+});
+
+
+
+
+
+
+
+/* HERO PARALLAX */
+
+window.addEventListener(
+
+"scroll",
+
+()=>{
+
+
+const bg=document.querySelector(
+
+".hero-bg"
+
+);
+
+
+if(bg){
+
+const y=
+
+window.scrollY*.25;
+
+
+bg.style.transform=
+
+`translateY(${y}px) scale(1.1)`;
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+window.openLightbox=function(src){
+
+const popup=document.createElement("div");
+
+popup.className="image-popup";
+
+const overlay=document.createElement("div");
+
+overlay.className="popup-overlay";
+
+const img=document.createElement("img");
+
+img.src=src;
+
+img.alt="Campus gallery image";
+
+const close=document.createElement("span");
+
+close.className="popup-close";
+
+close.innerHTML="&times;";
+
+overlay.appendChild(img);
+
+overlay.appendChild(close);
+
+popup.appendChild(overlay);
+
+document.body.appendChild(popup);
+
+popup.addEventListener("click",()=>popup.remove());
+
+};
+
+
+
+
+
+
+
+
+/* LOAD HEADER + FOOTER */
+
+async function loadShells(){
+
+
+try{
+
+
+const response=
+
+await fetch(
+
+'index.html'
+
+);
+
+
+const html=
+
+await response.text();
+
+
+const parser=
+
+new DOMParser();
+
+
+const doc=
+
+parser.parseFromString(
+
+html,
+
+'text/html'
+
+);
+
+
+
+/* HEADER */
+
+const wrapper=
+
+doc.querySelector(
+
+'#wrapper'
+
+);
+
+
+if(wrapper){
+
+
+let html='';
+
+
+wrapper.querySelectorAll(
+
+':scope > .tobbar_main,'+
+
+':scope > .headertoppanel,'+
+
+':scope > .navbar-area'
+
+).forEach(node=>{
+
+
+html+=
+
+node.outerHTML;
+
+
+});
+
+
+document.getElementById(
+
+'headerShell'
+
+).innerHTML=html;
+
+}
+
+
+
+/* FOOTER */
+
+const footer=
+
+doc.querySelector(
+
+'footer'
+
+);
+
+
+if(footer){
+
+
+document.getElementById(
+
+'footerShell'
+
+).innerHTML=
+
+footer.outerHTML;
+
+
+}
+
+
+
+
+/* MEANMENU */
+
+if(
+
+window.jQuery &&
+
+typeof $.fn.meanmenu==="function"
+
+){
+
+$('.mean-menu').meanmenu({
+
+meanScreenWidth:"991"
+
+});
+
+}
+
+
+
+}catch(e){
+
+console.log(e);
+
+}
+
+
+}
+
+
+loadShells();
+
+loadCampusContent().then(startCounters);
+
+
+
+
+
+
+/* FLOATING BUTTON EFFECT */
+
+const buttons=
+
+document.querySelectorAll(
+
+".hero-btn,.cta-btn"
+
+);
+
+
+buttons.forEach(btn=>{
+
+
+btn.addEventListener(
+
+"mouseenter",
+
+()=>{
+
+
+btn.style.transform=
+
+"translateY(-7px)";
+
+});
+
+
+btn.addEventListener(
+
+"mouseleave",
+
+()=>{
+
+
+btn.style.transform=
+
+"translateY(0px)";
+
+});
+
+
+});
+
+
+
+</script>
+
+
+
+
+<style>
+
+/* IMAGE POPUP */
+
+.image-popup{
+
+position:fixed;
+
+inset:0;
+
+background:
+
+rgba(0,0,0,.92);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:9999;
+
+animation:fadeIn .4s;
+
+}
+
+
+
+.popup-overlay{
+
+position:relative;
+
+max-width:90%;
+
+max-height:90%;
+
+}
+
+
+
+.popup-overlay img{
+
+max-width:100%;
+
+max-height:90vh;
+
+border-radius:20px;
+
+box-shadow:
+
+0 25px 60px
+
+rgba(0,0,0,.4);
+
+}
+
+
+
+.popup-close{
+
+position:absolute;
+
+top:-20px;
+
+right:-20px;
+
+font-size:45px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+
+@keyframes fadeIn{
+
+
+from{
+
+opacity:0;
+
+}
+
+
+to{
+
+opacity:1;
+
+}
+
+
+}
+
+</style>
+
+
+
+
+
+</body>
+
+</html>

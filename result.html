@@ -1,0 +1,914 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Academic Results Portal - Eklavya Model Residential School, Dornala" />
+    <title>Academic Results | EMRS Dornala</title>
+    <link rel="icon" type="image/x-icon" href="images/logo_emrs.ico">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Custom and Premium Styles -->
+    <link rel="stylesheet" href="assets/css/style-front.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    
+    <!-- Animations (AOS) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <style>
+        :root {
+            --primary-blue: #08295a;
+            --accent-orange: #ff5d24;
+            --card-shadow: 0 15px 35px rgba(8, 41, 90, 0.08);
+            --hover-shadow: 0 25px 50px rgba(255, 93, 36, 0.15);
+            --gradient-blue: linear-gradient(135deg, #08295a 0%, #1c4b8f 100%);
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.4);
+        }
+
+        body {
+            background-color: #f7fafd;
+            color: #1e2d3d;
+            font-family: "Segoe UI", sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .results-hero {
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px;
+            min-height: 480px;
+            background: var(--gradient-blue);
+            color: white;
+            box-shadow: 0 20px 45px rgba(8, 41, 90, 0.2);
+            margin: 25px auto;
+            max-width: 1240px;
+        }
+
+        .hero-bg-overlay {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            transition: transform 0.8s ease;
+        }
+
+        .results-hero:hover .hero-bg-overlay {
+            transform: scale(1.05);
+        }
+
+        .hero-gradient-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(8, 41, 90, 0.85) 0%, rgba(8, 41, 90, 0.3) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 80px 60px;
+            max-width: 750px;
+        }
+
+        .hero-kicker {
+            display: inline-block;
+            padding: 8px 18px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            backdrop-filter: blur(8px);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+
+        .hero-btn-primary {
+            background-color: var(--accent-orange);
+            color: white;
+            box-shadow: 0 10px 20px rgba(255, 93, 36, 0.3);
+            margin-right: 15px;
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 93, 36, 0.5);
+            color: white;
+        }
+
+        .hero-btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Section Headings */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header span {
+            color: var(--accent-orange);
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-orange);
+            border-radius: 10px;
+        }
+
+        /* Class Cards Grid */
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .class-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .class-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1.5px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(8,41,90,0.1) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .class-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+            border-color: rgba(255, 93, 36, 0.25);
+        }
+
+        .class-card-img-wrap {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .class-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .class-card:hover .class-card-img {
+            transform: scale(1.08);
+        }
+
+        .class-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(8,41,90,0.85) 100%);
+        }
+
+        .class-card-title {
+            position: absolute;
+            bottom: 20px;
+            left: 24px;
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .class-card-body {
+            padding: 24px;
+            flex-grow: 1;
+        }
+
+        .class-stat-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .class-stat-item {
+            background-color: rgba(8, 41, 90, 0.03);
+            border-radius: 12px;
+            padding: 10px 15px;
+            border: 1px solid rgba(8, 41, 90, 0.05);
+        }
+
+        .class-stat-label {
+            font-size: 11px;
+            color: #61778a;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .class-stat-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .class-stat-value.highlight {
+            color: var(--accent-orange);
+        }
+
+        .class-card-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .class-card-btn:hover {
+            background-color: var(--accent-orange);
+            color: white;
+        }
+
+        /* Statistics Counter Section */
+        .stats-section {
+            background: var(--gradient-blue);
+            border-radius: 28px;
+            color: white;
+            padding: 60px 40px;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(8,41,90,0.15);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-counter-card h3 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .stat-counter-card p {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.85;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Toppers Section */
+        .topper-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .topper-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(8, 41, 90, 0.05);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .topper-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .medal-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--accent-orange);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 8px 15px rgba(255, 93, 36, 0.4);
+            z-index: 5;
+        }
+
+        .topper-img-wrap {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 20px rgba(8,41,90,0.15);
+        }
+
+        .topper-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .topper-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .topper-class {
+            font-size: 13px;
+            color: #61778a;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .topper-score {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        .topper-label {
+            font-size: 11px;
+            color: #61778a;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        /* Notices Section */
+        .notices-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .notice-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(8, 41, 90, 0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .notice-card:hover {
+            border-color: var(--accent-orange);
+        }
+
+        .notice-card.pinned {
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .notice-date-badge {
+            background-color: rgba(8, 41, 90, 0.05);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .notice-date-day {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            display: block;
+            line-height: 1.1;
+        }
+
+        .notice-date-month {
+            font-size: 11px;
+            color: #61778a;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: block;
+        }
+
+        .notice-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .notice-info p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .notice-pdf-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .notice-pdf-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar stats list */
+        .sidebar-panel {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 25px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(8, 41, 90, 0.05);
+            height: fit-content;
+        }
+
+        .sidebar-panel h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            border-bottom: 2px solid rgba(8, 41, 90, 0.05);
+            padding-bottom: 10px;
+        }
+
+        .sidebar-stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(8, 41, 90, 0.05);
+        }
+
+        .sidebar-stat-row:last-child {
+            border: none;
+        }
+
+        .sidebar-stat-label {
+            font-size: 13px;
+            color: #61778a;
+            font-weight: 600;
+        }
+
+        .sidebar-stat-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .page-shell {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 15px 60px;
+        }
+
+        @media(max-width: 991px) {
+            .notices-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero-content {
+                padding: 60px 30px;
+            }
+            .hero-content h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar / Header Shell -->
+    <div id="headerShell"></div>
+
+    <!-- Main Dynamic Content Wrapper -->
+    <div class="page-shell">
+        
+        <!-- Hero Section -->
+        <section class="results-hero">
+            <div class="hero-bg-overlay" id="heroBanner"></div>
+            <div class="hero-gradient-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-kicker">EMRS Academic Portal</span>
+                <h1 id="heroTitle">Academic Results</h1>
+                <p id="heroSubtitle">View Academic Performance and Examination Results for Classes VI to XII</p>
+                <div class="hero-cta-buttons">
+                    <a href="#class-section" class="hero-btn hero-btn-primary">View Results <i class="fas fa-arrow-down ms-2"></i></a>
+                    <a href="#stats-section" class="hero-btn hero-btn-secondary">Academic Statistics</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Classes Cards Section -->
+        <section class="mt-5" id="class-section">
+            <div class="section-header" data-aos="fade-up">
+                <span>Result Sheets</span>
+                <h2>Class-wise Portals</h2>
+            </div>
+            
+            <div class="class-grid" id="classCardsContainer">
+                <!-- Loaded Dynamically -->
+                <div class="text-center w-100 p-5"><i class="fas fa-spinner fa-spin fa-2x"></i><p>Loading portals...</p></div>
+            </div>
+        </section>
+
+        <!-- Academic Statistics Section -->
+        <section class="stats-section" id="stats-section" data-aos="fade-up">
+            <div class="section-header text-center" style="margin-bottom: 40px;">
+                <span style="color: var(--accent-orange);">OVERALL SCORECARD</span>
+                <h2 style="color: #fff; border-bottom-color: rgba(255,255,255,0.2);">Academic Highlights</h2>
+            </div>
+            
+            <div class="stats-grid" id="statsGridContainer">
+                <!-- Loaded Dynamically -->
+            </div>
+        </section>
+
+        <!-- Toppers Section -->
+        <section class="mt-5" id="toppers-section">
+            <div class="section-header" data-aos="fade-up">
+                <span>Top Performers</span>
+                <h2>Topper Performer Board</h2>
+            </div>
+            
+            <div class="topper-grid" id="toppersContainer">
+                <!-- Loaded Dynamically -->
+            </div>
+        </section>
+
+        <!-- Notices Layout (Notices + Guidelines) -->
+        <div class="notices-layout">
+            
+            <!-- Left: Notices -->
+            <section id="notices-section">
+                <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                    <span>Official Announcements</span>
+                    <h2>Result Declarations & Notices</h2>
+                </div>
+                
+                <div id="noticesContainer">
+                    <!-- Loaded Dynamically -->
+                </div>
+            </section>
+            
+            <!-- Right: Side Guidelines -->
+            <aside class="sidebar-panel" data-aos="fade-left">
+                <h3>Result Guidelines</h3>
+                <div class="sidebar-stat-row">
+                    <span class="sidebar-stat-label">Passing Criteria</span>
+                    <span class="sidebar-stat-value">35% Per Subject</span>
+                </div>
+                <div class="sidebar-stat-row">
+                    <span class="sidebar-stat-label">Grading System</span>
+                    <span class="sidebar-stat-value">KVS Standard</span>
+                </div>
+                <div class="sidebar-stat-row">
+                    <span class="sidebar-stat-label">Revaluation Request</span>
+                    <span class="sidebar-stat-value">Within 15 Days</span>
+                </div>
+                <div class="sidebar-stat-row">
+                    <span class="sidebar-stat-label">Marksheet Verification</span>
+                    <span class="sidebar-stat-value">QR Code Scanning</span>
+                </div>
+                <div class="sidebar-stat-row">
+                    <span class="sidebar-stat-label">Support Helpdesk</span>
+                    <span class="sidebar-stat-value">info@emrsdornala.edu.in</span>
+                </div>
+            </aside>
+        </div>
+
+    </div>
+
+    <!-- Footer Shell -->
+    <div id="footerShell"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery-1.12.0.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/facility-public.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    
+    <script>
+        // Init AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        const baseUrl = window.EMRSFacility ? window.EMRSFacility.apiOrigin + '/api' : '/api';
+
+        function normalizeMediaUrl(url) {
+            return window.EMRSFacility ? window.EMRSFacility.normalizeMediaUrl(url) : url;
+        }
+
+        async function initPortal() {
+            // Load header & footer shells
+            await EMRSFacility.loadShells("#headerShell", "#footerShell");
+            
+            try {
+                const res = await fetch(`${baseUrl}/results`);
+                if (!res.ok) throw new Error('Failed to fetch results portal data');
+                const data = await res.json();
+                
+                renderHero(data.hero);
+                renderClassCards(data.class_cards);
+                renderStatistics(data.statistics);
+                renderToppers(data.toppers);
+                renderNotices(data.notices);
+                
+            } catch (err) {
+                console.error(err);
+                document.getElementById('classCardsContainer').innerHTML = `<div class="alert alert-danger w-100">Unable to load portal data. Check connection.</div>`;
+            }
+        }
+
+        function renderHero(hero) {
+            if (hero.title) document.getElementById('heroTitle').innerText = hero.title;
+            if (hero.subtitle) document.getElementById('heroSubtitle').innerText = hero.subtitle;
+            if (hero.banner_url) {
+                document.getElementById('heroBanner').style.backgroundImage = `url('${hero.banner_url}')`;
+            } else {
+                document.getElementById('heroBanner').style.backgroundImage = `url('images/hostel_bg.jpg')`;
+            }
+        }
+
+        function renderClassCards(cards) {
+            const container = document.getElementById('classCardsContainer');
+            container.innerHTML = '';
+            
+            // Hardcode standard images for class cards to look premium
+            const images = {
+                "VI": "images/class_6.png",
+                "VII": "images/class_7.png",
+                "VIII": "images/class_8.png",
+                "IX": "images/class_9.png",
+                "X": "images/class_10.png",
+                "XI": "images/class_11.png",
+                "XII": "images/class_12.png"
+            };
+
+            cards.forEach((c, idx) => {
+                const img = images[c.class_code] || "images/hostel_bg.jpg";
+                const delay = (idx % 3) * 100;
+                
+                const cardHtml = `
+                    <div class="class-card" data-aos="fade-up" data-aos-delay="${delay}">
+                        <div class="class-card-img-wrap">
+                            <img class="class-card-img" src="${img}" alt="${c.class_name}">
+                            <div class="class-card-overlay"></div>
+                            <h3 class="class-card-title">${c.class_name}</h3>
+                        </div>
+                        <div class="class-card-body">
+                            <div class="class-stat-list">
+                                <div class="class-stat-item">
+                                    <span class="class-stat-label">Students appeared</span>
+                                    <span class="class-stat-value">${c.appeared}</span>
+                                </div>
+                                <div class="class-stat-item">
+                                    <span class="class-stat-label">Pass Percentage</span>
+                                    <span class="class-stat-value highlight">${c.pass_percentage}</span>
+                                </div>
+                                <div class="class-stat-item">
+                                    <span class="class-stat-label">Passed Count</span>
+                                    <span class="class-stat-value">${c.passed}</span>
+                                </div>
+                                <div class="class-stat-item">
+                                    <span class="class-stat-label">Topper Marks</span>
+                                    <span class="class-stat-value">${c.top_score}</span>
+                                </div>
+                            </div>
+                            <a href="results/class-${c.class_code.toLowerCase()}.html" class="class-card-btn">View Results <i class="fas fa-chevron-right ms-2"></i></a>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
+        function renderStatistics(stats) {
+            const container = document.getElementById('statsGridContainer');
+            container.innerHTML = `
+                <div class="stat-counter-card">
+                    <h3>${stats.pass_percentage || '98%'}</h3>
+                    <p>Pass Percentage</p>
+                </div>
+                <div class="stat-counter-card">
+                    <h3>${stats.distinctions || '120'}</h3>
+                    <p>Distinctions</p>
+                </div>
+                <div class="stat-counter-card">
+                    <h3>${stats.first_division || '210'}</h3>
+                    <p>First Division</p>
+                </div>
+                <div class="stat-counter-card">
+                    <h3>${stats.students_appeared || '350'}</h3>
+                    <p>Students Appeared</p>
+                </div>
+                <div class="stat-counter-card">
+                    <h3>${stats.students_passed || '343'}</h3>
+                    <p>Students Passed</p>
+                </div>
+                <div class="stat-counter-card">
+                    <h3>${stats.topper_marks || '98.8%'}</h3>
+                    <p>Topper Marks</p>
+                </div>
+            `;
+        }
+
+        function renderToppers(toppers) {
+            const container = document.getElementById('toppersContainer');
+            container.innerHTML = '';
+            
+            if (toppers.length === 0) {
+                container.innerHTML = '<div class="text-center w-100 text-muted p-4">No toppers announced yet for this session.</div>';
+                return;
+            }
+
+            toppers.forEach((t, idx) => {
+                const delay = (idx % 4) * 100;
+                let photoHtml = '';
+                if (t.photo_url) {
+                    photoHtml = `<div class="topper-img-wrap"><img class="topper-img" src="${normalizeMediaUrl(t.photo_url)}" alt="${t.student_name}"></div>`;
+                } else {
+                    let iconHtml = '';
+                    if (t.rank.includes("1st") || idx === 0) {
+                        iconHtml = `<i class="fas fa-trophy" style="color: #ffd700; font-size: 2.2rem;"></i>`;
+                    } else if (t.rank.includes("2nd") || idx === 1) {
+                        iconHtml = `<i class="fas fa-award" style="color: #c0c0c0; font-size: 2.2rem;"></i>`;
+                    } else {
+                        iconHtml = `<i class="fas fa-medal" style="color: #cd7f32; font-size: 2.2rem;"></i>`;
+                    }
+                    photoHtml = `<div class="topper-img-wrap d-flex align-items-center justify-content-center" style="background: rgba(8, 41, 90, 0.04); margin: 0 auto 15px;">${iconHtml}</div>`;
+                }
+                
+                const topperHtml = `
+                    <div class="topper-card" data-aos="fade-up" data-aos-delay="${delay}">
+                        <div class="medal-badge">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        ${photoHtml}
+                        <h4>${t.student_name}</h4>
+                        <span class="topper-class">Class ${t.class} (Rank ${t.rank})</span>
+                        <span class="topper-score">${t.percentage}%</span>
+                        <span class="topper-label">Total: ${t.marks} Marks</span>
+                    </div>
+                `;
+                container.innerHTML += topperHtml;
+            });
+        }
+
+        function renderNotices(notices) {
+            const container = document.getElementById('noticesContainer');
+            container.innerHTML = '';
+            
+            if (notices.length === 0) {
+                container.innerHTML = '<div class="text-center w-100 text-muted p-4">No academic result notices at this time.</div>';
+                return;
+            }
+
+            notices.forEach(n => {
+                // Parse date
+                const dateObj = new Date(n.notice_date);
+                const day = isNaN(dateObj.getDate()) ? "N/A" : String(dateObj.getDate()).padStart(2, '0');
+                const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+                const month = isNaN(dateObj.getMonth()) ? "DATE" : months[dateObj.getMonth()];
+                
+                const pinBadge = n.pinned ? '<span class="badge bg-danger ms-2"><i class="fas fa-thumbtack me-1"></i> Pinned</span>' : '';
+                const pdfButton = n.pdf_url ? `<a href="${n.pdf_url}" class="notice-pdf-btn" download><i class="fas fa-file-pdf"></i> ${n.pdf_name || 'Download PDF Notice'}</a>` : '';
+
+                const noticeHtml = `
+                    <div class="notice-card ${n.pinned ? 'pinned' : ''}" data-aos="fade-up">
+                        <div class="notice-date-badge">
+                            <span class="notice-date-day">${day}</span>
+                            <span class="notice-date-month">${month}</span>
+                        </div>
+                        <div class="notice-info">
+                            <h4>${n.title} ${pinBadge}</h4>
+                            <p>${n.content}</p>
+                            ${pdfButton}
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += noticeHtml;
+            });
+        }
+
+        $(document).ready(function() {
+            initPortal();
+        });
+    </script>
+</body>
+
+</html>

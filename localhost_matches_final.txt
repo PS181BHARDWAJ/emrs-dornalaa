@@ -1,0 +1,26 @@
+C:\Users\psbha\Downloads\emrs-master\emrs-master\admin-dashboard.html:1287:const apiHost = window.location.hostname || 'localhost';
+C:\Users\psbha\Downloads\emrs-master\emrs-master\admin-login.html:523:    const API_BASE = 'http://localhost:5000/api';
+C:\Users\psbha\Downloads\emrs-master\emrs-master\admin-login.html:681:          showAlert('Unable to reach login server. Please ensure the backend is running at http://localhost:5000.', 'error');
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_MODULE_README.md:275:The module expects a FastAPI/Python backend server running on `http://localhost:5000` with the following configuration:
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_MODULE_README.md:377:- Check backend server is running on `http://localhost:5000`
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:22:The server should run on: `http://localhost:5000`
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:25:- Visit `http://localhost:5000/api/alumni` in your browser
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:37:curl -X POST http://localhost:5000/api/alumni \
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:63:**URL:** `http://localhost:YOUR_PORT/alumni.html`
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:97:**URL:** `http://localhost:YOUR_PORT/alumni-events.html`
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:128:**URL:** `http://localhost:YOUR_PORT/mentorship.html`
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:191:**URL:** `http://localhost:YOUR_PORT/testimonials.html`
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:241:**URL:** `http://localhost:YOUR_PORT/admin-dashboard.html`
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:442:curl http://localhost:5000/api/alumni
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:445:curl http://localhost:5000/api/alumni/ALUMNI_ID
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:448:curl -X POST http://localhost:5000/api/alumni \
+C:\Users\psbha\Downloads\emrs-master\emrs-master\ALUMNI_TESTING_GUIDE.md:543:1. Check backend is running: http://localhost:5000/api/alumni
+C:\Users\psbha\Downloads\emrs-master\emrs-master\QUICK_START_TESTING.md:37:http://localhost:5000/api/alumni
+C:\Users\psbha\Downloads\emrs-master\emrs-master\QUICK_START_TESTING.md:63:http://localhost/alumni.html
+C:\Users\psbha\Downloads\emrs-master\emrs-master\QUICK_START_TESTING.md:64:http://localhost/alumni-events.html
+C:\Users\psbha\Downloads\emrs-master\emrs-master\QUICK_START_TESTING.md:65:http://localhost/mentorship.html
+C:\Users\psbha\Downloads\emrs-master\emrs-master\QUICK_START_TESTING.md:66:http://localhost/testimonials.html
+C:\Users\psbha\Downloads\emrs-master\emrs-master\assets\js\alumni-api.js:10:    host: window.location.hostname || 'localhost',
+C:\Users\psbha\Downloads\emrs-master\emrs-master\assets\js\api-integration.js:1:const emrsBaseURL = "http://localhost:5000/api";
+C:\Users\psbha\Downloads\emrs-master\emrs-master\assets\js\results-public.js:2:  const backendBase = 'http://localhost:5000';
+C:\Users\psbha\Downloads\emrs-master\emrs-master\assets\js\visitor-counter.js:3:  API_BASE: 'http://localhost:5000', // Local backend

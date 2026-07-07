@@ -1,0 +1,1103 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="source" content="EMRS Dornala" />
+    <meta name="author" content="EMRS Dornala, Andhra Pradesh" />
+    <meta name="description" content="Eklavya Model Residential School, Dornala - Andhra Pradesh" />
+    <meta name="keywords" content="EMRS Dornala, Tribal School, Residential School, Andhra Pradesh" />
+    <title>Check Application Status | EMRS Dornala</title>
+	<link rel="icon" type="image/x-icon" href="images/logo_emrs.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap Min CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<!-- Flaticon CSS -->
+	<link rel="stylesheet" href="assets/css/flaticon.css">
+	<!-- Magnific Popup Min CSS -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+	<!-- niceSelect CSS -->
+	<link rel="stylesheet" href="assets/css/nice-select.css">
+	<!-- Odometer Min CSS -->
+	<link rel="stylesheet" href="assets/css/odometer.min.css">
+	<!-- Owl Carousel Min CSS -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<!-- Progressbar Min CSS -->
+	<link rel="stylesheet" href="assets/css/progressbar.min.css">
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="assets/css/style-front.css">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- MeanMenu CSS -->
+	<link rel="stylesheet" href="assets/css/meanmenu.css">
+
+	<script src="assets/js/jquery-1.12.0.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<!-- Bootstrap Min JS -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- MeanMenu JS -->
+	<script src="assets/js/jquery.meanmenu.js"></script>
+	<!-- Main JS -->
+	<script src="assets/js/main.js"></script>
+
+    <style>
+        .tracker-wrapper {
+            background-color: #f8fafc;
+            padding: 40px 0;
+            font-family: 'Inter', sans-serif;
+            min-height: 700px;
+        }
+
+        .search-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 43, 73, 0.05);
+            border: 1px solid #e2e8f0;
+            padding: 30px;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+        }
+
+        .search-card h3 {
+            color: #002B49;
+            font-weight: 800;
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .search-card h3 i {
+            color: #0056B3;
+        }
+
+        /* Result Panel Styling */
+        .result-panel {
+            display: none;
+            max-width: 850px;
+            margin: 0 auto;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 43, 73, 0.06);
+            border: 1px solid #e2e8f0;
+            padding: 35px;
+            margin-bottom: 30px;
+        }
+
+        /* Status badges */
+        .status-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .app-title-info h4 {
+            color: #002B49;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .app-title-info span {
+            color: #64748b;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            font-size: 0.9rem;
+            font-weight: 800;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-badge.pending {
+            background-color: #fef3c7;
+            color: #d97706;
+            border: 1px solid #fde68a;
+        }
+
+        .status-badge.review {
+            background-color: #dbeafe;
+            color: #2563eb;
+            border: 1px solid #bfdbfe;
+        }
+
+        .status-badge.approved {
+            background-color: #dcfce7;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+
+        .status-badge.rejected {
+            background-color: #fee2e2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        /* Timeline tracker */
+        .tracker-timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin: 30px auto 40px auto;
+            max-width: 600px;
+        }
+
+        .tracker-timeline::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .timeline-progress-bar {
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            width: 0%;
+            height: 3px;
+            background: #28a745;
+            z-index: 1;
+            transition: width 0.4s ease;
+        }
+
+        .timeline-node {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline-circle {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #e2e8f0;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .timeline-node.active .timeline-circle {
+            border-color: #0056B3;
+            color: #0056B3;
+            background: #f0f7ff;
+            box-shadow: 0 0 10px rgba(0, 86, 179, 0.15);
+        }
+
+        .timeline-node.completed .timeline-circle {
+            border-color: #28a745;
+            color: white;
+            background: #28a745;
+        }
+
+        .timeline-node.rejected-node .timeline-circle {
+            border-color: #dc2626;
+            color: white;
+            background: #dc2626;
+        }
+
+        .timeline-label {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #64748b;
+        }
+
+        .timeline-node.active .timeline-label {
+            color: #0056B3;
+        }
+
+        .timeline-node.completed .timeline-label {
+            color: #28a745;
+        }
+
+        .timeline-node.rejected-node .timeline-label {
+            color: #dc2626;
+        }
+
+        /* Detail grids */
+        .details-section-title {
+            color: #002B49;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px 25px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-item label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #64748b;
+            margin-bottom: 3px;
+        }
+
+        .info-item span {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        /* Remarks Box */
+        .remarks-box {
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .remarks-box.success {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+        }
+
+        .remarks-box.danger {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+        }
+
+        .remarks-box.info {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            color: #0369a1;
+        }
+
+        .remarks-box.warning {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            color: #92400e;
+        }
+
+        .remarks-box i {
+            font-size: 1.4rem;
+            margin-top: 2px;
+        }
+
+        .remarks-content h5 {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            color: inherit;
+        }
+
+        .remarks-content p {
+            font-size: 0.88rem;
+            margin-bottom: 0;
+            line-height: 1.5;
+            color: inherit;
+        }
+
+        /* Actions block */
+        .actions-panel {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 35px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 20px;
+        }
+
+        /* Form UI improvements */
+        .form-group label {
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+
+        .btn-track {
+            background-color: #0056B3;
+            color: white !important;
+            font-weight: 700;
+            padding: 11px 24px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 86, 179, 0.15);
+        }
+
+        .btn-track:hover {
+            background-color: #004085;
+            box-shadow: 0 6px 12px rgba(0, 86, 179, 0.25);
+        }
+
+        .btn-gov-primary-link {
+            background-color: #28a745;
+            color: white !important;
+            font-weight: 700;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(40,167,69,0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gov-primary-link:hover {
+            background-color: #218838;
+            transform: translateY(-1px);
+        }
+
+        .btn-gov-secondary-link {
+            background-color: #64748b;
+            color: white !important;
+            font-weight: 700;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gov-secondary-link:hover {
+            background-color: #475569;
+            transform: translateY(-1px);
+        }
+
+        /* Toast alert */
+        .toast-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ef4444;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification.success {
+            background: #10b981;
+        }
+
+        /* Loading spinner */
+        .loading-spinner {
+            width: 35px;
+            height: 35px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0056B3;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 576px) {
+            .status-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .tracker-timeline {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+                padding-left: 40px;
+            }
+            .tracker-timeline::before, .timeline-progress-bar {
+                left: 60px;
+                top: 0;
+                bottom: 0;
+                width: 3px !important;
+                height: 80% !important;
+            }
+            .timeline-node {
+                flex-direction: row;
+                text-align: left;
+                width: 100%;
+                gap: 15px;
+            }
+            .timeline-label {
+                margin-top: 0;
+            }
+            .actions-panel {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .btn-gov-primary-link, .btn-gov-secondary-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+
+<body data-spy="scroll" class="skillbar" data-target=".navbar-collapse">
+
+    <div id="wrapper">
+        <div>
+            <!--Tob Bar-->
+            <div class="row tobbar_main">
+                <div class="container">
+                    <div class="skipto"><a title="Skip to main content" class="skip-content" href="#skipCont"><img src="images/ico-skip.png" alt="Skip to main content">&nbsp;&nbsp;Skip to Main Content</a></div>
+                    <div class="common-right clearfix">
+                        <ul id="header-nav">
+                            <li><a title="Social Media's" id="toggleSocial" href="javascript:void(0);"><img src="images/color_scheems.png" alt="Color schemes"></a>
+                                <ul>
+                                    <li><a href="javascript:void(0);" id="sch_1"><img src="images/d1.jpg" alt="Theme option 1"></a></li>
+                                    <li><a href="javascript:void(0);" id="sch_2"><img src="images/d2.jpg" alt="Theme option 2"></a></li>
+                                    <li><a href="javascript:void(0);" id="sch_3"><img src="images/d3.jpg" alt="Theme option 3"></a></li> 
+                                </ul>
+                            </li>
+                            <li class="ico-accessibility"><a title="Accessibility Dropdown" id="toggleAccessibility" href="javascript:void(0);"></a>
+                                <ul>
+                                    <li> <a href="javascript:void(0);" title="Increase font size" id="In">A<sup>+</sup></a> </li>
+                                    <li> <a href="javascript:void(0);" title="Reset font size" id="Normal">A<sup>&nbsp;</sup></a> </li>
+                                    <li> <a href="javascript:void(0);" title="Decrease font size" id="Out">A<sup>-</sup></a> </li>
+                                </ul>
+                            </li>
+                            <li class="ico-social"><a title="Social Media's" href="javascript:void(0);"></a>
+                                <ul>
+                                    <li><a href="javascript:void(0);" target="_blank"><img src="images/ico-facebook.png" alt="Facebook"></a></li>
+                                    <li><a href="javascript:void(0);" target="_blank"><img src="images/ico-twitter.png" alt="Twitter"></a></li>
+                                    <li><a href="javascript:void(0);" target="_blank"><img src="images/ico-youtube.png" alt="youtube"></a></li>
+                                </ul>
+                            </li>
+                            <li class="ico-sitemap"><a title="Sitemap" href="sitemap.html"></a></li>
+                            <li class="hindi"><a title="" href="javascript:void(0);">Language</a>
+                                <ul>
+                                    <li><a title="Link to English version" href="index.html">English</a></li>
+                                    <li><a title="Link to Hindi version" href="index.html">'हिंदी में'</a></li>
+                                </ul> 
+                            </li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+            
+            <div class="container headertoppanel">
+                <div class="row header_main">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1 pt-1 emblemb text-center"><img src="WriteReadData/MD32145/dept_logo.jpg" ></div>
+                            <div class="col-md-5 headerpanelmain_box ">
+                                <h1>Eklavya Model Residential School</h1>
+                                <h1>Dornala, Andhra Pradesh</h1>
+                                <span>(जनजातीय कार्य मंत्रालय के अंतर्गत एक स्वायत्त संस्थान), भारत सरकार</span>
+                                <br/>
+                                <span>(An Autonomous organisation under Ministry of Tribal Affairs), Government of India</span>
+                            </div>
+                            <div class="col-md-3 emblemb text-center dis_none">
+                                 <span style="height: 70px!important;margin-top: 15px;"></span>
+                            </div>
+                            <div class="col-md-3 emblemb text-center dis_none d-flex align-items-center justify-content-center gap-3">
+                            <img src="WriteReadData/MD32145/NEST.jpeg" style="height: 70px!important;" alt="NEST Logo">
+                            <div>
+                                <img src="images/loogo.png" style="height: 70px!important;" alt="EMRS logo">
+                                <br>
+                                <span class="pt-2 d-block" style="font-size:14px; font-weight:bold; color:#000000; line-height: 1.2;">Tribal Transformation Through Education</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        
+        <!--Navigation bar-->
+        <div class="navbar-area">
+            <div class="labto-mobile-nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="WriteReadData/MD32145/dept_logo.jpg" alt="EMRS Dornala Logo" class="mobile-logo">
+                    </a>
+                </div>
+            </div>
+
+            <div class="labto-nav">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link" href="about.html">About School</a></li>
+                                        <li><a class="nav-link" href="vision.html">Vision</a></li>
+                                        <li><a class="nav-link" href="mission.html">Mission</a></li>
+                                        <li><a class="nav-link" href="objective.html">Objective</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="academics.html" class="nav-link">Academics <i class="fas fa-chevron-down"></i></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="campus life.html" class="nav-link">Campus Life <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link" href="mess.html">Mess</a></li>
+                                        <li><a class="nav-link" href="hostel.html">Hostel</a></li>
+                                        <li><a class="nav-link" href="staff-quarters.html">Staff Quarters</a></li>
+                                        <li><a class="nav-link" href="school.html">School</a></li>
+                                        <li><a class="nav-link" href="playground.html">Playground</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="achievments and events.html" class="nav-link">Achievements</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="events.html" class="nav-link">Events <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link" href="sports.html">Sports Facilities</a></li>
+                                        <li><a class="nav-link" href="events.html?category=cultural">Cultural Events</a></li>
+                                        <li><a class="nav-link" href="events.html?category=general">Other Activities</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="staff.html" class="nav-link">Staff Directory</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="alumni.html" class="nav-link">Alumni <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link" href="alumni.html">Notable Alumni</a></li>
+                                        <li><a class="nav-link" href="alumni-events.html">Alumni Events</a></li>
+                                        <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="admissions.html" class="nav-link active">Admissions</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="result.html" class="nav-link">Results <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="nav-link" href="result.html">All Results Portal</a></li>
+                                        <li><a class="nav-link" href="results/class-vi.html">Class VI Results</a></li>
+                                        <li><a class="nav-link" href="results/class-vii.html">Class VII Results</a></li>
+                                        <li><a class="nav-link" href="results/class-viii.html">Class VIII Results</a></li>
+                                        <li><a class="nav-link" href="results/class-ix.html">Class IX Results</a></li>
+                                        <li><a class="nav-link" href="results/class-x.html">Class X Results</a></li>
+                                        <li><a class="nav-link" href="results/class-xi.html">Class XI Results</a></li>
+                                        <li><a class="nav-link" href="results/class-xii.html">Class XII Results</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="contactus.html" class="nav-link">Contact Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="admin-login.html" class="nav-link" style="color:#d13b3b;font-weight:600;" target="_blank">MIS Login</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div id="container-body">
+            <div class="container" id="inner-search" style="min-height: 550px;">
+                <ul class="breadcrumb">
+                    <li><a href="index.html" title="Home">Home</a></li>
+                    <li><a href="admissions.html" title="Admissions">Admissions</a></li>
+                    <li>Track Status</li>
+                </ul>
+
+                <div class="row" id="print-container">
+                    <div class="col-md-12">
+                        <div class="tracker-wrapper">
+                            <div class="container">
+                                
+                                <!-- Tracking Search Form -->
+                                <div class="search-card">
+                                    <h3><i class="fa fa-search"></i> Track Admission Application</h3>
+                                    <form id="trackForm" autocomplete="off">
+                                        <div class="form-group">
+                                            <label>Application Registration Number</label>
+                                            <input type="text" id="inpAppNo" class="form-control" placeholder="e.g. EMRS202600001" required>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label>Registered Email Address</label>
+                                            <input type="email" id="inpEmail" class="form-control" placeholder="e.g. example@email.com" required>
+                                        </div>
+                                        <button type="submit" class="btn-track"><i class="fa fa-location-arrow"></i> Track Status</button>
+                                    </form>
+                                    
+                                    <div class="loading-spinner" id="loadingSpinner"></div>
+                                </div>
+
+                                <!-- Detailed Search Result Panel -->
+                                <div class="result-panel" id="resultPanel">
+                                    <div class="result-card" id="printableArea">
+                                        
+                                        <!-- Header Block with Status Badge -->
+                                        <div class="status-header">
+                                            <div class="app-title-info">
+                                                <h4 id="resAppNo">EMRS202600001</h4>
+                                                <span>Submitted on: <span id="resSubmittedDate">24-06-2026</span></span>
+                                            </div>
+                                            <div class="status-badge" id="resStatusBadge">
+                                                <i class="fa fa-clock-o"></i> Pending
+                                            </div>
+                                        </div>
+
+                                        <!-- Interactive Timeline Tracker -->
+                                        <div class="tracker-timeline">
+                                            <div class="timeline-progress-bar" id="timelineBar"></div>
+                                            
+                                            <div class="timeline-node completed" id="node1">
+                                                <div class="timeline-circle"><i class="fa fa-check"></i></div>
+                                                <div class="timeline-label">Submitted</div>
+                                            </div>
+                                            
+                                            <div class="timeline-node" id="node2">
+                                                <div class="timeline-circle">2</div>
+                                                <div class="timeline-label">Verification</div>
+                                            </div>
+                                            
+                                            <div class="timeline-node" id="node3">
+                                                <div class="timeline-circle">3</div>
+                                                <div class="timeline-label">Decision</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Remarks box -->
+                                        <div class="remarks-box" id="remarksBlock">
+                                            <i class="fa fa-info-circle" id="remarkIcon"></i>
+                                            <div class="remarks-content">
+                                                <h5 id="remarkTitle">Status Update</h5>
+                                                <p id="remarkText">Your document verification is currently pending review by the EMRS Dornala school board. Please check back shortly.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Student Info Details Grid -->
+                                        <div class="details-section-title">1. Applicant Details</div>
+                                        <div class="info-grid">
+                                            <div class="info-item">
+                                                <label>Student Full Name</label>
+                                                <span id="resStudentName">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Class Applied For</label>
+                                                <span id="resClassApplying">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Date of Birth</label>
+                                                <span id="resDob">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Gender</label>
+                                                <span id="resGender">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Category</label>
+                                                <span id="resCategory">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Aadhaar Number</label>
+                                                <span id="resAadhaar">-</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Parents Info Details Grid -->
+                                        <div class="details-section-title">2. Parent & Contact Details</div>
+                                        <div class="info-grid">
+                                            <div class="info-item">
+                                                <label>Father's Name</label>
+                                                <span id="resFatherName">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Mother's Name</label>
+                                                <span id="resMotherName">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Mobile Number</label>
+                                                <span id="resMobile">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Email Address</label>
+                                                <span id="resEmail">-</span>
+                                            </div>
+                                            <div class="info-item" style="grid-column: span 2;">
+                                                <label>Correspondence Address</label>
+                                                <span id="resAddress">-</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Academic details -->
+                                        <div class="details-section-title">3. Academic History</div>
+                                        <div class="info-grid">
+                                            <div class="info-item">
+                                                <label>Previous School Name</label>
+                                                <span id="resPrevSchool">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Last Class</label>
+                                                <span id="resLastClass">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Affiliation Board</label>
+                                                <span id="resBoard">-</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <label>Marks / Percentage</label>
+                                                <span id="resPercentage">-</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Bottom Action Buttons -->
+                                    <div class="actions-panel">
+                                        <button type="button" class="btn-gov-secondary-link" onclick="window.print()"><i class="fa fa-print"></i> Print Status Page</button>
+                                        <a href="" id="resDownloadPdf" class="btn-gov-primary-link" target="_blank"><i class="fa fa-file-pdf-o"></i> Download Application PDF</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+
+        <!-- Custom toast notifications -->
+        <div class="toast-notification" id="toastNotification">
+            <i class="fa fa-exclamation-triangle"></i>
+            <span id="toastMsg">Error message here</span>
+        </div>
+
+        <footer>
+            <div class="row copyright-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p> EMRS Dornala , Parkasham, Andhra Pradesh </p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <ul>
+                                <li><a title="Accessibility Options" href="#">Accessibility Options</a></li>
+                                <li><a title="Disclaimer" href="#">Disclaimer</a></li>
+                                <li><a title="Copyright Policy" href="#">Copyright Policy</a></li>
+                                <li><a title="Website Policies" href="#">Website Policies</a></li>
+                                <li><a title="Privacy Policy" href="#">Privacy Policy</a></li>
+                                <li><a title="Help" href="contactus.html">Help</a></li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-md-9">&nbsp;</div>
+                                <div class="col-md-3 visitor_number">Visitor No.- 20803047</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script logic for tracking status -->
+    <script>
+        const API_BASE = 'https://emrsdornala.onrender.com/api';
+
+        // Toast display utility
+        function showToast(message, isSuccess = false) {
+            const toast = document.getElementById('toastNotification');
+            const msgSpan = document.getElementById('toastMsg');
+            msgSpan.textContent = message;
+            
+            if (isSuccess) {
+                toast.classList.add('success');
+                toast.querySelector('i').className = 'fa fa-check-circle';
+            } else {
+                toast.classList.remove('success');
+                toast.querySelector('i').className = 'fa fa-exclamation-triangle';
+            }
+            
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4500);
+        }
+
+        // Form Submit Handler
+        document.getElementById('trackForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const appNo = document.getElementById('inpAppNo').value.trim();
+            const email = document.getElementById('inpEmail').value.trim();
+            
+            const spinner = document.getElementById('loadingSpinner');
+            const resultPanel = document.getElementById('resultPanel');
+            
+            if (!appNo || !email) {
+                showToast("Please enter both the application number and registered email address.");
+                return;
+            }
+ 
+            spinner.style.display = 'block';
+            resultPanel.style.display = 'none';
+ 
+            try {
+                const response = await fetch(`${API_BASE}/admissions/status/${encodeURIComponent(appNo)}?email=${encodeURIComponent(email)}`);
+                const data = await response.json();
+                
+                spinner.style.display = 'none';
+ 
+                if (response.ok) {
+                    renderApplicationDetails(data);
+                } else {
+                    showToast(data.detail || "Application not found. Please double check details.");
+                }
+            } catch (err) {
+                spinner.style.display = 'none';
+                showToast("Connection failed. Please ensure the backend FastAPI service is running.");
+                console.error(err);
+            }
+        });
+ 
+        // Populate and render details
+        function renderApplicationDetails(app) {
+            const resultPanel = document.getElementById('resultPanel');
+            resultPanel.style.display = 'block';
+            
+            // Standard values
+            document.getElementById('resAppNo').textContent = app.applicationNo;
+            
+            // Date formatting
+            let dateStr = app.submittedAt;
+            if (dateStr && dateStr.includes('T')) {
+                const parts = dateStr.split('T')[0].split('-');
+                if (parts.length === 3) {
+                    dateStr = `${parts[2]}-${parts[1]}-${parts[0]}`;
+                }
+            }
+            document.getElementById('resSubmittedDate').textContent = dateStr || 'N/A';
+            
+            document.getElementById('resStudentName').textContent = app.studentName;
+            document.getElementById('resClassApplying').textContent = `Class ${app.classApplying}`;
+            
+            // Dob formatting
+            let dobParts = app.dob.split('-');
+            let dobFormatted = app.dob;
+            if (dobParts.length === 3) {
+                dobFormatted = `${dobParts[2]}-${dobParts[1]}-${dobParts[0]}`;
+            }
+            document.getElementById('resDob').textContent = dobFormatted;
+            
+            document.getElementById('resGender').textContent = app.gender;
+            document.getElementById('resCategory').textContent = app.category;
+            document.getElementById('resAadhaar').textContent = app.aadhaar ? app.aadhaar.replace(/(\d{4})/g, '$1 ').trim() : 'N/A';
+            
+            document.getElementById('resFatherName').textContent = app.fatherName;
+            document.getElementById('resMotherName').textContent = app.motherName;
+            document.getElementById('resMobile').textContent = app.mobile;
+            document.getElementById('resEmail').textContent = app.email || 'N/A';
+            
+            const addr = app.address || {};
+            document.getElementById('resAddress').textContent = `${addr.fullAddress || ''}, Village: ${addr.village || ''}, Dist: ${addr.district || ''}, State: ${addr.state || ''} - ${addr.pincode || ''}`;
+            
+            const acad = app.academic || {};
+            document.getElementById('resPrevSchool').textContent = acad.previousSchool || 'N/A';
+            document.getElementById('resLastClass').textContent = acad.lastClass || 'N/A';
+            document.getElementById('resBoard').textContent = acad.board || 'N/A';
+            document.getElementById('resPercentage').textContent = acad.percentage || 'N/A';
+ 
+            // Configure PDF download link
+            document.getElementById('resDownloadPdf').href = `${API_BASE}/admissions/${app.applicationNo}/pdf?dob=${encodeURIComponent(app.dob)}`;
+ 
+            // Sync Badge and Timeline
+            syncStatusBadgeAndTimeline(app.status, app.remarks);
+ 
+            // Scroll result into view smoothly
+            resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Auto trigger search on page load if query params present
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const appNo = urlParams.get('appNo');
+            const email = urlParams.get('email');
+            
+            if (appNo && email) {
+                document.getElementById('inpAppNo').value = appNo;
+                document.getElementById('inpEmail').value = email;
+                document.getElementById('trackForm').dispatchEvent(new Event('submit'));
+            }
+        });
+
+        // Status Badge & Timeline logic
+        function syncStatusBadgeAndTimeline(status, remarks) {
+            const badge = document.getElementById('resStatusBadge');
+            const remarksBlock = document.getElementById('remarksBlock');
+            const remarkIcon = document.getElementById('remarkIcon');
+            const remarkTitle = document.getElementById('remarkTitle');
+            const remarkText = document.getElementById('remarkText');
+            
+            const node2 = document.getElementById('node2');
+            const node3 = document.getElementById('node3');
+            const bar = document.getElementById('timelineBar');
+
+            // Default resetting
+            node2.className = 'timeline-node';
+            node3.className = 'timeline-node';
+            node2.querySelector('.timeline-circle').innerHTML = '2';
+            node3.querySelector('.timeline-circle').innerHTML = '3';
+            bar.style.width = '0%';
+
+            if (status === 'Pending') {
+                badge.className = 'status-badge pending';
+                badge.innerHTML = '<i class="fa fa-clock-o"></i> Pending Review';
+                
+                remarksBlock.className = 'remarks-box info';
+                remarkIcon.className = 'fa fa-info-circle';
+                remarkTitle.textContent = 'Application Pending';
+                remarkText.textContent = remarks || "Your online application has been successfully registered. Document verification is pending review by the school administration board.";
+                
+                bar.style.width = '0%';
+            } 
+            else if (status === 'Under Review') {
+                badge.className = 'status-badge review';
+                badge.innerHTML = '<i class="fa fa-refresh fa-spin"></i> Under Verification';
+                
+                node2.className = 'timeline-node completed active';
+                node2.querySelector('.timeline-circle').innerHTML = '<i class="fa fa-refresh fa-spin"></i>';
+                
+                remarksBlock.className = 'remarks-box info';
+                remarkIcon.className = 'fa fa-info-circle';
+                remarkTitle.textContent = 'Verification In Progress';
+                remarkText.textContent = remarks || "The school administration is actively verifying your academic history and uploaded certificates. Please check back shortly.";
+                
+                bar.style.width = '40%';
+            } 
+            else if (status === 'Approved') {
+                badge.className = 'status-badge approved';
+                badge.innerHTML = '<i class="fa fa-check-circle"></i> Approved';
+                
+                node2.className = 'timeline-node completed';
+                node2.querySelector('.timeline-circle').innerHTML = '<i class="fa fa-check"></i>';
+                node3.className = 'timeline-node completed';
+                node3.querySelector('.timeline-circle').innerHTML = '<i class="fa fa-check"></i>';
+                
+                remarksBlock.className = 'remarks-box success';
+                remarkIcon.className = 'fa fa-check-circle';
+                remarkTitle.textContent = 'Admission Approved';
+                remarkText.textContent = remarks || "Congratulations! Your admission has been approved. Please download/print the complete Application PDF form, and report to the school admissions center with your original academic/caste certificate files for physical verification.";
+                
+                bar.style.width = '80%';
+            } 
+            else if (status === 'Rejected') {
+                badge.className = 'status-badge rejected';
+                badge.innerHTML = '<i class="fa fa-times-circle"></i> Rejected';
+                
+                node2.className = 'timeline-node completed';
+                node2.querySelector('.timeline-circle').innerHTML = '<i class="fa fa-check"></i>';
+                node3.className = 'timeline-node rejected-node';
+                node3.querySelector('.timeline-circle').innerHTML = '<i class="fa fa-times"></i>';
+                
+                remarksBlock.className = 'remarks-box danger';
+                remarkIcon.className = 'fa fa-exclamation-circle';
+                remarkTitle.textContent = 'Application Rejected';
+                remarkText.textContent = remarks || "We regret to inform you that your application has been rejected due to invalid certificate uploads or eligibility discrepancies. Please contact the school board.";
+                
+                bar.style.width = '80%';
+            }
+            else if (status === 'Correction Required') {
+                badge.className = 'status-badge pending';
+                badge.innerHTML = '<i class="fa fa-exclamation-triangle"></i> Correction Required';
+                
+                node2.className = 'timeline-node completed active';
+                node2.querySelector('.timeline-circle').innerHTML = '<i class="fa fa-exclamation-triangle"></i>';
+                
+                remarksBlock.className = 'remarks-box warning';
+                remarkIcon.className = 'fa fa-exclamation-triangle';
+                remarkTitle.textContent = 'Correction Required';
+                remarkText.textContent = remarks || "Your application requires some corrections before we can complete verification. Please check your registered email address for detailed feedback and instructions.";
+                
+                bar.style.width = '40%';
+            }
+        }
+    </script>
+    <script src="assets/jqprint/print-page.js"></script>
+    <script src="assets/js/visitor-counter.js"></script>
+</body>
+</html>

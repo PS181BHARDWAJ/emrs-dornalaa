@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Quarters | EMRS Dornala</title>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/style-front.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/meanmenu.css">
+<link rel="icon" href="images/logo_emrs.ico">
+<style>
+:root{--primary:#0f4c81;--secondary:#1f78b4;--accent:#ffa500;--light:#eef6fb;--card:#ffffff;--text:#1f3244;--border:#d1e0ec;}
+body{margin:0;background:linear-gradient(180deg,#f6f9fd,#e9f2fb);font-family:"Segoe UI",sans-serif;color:var(--text);}
+.page-shell{max-width:1240px;margin:auto;padding:0 20px;}
+.facility-hero{position:relative;overflow:hidden;border-radius:28px;min-height:420px;margin-top:20px;background:linear-gradient(135deg,#0f4c81 0%,#1f78b4 45%,#ffa500 100%);box-shadow:0 25px 50px rgba(15,76,129,.22);}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.25;transform:scale(1.1);}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.25);}
+.hero-content{position:relative;z-index:2;padding:80px 60px;color:white;max-width:700px;}
+.hero-kicker{display:inline-block;padding:10px 18px;background:rgba(255,255,255,.18);border-radius:40px;backdrop-filter:blur(10px);font-weight:600;margin-bottom:20px;}
+.hero-content h1{font-size:56px;font-weight:800;margin-bottom:20px;}
+.hero-content p{font-size:20px;line-height:1.8;opacity:.95;}
+.hero-buttons{margin-top:35px;display:flex;gap:15px;flex-wrap:wrap;}
+.hero-btn{padding:14px 28px;border-radius:8px;font-weight:700;text-decoration:none;transition:.3s;display:inline-flex;align-items:center;gap:8px;}
+.hero-primary{background:white;color:var(--primary);}
+.hero-secondary{background:rgba(255,255,255,.15);color:white;border:2px solid rgba(255,255,255,.3);}
+.hero-btn:hover{transform:translateY(-3px);}
+.section{margin-top:80px;}
+.section-kicker{color:var(--primary);font-weight:700;letter-spacing:1px;font-size:14px;}
+.section-title{font-size:42px;font-weight:800;margin-top:10px;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;margin-top:45px;}
+.stat-card{background:white;padding:35px;border-radius:20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.05);transition:.3s;}
+.stat-card:hover{transform:translateY(-6px);}
+.stat-icon{font-size:45px;margin-bottom:20px;}
+.stat-number{font-size:42px;font-weight:800;color:var(--primary);}
+.stat-title{margin-top:10px;font-size:18px;font-weight:600;}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;margin-top:40px;}
+.feature-card{background:white;padding:35px;border-radius:22px;box-shadow:0 12px 30px rgba(0,0,0,.06);transition:.35s;text-align:center;border:1px solid #eef2f6;}
+.feature-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(15,76,129,.12);}
+.feature-icon{font-size:55px;margin-bottom:20px;}
+.feature-card h3{font-size:24px;font-weight:700;margin-bottom:15px;}
+.feature-card p{line-height:1.8;color:#555;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:45px;}
+.gallery-item{position:relative;overflow:hidden;border-radius:22px;cursor:pointer;box-shadow:0 12px 35px rgba(0,0,0,.08);transition:.35s;}
+.gallery-item:hover{transform:translateY(-6px);}
+.gallery-item img{width:100%;height:280px;object-fit:cover;transition:transform .5s ease;}
+.gallery-item:hover img{transform:scale(1.12);}
+.gallery-overlay{position:absolute;left:0;right:0;bottom:0;padding:25px;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);color:white;font-size:22px;font-weight:700;}
+.featured-badge{position:absolute;top:18px;right:18px;background:var(--accent);padding:8px 15px;border-radius:30px;font-size:13px;font-weight:700;color:white;}
+.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:9999;justify-content:center;align-items:center;}
+.lightbox img{max-width:90%;max-height:90vh;border-radius:18px;}
+.close-btn{position:absolute;top:25px;right:40px;background:none;border:none;font-size:42px;color:white;cursor:pointer;}
+.close-btn:hover{transform:scale(1.1);}
+@media(max-width:991px){.stats-grid{grid-template-columns:1fr 1fr;}.hero-content{padding:50px 30px;}.hero-content h1{font-size:38px;}}@media(max-width:768px){.stats-grid{grid-template-columns:1fr;}.hero-buttons{flex-direction:column;}.feature-grid{grid-template-columns:1fr;}.gallery-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div id="headerShell"></div>
+<main class="page-shell">
+<section class="facility-hero" id="heroSection">
+<div class="hero-bg" id="heroBanner"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-kicker">Staff Housing</div>
+<h1 id="heroTitle">Comfortable Quarters for Staff</h1>
+<p id="heroSubtitle">Secure, well-designed housing for faculty and staff within the campus campus community.</p>
+<div class="hero-buttons">
+<a href="#stats" class="hero-btn hero-primary">Explore Quarters</a>
+<a href="#gallery" class="hero-btn hero-secondary">View Gallery</a>
+</div>
+</div>
+</section>
+<section id="stats" class="section">
+<div class="section-kicker">HOUSING OVERVIEW</div>
+<h2 class="section-title">Serving Staff with Quality Living</h2>
+<div class="stats-grid" id="statsContainer">
+<div class="stat-card"><div class="stat-icon">🏘️</div><div class="stat-number" id="unitsStat">72</div><div class="stat-title">Housing Units</div></div>
+<div class="stat-card"><div class="stat-icon">👩‍🏫</div><div class="stat-number" id="facultyStat">42</div><div class="stat-title">Faculty Accommodation</div></div>
+<div class="stat-card"><div class="stat-icon">🛡️</div><div class="stat-number" id="securityStat">24</div><div class="stat-title">Security Staff</div></div>
+<div class="stat-card"><div class="stat-icon">📊</div><div class="stat-number" id="occupancyStat">98%</div><div class="stat-title">Occupancy</div></div>
+</div>
+</section>
+<section class="section">
+<div class="section-kicker">RESIDENTIAL AMENITIES</div>
+<h2 class="section-title">A Supportive Community for Educators</h2>
+<div class="feature-grid">
+<div class="feature-card"><div class="feature-icon">🛏️</div><h3>Comfortable Rooms</h3><p>Well-maintained living spaces with privacy and convenience.</p></div>
+<div class="feature-card"><div class="feature-icon">🌐</div><h3>Connectivity</h3><p>Reliable utilities and internet access to support daily life and work.</p></div>
+<div class="feature-card"><div class="feature-icon">🛠️</div><h3>Maintenance</h3><p>Rapid support services for repairs and upkeep across all quarters.</p></div>
+<div class="feature-card"><div class="feature-icon">🌿</div><h3>Community Spaces</h3><p>Common areas for social interaction, relaxation and staff well-being.</p></div>
+</div>
+</section>
+<section id="gallery" class="section">
+<div class="section-kicker">STAFF QUARTERS GALLERY</div>
+<h2 class="section-title">See the Residential Facilities</h2>
+<div id="galleryContainer" class="gallery-grid"></div>
+</section>
+<div id="lightbox" class="lightbox"><button class="close-btn" onclick="closeLightbox()">×</button><img id="lightboxImg" src="" alt="Gallery Image"></div>
+</main>
+<div id="footerShell"></div>
+<script src="assets/js/facility-public.js"></script>
+<script>
+function openLightbox(src){document.getElementById("lightbox").style.display="flex"; document.getElementById("lightboxImg").src=src;}
+function closeLightbox(){document.getElementById("lightbox").style.display="none";}
+async function init(){
+  await EMRSFacility.loadFacilityPage({
+    basePath: '/staff_quarters',
+    heroTitle: '#heroTitle',
+    heroSubtitle: '#heroSubtitle',
+    heroBanner: '#heroBanner',
+    heroOverlay: '.hero-overlay',
+    gallerySelector: '#galleryContainer',
+    stats: {
+      units: { selector: '#unitsStat' },
+      faculty: { selector: '#facultyStat' },
+      security: { selector: '#securityStat' },
+      occupancy: { selector: '#occupancyStat', suffix: '%' }
+    }
+  });
+}
+init();
+</script>
+</body>
+</html>
