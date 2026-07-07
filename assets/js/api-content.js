@@ -1383,7 +1383,7 @@ async function renderHomeGallery(areaId) {
 
     // Now initialize slick slider manually as a single slide slideshow
     $('#dynamic-home-slick').slick({
-        dots: true,
+        dots: false,
         arrows: true,
         slidesToShow: 1,
         slidesToScroll: 1,
