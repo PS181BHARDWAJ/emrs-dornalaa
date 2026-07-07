@@ -22,7 +22,60 @@ async def log_notification(db, notification_type: str, recipient: str, status: s
     except Exception as e:
         print(f"Failed to log notification: {e}")
 
-def _send_smtp_email(to_email: str, subject: str, text_content: str, html_content: str, attachment_path: str = None) -> str:
+def _send_resend_email(api_key: str, from_email: str, to_email: str, subject: str, text_content: str, html_content: str, attachment_path: str = None) -> str:
+    """Send email using Resend HTTP API to bypass SMTP port blocks on cloud hosts."""
+    import urllib.request
+    import json
+    import base64
+    
+    url = "https://api.resend.com/emails"
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+    
+    payload = {
+        "from": from_email,
+        "to": [to_email],
+        "subject": subject,
+        "html": html_content,
+        "text": text_content
+    }
+    
+    if attachment_path:
+        path_obj = Path(attachment_path)
+        if path_obj.exists() and path_obj.is_file():
+            with open(path_obj, "rb") as f:
+                encoded = base64.b64encode(f.read()).decode("utf-8")
+            payload["attachments"] = [
+                {
+                    "content": encoded,
+                    "filename": path_obj.name
+                }
+            ]
+            
+    req = urllib.request.Request(
+        url, 
+        data=json.dumps(payload).encode("utf-8"), 
+        headers=headers, 
+        method="POST"
+    )
+    
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            res_body = response.read().decode("utf-8")
+            res_data = json.loads(res_body)
+            return res_data.get("id", f"resend_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}_{to_email}")
+    except Exception as e:
+        if hasattr(e, 'read'):
+            error_body = e.read().decode("utf-8")
+            print(f"[Resend] API Error Details: {error_body}")
+            raise Exception(f"Resend API error: {error_body}")
+        else:
+            print(f"[Resend] Connection Error: {e}")
+            raise e
+
+def _send_smtp_email_direct(to_email: str, subject: str, text_content: str, html_content: str, attachment_path: str = None) -> str:
     """Synchronous SMTP helper running inside executors to prevent blocking."""
     host = os.getenv("EMAIL_HOST", "smtp.gmail.com").strip()
     port_val = os.getenv("EMAIL_PORT", "587").strip()
@@ -100,6 +153,20 @@ def _send_smtp_email(to_email: str, subject: str, text_content: str, html_conten
     
     # Generate mock message id for logging
     return f"smtp_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}_{to_email}"
+
+def _send_smtp_email(to_email: str, subject: str, text_content: str, html_content: str, attachment_path: str = None) -> str:
+    """Wrapper that routes email dispatch to Resend if RESEND_API_KEY is configured, else falls back to SMTP."""
+    resend_api_key = os.getenv("RESEND_API_KEY", "").strip()
+    if resend_api_key:
+        print("[Resend] Sending email via Resend API...")
+        from_email = os.getenv("RESEND_FROM", "").strip()
+        if not from_email:
+            # Resend onboarding fallback address
+            from_email = "onboarding@resend.dev"
+        sender = f"EMRS Dornala Admissions <{from_email}>"
+        return _send_resend_email(resend_api_key, sender, to_email, subject, text_content, html_content, attachment_path)
+    
+    return _send_smtp_email_direct(to_email, subject, text_content, html_content, attachment_path)
 
 async def send_otp_email(db, email: str, otp: str) -> bool:
     subject = "EMRS Dornala Email Verification Code"

@@ -268,7 +268,7 @@ async def send_verification_otp(
 
     import os
     res_payload = {"message": "OTP verification email dispatched."}
-    if not os.getenv("EMAIL_USER", "ps702189@gmail.com") or not os.getenv("EMAIL_PASSWORD", "pzyq kjpl kwct nvqv"):
+    if (not os.getenv("EMAIL_USER", "ps702189@gmail.com") or not os.getenv("EMAIL_PASSWORD", "pzyq kjpl kwct nvqv")) and not os.getenv("RESEND_API_KEY"):
         res_payload["mock_otp"] = otp
     return res_payload
 
