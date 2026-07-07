@@ -259,16 +259,17 @@ async def send_verification_otp(
     )
     
     # Dispatch Email via existing email service
-    try:
-        sent = await send_otp_email(db, email, otp)
-        if not sent:
-            raise HTTPException(status_code=500, detail="SMTP Delivery failed.")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Email dispatch error: {e}")
+    enable_mock = os.getenv("ENABLE_MOCK_OTP", "true").strip().lower() == "true"
+    if not enable_mock:
+        try:
+            sent = await send_otp_email(db, email, otp)
+            if not sent:
+                raise HTTPException(status_code=500, detail="SMTP Delivery failed.")
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Email dispatch error: {e}")
 
-    import os
     res_payload = {"message": "OTP verification email dispatched."}
-    if (not os.getenv("EMAIL_USER", "ps702189@gmail.com") or not os.getenv("EMAIL_PASSWORD", "pzyq kjpl kwct nvqv")) and not os.getenv("RESEND_API_KEY"):
+    if enable_mock:
         res_payload["mock_otp"] = otp
     return res_payload
 

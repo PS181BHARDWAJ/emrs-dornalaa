@@ -78,11 +78,12 @@ async def send_otp_to_email(payload: EmailSendSchema, background_tasks: Backgrou
     )
     
     # Queue transmission in background
-    background_tasks.add_task(send_otp_email, db, email, otp)
+    enable_mock = os.getenv("ENABLE_MOCK_OTP", "true").strip().lower() == "true"
+    if not enable_mock:
+        background_tasks.add_task(send_otp_email, db, email, otp)
         
-    import os
     res_payload = {"message": "Verification OTP sent successfully to your email."}
-    if (not os.getenv("EMAIL_USER", "ps702189@gmail.com") or not os.getenv("EMAIL_PASSWORD", "pzyq kjpl kwct nvqv")) and not os.getenv("RESEND_API_KEY"):
+    if enable_mock:
         res_payload["mock_otp"] = otp
     return res_payload
 
