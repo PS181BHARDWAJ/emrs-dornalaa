@@ -2,7 +2,14 @@ import os
 from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv
 
-load_dotenv()
+# Load environment variables robustly from current dir or backend dir
+_env_path = os.path.join(os.getcwd(), '.env')
+if not os.path.exists(_env_path):
+    _env_path = os.path.join(os.getcwd(), 'backend', '.env')
+if os.path.exists(_env_path):
+    load_dotenv(dotenv_path=_env_path)
+else:
+    load_dotenv()
 
 MONGODB_URI = os.getenv("MONGODB_URI", "mongodb://127.0.0.1:27017").strip()
 

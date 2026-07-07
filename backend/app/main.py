@@ -12,7 +12,14 @@ import logging
 
 from pymongo.errors import PyMongoError
 
-load_dotenv()
+# Load environment variables robustly from current dir or backend dir
+_env_path = os.path.join(os.getcwd(), '.env')
+if not os.path.exists(_env_path):
+    _env_path = os.path.join(os.getcwd(), 'backend', '.env')
+if os.path.exists(_env_path):
+    load_dotenv(dotenv_path=_env_path)
+else:
+    load_dotenv()
 
 from .routes import (
     auth,
