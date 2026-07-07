@@ -1,6 +1,8 @@
 // Visitor Counter Module
 const visitorCounter = {
-  API_BASE: 'https://emrs-dornalaa.onrender.com',
+  API_BASE: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://localhost:8000'
+    : 'https://emrs-dornalaa.onrender.com',
 
   // Initialize visitor counter on page load
   init: async function() {

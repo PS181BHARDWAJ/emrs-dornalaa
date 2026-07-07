@@ -1,6 +1,8 @@
 // ================= CONFIG =================
 const API_HOST_CANDIDATES = [
-  'https://emrs-dornalaa.onrender.com'
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://localhost:8000'
+    : 'https://emrs-dornalaa.onrender.com'
 ];
 let ACTIVE_API_HOST = API_HOST_CANDIDATES[0];
 

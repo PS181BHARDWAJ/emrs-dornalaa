@@ -1,8 +1,12 @@
 (function () {
-  const LOCAL_API_ORIGIN = 'https://emrs-dornalaa.onrender.com';
+  const LOCAL_API_ORIGIN = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://localhost:8000'
+    : 'https://emrs-dornalaa.onrender.com';
 
   function getApiOrigin() {
-    return 'https://emrs-dornalaa.onrender.com';
+    return (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+      ? 'http://localhost:8000'
+      : 'https://emrs-dornalaa.onrender.com';
   }
 
   const apiOrigin = getApiOrigin();

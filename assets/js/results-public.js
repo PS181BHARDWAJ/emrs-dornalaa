@@ -1,5 +1,7 @@
 (function () {
-  const backendBase = 'https://emrs-dornalaa.onrender.com';
+  const backendBase = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://localhost:8000'
+    : 'https://emrs-dornalaa.onrender.com';
   const apiBase = `${backendBase}/api`;
   const classKey = document.body.dataset.classKey;
 

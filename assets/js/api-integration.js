@@ -1,5 +1,7 @@
 const emrsApiHosts = [
-  'https://emrs-dornalaa.onrender.com'
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://localhost:8000'
+    : 'https://emrs-dornalaa.onrender.com'
 ];
 let emrsActiveHost = emrsApiHosts[0];
 

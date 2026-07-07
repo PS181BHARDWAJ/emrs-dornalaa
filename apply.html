@@ -1163,7 +1163,9 @@
 
     <!-- Script controls for Stepper Form Wizard -->
     <script>
-        const API_BASE = 'https://emrs-dornalaa.onrender.com/api';
+        const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+            ? 'http://127.0.0.1:8000/api'
+            : 'https://emrs-dornalaa.onrender.com/api';
 
         let currentStep = 1;
         const totalSteps = 5;

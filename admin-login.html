@@ -549,9 +549,9 @@
         const host = u.hostname;
         const port = u.port;
 
-        // If the current origin is localhost and already uses backend port, use it.
-        if ((host === 'localhost' || host === '127.0.0.1') && (port === '8000' || port === '5000')) {
-          _cachedApiBase.value = `${origin}/api`;
+        // If the current origin is localhost, default to local backend port 8000
+        if (host === 'localhost' || host === '127.0.0.1') {
+          _cachedApiBase.value = `http://${host}:8000/api`;
           return _cachedApiBase.value;
         }
       } catch (e) {

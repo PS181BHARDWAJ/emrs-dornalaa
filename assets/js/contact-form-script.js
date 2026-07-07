@@ -24,7 +24,9 @@
         var phone_number = $("#phone_number").val();
         var message = $("#message").val();
 
-        var base = 'https://emrs-dornalaa.onrender.com';
+        var base = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+            ? 'http://localhost:8000'
+            : 'https://emrs-dornalaa.onrender.com';
 
         var url = base + '/api/contact-message';
 
