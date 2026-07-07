@@ -209,7 +209,7 @@ function resetDashboardScroll() {
 updateLastModified();
 setInterval(updateLastModified, 60000);
 
-const baseUrl = 'https://emrsdornala.onrender.com/api';
+const baseUrl = 'https://emrs-dornalaa.onrender.com/api';
 const facilitiesBase = baseUrl + '/facilities';
 const mediaBaseUrl = baseUrl.replace(/\/api\/?$/, '');
 const token = localStorage.getItem('emrs_token');

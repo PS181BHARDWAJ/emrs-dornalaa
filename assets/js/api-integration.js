@@ -1,5 +1,5 @@
 const emrsApiHosts = [
-  'https://emrsdornala.onrender.com'
+  'https://emrs-dornalaa.onrender.com'
 ];
 let emrsActiveHost = emrsApiHosts[0];
 

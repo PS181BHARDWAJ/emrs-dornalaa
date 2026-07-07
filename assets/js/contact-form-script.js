@@ -24,7 +24,7 @@
         var phone_number = $("#phone_number").val();
         var message = $("#message").val();
 
-        var base = 'https://emrsdornala.onrender.com';
+        var base = 'https://emrs-dornalaa.onrender.com';
 
         var url = base + '/api/contact-message';
 

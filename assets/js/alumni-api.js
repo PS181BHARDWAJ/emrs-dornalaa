@@ -3,7 +3,7 @@
 // ============================================
 
 const alumniAPI = {
-    baseHost: 'https://emrsdornala.onrender.com',
+    baseHost: 'https://emrs-dornalaa.onrender.com',
 
     get baseURL() {
         return `${this.baseHost}/api`;

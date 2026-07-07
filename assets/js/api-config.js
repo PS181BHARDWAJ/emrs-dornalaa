@@ -5,7 +5,7 @@
 
 // API Configuration
 const API_CONFIG = {
-  BASE_URL: 'https://emrsdornala.onrender.com',
+  BASE_URL: 'https://emrs-dornalaa.onrender.com',
   
   ENDPOINTS: {
     // Authentication

@@ -526,7 +526,7 @@
 
   <script>
     // Resolve backend API base intelligently. Defaults to deployed API.
-    let API_BASE = 'https://emrsdornala.onrender.com/api';
+    let API_BASE = 'https://emrs-dornalaa.onrender.com/api';
     const _cachedApiBase = { value: null };
 
     async function _probeUrl(url) {
@@ -559,10 +559,10 @@
       }
 
       const candidates = [
-        'https://emrsdornala.onrender.com/api',
-        'https://emrsdornala.onrender.com/api',
-        'https://emrsdornala.onrender.com/api',
-        'https://emrsdornala.onrender.com/api',
+        'https://emrs-dornalaa.onrender.com/api',
+        'https://emrs-dornalaa.onrender.com/api',
+        'https://emrs-dornalaa.onrender.com/api',
+        'https://emrs-dornalaa.onrender.com/api',
       ];
 
       for (const c of candidates) {
@@ -749,7 +749,7 @@
             } catch (error) {
         const message = error?.message || 'Login failed. Please check your credentials.';
         if (message.includes('Failed to fetch') || message.includes('NetworkError')) {
-          showAlert('Unable to reach login server. Please ensure the backend is running at https://emrsdornala.onrender.com.', 'error');
+          showAlert('Unable to reach login server. Please ensure the backend is running at https://emrs-dornalaa.onrender.com.', 'error');
         } else {
           showAlert(message, 'error');
         }

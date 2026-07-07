@@ -1,5 +1,5 @@
 (function () {
-  const backendBase = 'https://emrsdornala.onrender.com';
+  const backendBase = 'https://emrs-dornalaa.onrender.com';
   const apiBase = `${backendBase}/api`;
   const classKey = document.body.dataset.classKey;
 

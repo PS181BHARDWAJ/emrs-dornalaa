@@ -1,8 +1,8 @@
 (function () {
-  const LOCAL_API_ORIGIN = 'https://emrsdornala.onrender.com';
+  const LOCAL_API_ORIGIN = 'https://emrs-dornalaa.onrender.com';
 
   function getApiOrigin() {
-    return 'https://emrsdornala.onrender.com';
+    return 'https://emrs-dornalaa.onrender.com';
   }
 
   const apiOrigin = getApiOrigin();

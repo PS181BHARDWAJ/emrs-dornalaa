@@ -1,6 +1,6 @@
 // ================= CONFIG =================
 const API_HOST_CANDIDATES = [
-  'https://emrsdornala.onrender.com'
+  'https://emrs-dornalaa.onrender.com'
 ];
 let ACTIVE_API_HOST = API_HOST_CANDIDATES[0];
 

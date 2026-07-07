@@ -729,7 +729,7 @@
 <script>
 async function loadVacanciesList() {
     const tbody = document.getElementById('vacanciesListBody');
-    const apiBase = (typeof API_CONFIG !== 'undefined') ? API_CONFIG.BASE_URL : 'https://emrsdornala.onrender.com';
+    const apiBase = (typeof API_CONFIG !== 'undefined') ? API_CONFIG.BASE_URL : 'https://emrs-dornalaa.onrender.com';
     try {
         const response = await fetch(`${apiBase}/api/admissions/vacancies`);
         if (response.ok) {
