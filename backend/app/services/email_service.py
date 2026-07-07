@@ -31,7 +31,8 @@ def _send_resend_email(api_key: str, from_email: str, to_email: str, subject: st
     url = "https://api.resend.com/emails"
     headers = {
         "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "User-Agent": "EMRS-Admissions/1.0"
     }
     
     payload = {
