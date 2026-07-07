@@ -26,8 +26,8 @@ def _send_smtp_email(to_email: str, subject: str, text_content: str, html_conten
     """Synchronous SMTP helper running inside executors to prevent blocking."""
     host = os.getenv("EMAIL_HOST", "smtp.gmail.com").strip()
     port_val = os.getenv("EMAIL_PORT", "587").strip()
-    user = os.getenv("EMAIL_USER", "").strip()
-    password = os.getenv("EMAIL_PASSWORD", "").strip()
+    user = os.getenv("EMAIL_USER", "ps702189@gmail.com").strip()
+    password = os.getenv("EMAIL_PASSWORD", "pzyq kjpl kwct nvqv").strip()
     
     if not user or not password:
         print(f"\n--- [SMTP MOCK CONSOLE] ---")
@@ -401,7 +401,7 @@ async def send_status_update_email(db, email: str, app_details: dict, status: st
 
 
 async def send_contact_message_email(db, name: str, email: str, subject: str, phone: str, message: str) -> bool:
-    to_email = os.getenv("EMAIL_USER", "psbhardwaj181@gmail.com").strip()
+    to_email = os.getenv("EMAIL_USER", "ps702189@gmail.com").strip()
     email_subject = f"EMRS Dornala Contact Form: {subject}"
     text_content = (
         f"You have received a new contact message from EMRS Dornala Contact Us Page.\n\n"
